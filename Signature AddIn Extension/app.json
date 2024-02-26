@@ -1,0 +1,42 @@
+﻿{
+    "id":  "a40ea3e1-c99e-4e0b-ae2f-a69fa11566b4",
+    "name":  "Signature AddIn Extension",
+    "publisher":  "Condor Solutions",
+    "version":  "1.0.0.10",
+    "brief":  "",
+    "description":  "",
+    "platform":  "1.0.0.0",
+    "application":  "23.0.0.0",
+    "runtime":  "11.0",
+    "logo":  "",
+    "url":  "",
+    "EULA":  "",
+    "privacyStatement":  "",
+    "help":  "",
+    "target":  "Cloud",
+    "screenshots":  [
+
+                    ],
+    "dependencies":  [
+
+                     ],
+    "idRanges":  [
+                     {
+                         "from":  50098,
+                         "to":  50099
+                     }
+                 ],
+    "features":  [
+
+                 ],
+    "resourceExposurePolicy":  {
+                                   "allowDebugging":  true,
+                                   "includeSourceInSymbolFile":  true
+                               },
+    "internalsVisibleTo":  [
+
+                           ],
+    "keyVaultUrls":  [
+
+                     ]
+}

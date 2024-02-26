@@ -1,0 +1,47 @@
+﻿{
+    "id":  "734255dc-82de-4c7b-a244-40e244417ece",
+    "name":  "Coffee3 Extension",
+    "publisher":  "Condor Solutions",
+    "version":  "1.0.0.41",
+    "brief":  "",
+    "description":  "",
+    "platform":  "1.0.0.0",
+    "application":  "23.0.0.0",
+    "runtime":  "11.0",
+    "logo":  "",
+    "url":  "",
+    "EULA":  "",
+    "privacyStatement":  "",
+    "help":  "",
+    "target":  "Cloud",
+    "screenshots":  [
+
+                    ],
+    "dependencies":  [
+                         {
+                             "id":  "a40ea3e1-c99e-4e0b-ae2f-a69fa11566b4",
+                             "publisher":  "Condor Solutions",
+                             "name":  "Signature AddIn Extension",
+                             "version":  "1.0.0.10"
+                         }
+                     ],
+    "idRanges":  [
+                     {
+                         "from":  50000,
+                         "to":  50097
+                     }
+                 ],
+    "features":  [
+                     "TranslationFile",
+                     "GenerateCaptions"
+                 ],
+    "resourceExposurePolicy":  {
+                                   "allowDebugging":  true
+                               },
+    "internalsVisibleTo":  [
+
+                           ],
+    "keyVaultUrls":  [
+
+                     ]
+}

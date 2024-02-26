@@ -1,8 +1,14 @@
 {
-    "folders": [
-        {
-            "path": ".AL-Go"
-        }
-    ],
-    "settings": {}
+  "folders": [
+    {
+      "path": ".AL-Go"
+    },
+    {
+      "path": "Coffee3 Extension"
+    },
+    {
+      "path": "Signature AddIn Extension"
+    }
+  ],
+  "settings": {}
 }
