@@ -3,7 +3,7 @@ tableextension 50015 "CS Sales & Receivables Setup" extends "Sales & Receivables
     Description = 'CS1.0';
     fields
     {
-        field(60000; "Name exportdirectory"; Text[250])
+        field(50000; "Name exportdirectory"; Text[250])
         {
             Caption = 'Name exportdirectory';
             DataClassification = ToBeClassified;
@@ -13,13 +13,13 @@ tableextension 50015 "CS Sales & Receivables Setup" extends "Sales & Receivables
                     "Name exportdirectory" := "Name exportdirectory" + '\';
             end;
         }
-        field(60001; "Max. Historie Time"; Code[10])
+        field(50001; "Max. Historie Time"; Code[10])
         {
             Caption = 'Max. Historie Time';
             DataClassification = ToBeClassified;
             DateFormula = true;
         }
-        field(60002; "Direct Debit Mandate Nos. Org"; Code[10])
+        field(50002; "Direct Debit Mandate Nos. Org"; Code[10])
         {
             Caption = 'Direct Debit Mandate Nos.';
             DataClassification = ToBeClassified;

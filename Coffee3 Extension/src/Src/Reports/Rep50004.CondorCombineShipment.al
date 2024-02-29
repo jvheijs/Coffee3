@@ -1,6 +1,6 @@
 report 50004 "Condor Combine Shipments"
 {
-    ApplicationArea = all;
+    ApplicationArea = All;
     Caption = 'Condor verzamelfacturering';
     ProcessingOnly = true;
     UsageCategory = Tasks;
@@ -194,16 +194,19 @@ report 50004 "Condor Combine Shipments"
                     Caption = 'Options';
                     field(PostingDate; PostingDateReq)
                     {
+                        ApplicationArea = All;
                         Caption = 'Posting Date';
                         ToolTip = 'Specifies the posting date for the invoice(s) that the batch job creates. This field must be filled in.';
                     }
                     field(DocDateReq; DocDateReq)
                     {
+                        ApplicationArea = All;
                         Caption = 'Document Date';
                         ToolTip = 'Specifies the document date for the invoice(s) that the batch job creates. This field must be filled in.';
                     }
                     field(CalcInvDisc; CalcInvDisc)
                     {
+                        ApplicationArea = All;
                         Caption = 'Calc. Inv. Discount';
                         ToolTip = 'Specifies if you want the invoice discount amount to be automatically calculated on the shipment.';
 
@@ -215,16 +218,19 @@ report 50004 "Condor Combine Shipments"
                     }
                     field(PostInv; PostInv)
                     {
+                        ApplicationArea = All;
                         Caption = 'Post Invoices';
                         ToolTip = 'Specifies if you want to have the invoices posted immediately.';
                     }
                     field(OnlyStdPmtTerms; OnlyStdPmtTerms)
                     {
+                        ApplicationArea = All;
                         Caption = 'Only Std. Payment Terms';
                         ToolTip = 'Specifies if you want to include shipments with standard payments terms. If you select this option, you must manually invoice all other shipments.';
                     }
                     field(CopyTextLines; CopyTextLines)
                     {
+                        ApplicationArea = All;
                         Caption = 'Copy Text Lines';
                         ToolTip = 'Specifies if you want manually written text on the shipment lines to be copied to the invoice.';
                     }

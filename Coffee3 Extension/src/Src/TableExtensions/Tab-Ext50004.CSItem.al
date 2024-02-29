@@ -11,7 +11,7 @@ tableextension 50004 "CS Item" extends Item
             Description = '2000-901-09';
             DataClassification = ToBeClassified;
         }
-        field(60009; "Export Item"; Boolean)
+        field(50009; "Export Item"; Boolean)
         {
             Description = 'FNT-84';
             Caption = 'Export Item';

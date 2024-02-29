@@ -2,7 +2,7 @@ tableextension 50003 "CS Cust. Ledger Entry" extends "Cust. Ledger Entry"
 {
     fields
     {
-        field(60000; "Aantal aanmaningen verstuurd"; Integer)
+        field(50000; "Aantal aanmaningen verstuurd"; Integer)
         {
             caption = 'Quantity Reminders Send';
             FieldClass = FlowField;
