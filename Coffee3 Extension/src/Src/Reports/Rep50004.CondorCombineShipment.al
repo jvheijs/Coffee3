@@ -225,13 +225,13 @@ report 50004 "Condor Combine Shipments"
                     field(OnlyStdPmtTerms; OnlyStdPmtTerms)
                     {
                         ApplicationArea = all;
-                        Caption = 'Alleen standaard betalings voorwaarden';
+                        Caption = 'Alleen standaard betalingsvoorwaarden';
                         ToolTip = 'Specifies if you want to include shipments with standard payments terms. If you select this option, you must manually invoice all other shipments.';
                     }
                     field(CopyTextLines; CopyTextLines)
                     {
                         ApplicationArea = all;
-                        Caption = 'Kopieer tekst regels';
+                        Caption = 'Kopieer tekstregels';
                         ToolTip = 'Specifies if you want manually written text on the shipment lines to be copied to the invoice.';
                     }
                 }
