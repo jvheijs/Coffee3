@@ -1,7 +1,7 @@
 page 50009 "Toolbox John"
 {
     ApplicationArea = All;
-    Caption = 'Toolbox John';
+    Caption = 'Toolbox Johnie';
     PageType = List;
     UsageCategory = Lists;
     Permissions = tabledata 112 = RIMD,
