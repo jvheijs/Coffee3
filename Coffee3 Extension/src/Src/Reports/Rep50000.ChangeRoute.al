@@ -16,15 +16,61 @@ report 50000 "Change Route"
 
     requestpage
     {
+        SaveValues = true;
 
         layout
         {
-        }
+            area(content)
+            {
+                group(Options)
+                {
+                    Caption = 'Options';
+                    field(RayonOud; RayonOud)
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Rayon Oud';
+                        ToolTip = 'Rayon Oud';
 
-        actions
-        {
+                        TableRelation = "Area and Customerstatus".Rayoncode;
+                    }
+                    field(RayonNieuw; RayonNieuw)
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Rayon Nieuw';
+                        ToolTip = 'Rayon Nieuw';
+
+                        TableRelation = "Area and Customerstatus".Rayoncode;
+                    }
+
+                    field(RouteOud; RouteOud)
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Route Oud';
+                        ToolTip = 'Route Oud';
+
+                        trigger OnLookup(var Text: Text): Boolean
+                        begin
+                            RouteOud := RouteOnLookup();
+                        end;
+                    }
+
+                    field(RouteNieuw; RouteNieuw)
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Route Nieuw';
+                        ToolTip = 'Route Nieuw';
+
+                        trigger OnLookup(var Text: Text): Boolean
+                        begin
+                            RouteNieuw := RouteOnLookup();
+                        end;
+                    }
+
+                }
+            }
         }
     }
+
 
     labels
     {
@@ -68,5 +114,18 @@ report 50000 "Change Route"
         KlantRec: Record Customer;
         Text60000: Label 'Deze combinatie van rayonnummer %1 en routenummer %2 bestaat al./';
         Text60001: Label 'U kunt deze niet dubbel aanmaken';
+
+    local procedure RouteOnLookup(): Integer
+    var
+        Route: Record Route;
+        Routes: Page Routes;
+    begin
+        Clear(Routes);
+        Routes.LookupMode := true;
+        if Routes.RunModal() = ACTION::LookupOK then begin
+            Routes.GetRecord(Route);
+            exit(Route.Routenummer);
+        end;
+    end;
 }
 

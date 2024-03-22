@@ -80,20 +80,20 @@ page 50012 "DP Sales Order Line"
 
                 group(Orders)
                 {
-                    Caption = 'Beschikbaarheid';                // JvH-131023
+                    Caption = 'Historie';                // JvH-131023
                     field("Bst-Laatste"; Rec.LastOrder)
                     {
-                        Caption = 'Verzenddatum';        // JvH-131023
+                        Caption = 'Verkocht aantal';        // JvH-131023
                         DecimalPlaces = 0 : 0;
-                        ToolTip = 'Specifies when the items on the sales line must be shipped.';
+                        ToolTip = 'Verkocht aantal per datum';
                     }
 
                     field("Bst-Laatste-1"; Rec."LastOrder-1")
                     {
-                        Caption = 'Artikelbeschikbaarheid';            // JvH-131023
+                        Caption = 'Verkocht aantal 1';            // JvH-131023
                         DecimalPlaces = 0 : 0;
                         DrillDown = true;
-                        ToolTip = 'Specifies how may units of the item on the sales line are available, in inventory or incoming before the shipment date.';
+                        ToolTip = 'Verkocht aantal per datum 1';
 
                         trigger OnDrillDown()
                         begin
@@ -103,9 +103,9 @@ page 50012 "DP Sales Order Line"
                     }
                     field("Bst-Laatste-2"; Rec."LastOrder-2")
                     {
-                        Caption = 'Artikelvoorraad';              // JvH-131023
+                        Caption = 'Verkocht aantal 2';              // JvH-131023
                         DecimalPlaces = 0 : 0;
-                        ToolTip = 'Specifies the quantity of the item that is currently in inventory and not reserved for other demand.';
+                        ToolTip = 'Verkocht aantal per datum 2';
                     }
 
                     field(DateLastOrder; Rec.DateLastOrder)
@@ -126,16 +126,16 @@ page 50012 "DP Sales Order Line"
                     Caption = 'Artikel';             // JvH-131023
                     field("Vrd-Laatste"; Rec."Stock-0")
                     {
-                        Caption = 'Verzenddatum';                    // JvH-131023
+                        Caption = 'Opgenomen voorraad';                    // JvH-131023
                         DecimalPlaces = 0 : 0;
-                        ToolTip = 'Specifies when the items on the sales line must be shipped.';
+                        ToolTip = 'Opgenomen voorraad per datum';
                     }
                     field("Vrd-Laatste-1"; Rec."Stock-1")
                     {
-                        Caption = 'Artikelbeschikbaarheid';              // JvH-131023
+                        Caption = 'Opgenomen voorraad 1';              // JvH-131023
                         DecimalPlaces = 0 : 0;
                         DrillDown = true;
-                        ToolTip = 'Specifies how may units of the item on the sales line are available, in inventory or incoming before the shipment date.';
+                        ToolTip = 'Opgenomen voorraad per datum 1';
 
                         trigger OnDrillDown()
                         begin
@@ -145,9 +145,9 @@ page 50012 "DP Sales Order Line"
                     }
                     field("Vrd-Laatste-2"; Rec."Stock-2")
                     {
-                        Caption = 'Artikelvoorraad';                    // JvH-131023
+                        Caption = 'Opgenomen voorraad 2';                    // JvH-131023
                         DecimalPlaces = 0 : 0;
-                        ToolTip = 'Specifies the quantity of the item that is currently in inventory and not reserved for other demand.';
+                        ToolTip = 'Opgenomen voorraad per datum 2';
                     }
                     field("DateStock-0"; Rec."DateStock-0")
                     {

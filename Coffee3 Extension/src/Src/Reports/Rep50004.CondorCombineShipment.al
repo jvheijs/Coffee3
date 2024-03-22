@@ -1,6 +1,6 @@
 report 50004 "Condor Combine Shipments"
 {
-    ApplicationArea = All;
+    ApplicationArea = all;
     Caption = 'Condor verzamelfacturering';
     ProcessingOnly = true;
     UsageCategory = Tasks;
@@ -194,20 +194,20 @@ report 50004 "Condor Combine Shipments"
                     Caption = 'Options';
                     field(PostingDate; PostingDateReq)
                     {
-                        ApplicationArea = All;
-                        Caption = 'Posting Date';
+                        ApplicationArea = all;
+                        Caption = 'Boekingsdatum';
                         ToolTip = 'Specifies the posting date for the invoice(s) that the batch job creates. This field must be filled in.';
                     }
                     field(DocDateReq; DocDateReq)
                     {
-                        ApplicationArea = All;
-                        Caption = 'Document Date';
+                        ApplicationArea = all;
+                        Caption = 'Documentdatum';
                         ToolTip = 'Specifies the document date for the invoice(s) that the batch job creates. This field must be filled in.';
                     }
                     field(CalcInvDisc; CalcInvDisc)
                     {
-                        ApplicationArea = All;
-                        Caption = 'Calc. Inv. Discount';
+                        ApplicationArea = all;
+                        Caption = 'Bereken factuurkorting';
                         ToolTip = 'Specifies if you want the invoice discount amount to be automatically calculated on the shipment.';
 
                         trigger OnValidate()
@@ -218,20 +218,20 @@ report 50004 "Condor Combine Shipments"
                     }
                     field(PostInv; PostInv)
                     {
-                        ApplicationArea = All;
-                        Caption = 'Post Invoices';
+                        ApplicationArea = all;
+                        Caption = 'Boek facturen';
                         ToolTip = 'Specifies if you want to have the invoices posted immediately.';
                     }
                     field(OnlyStdPmtTerms; OnlyStdPmtTerms)
                     {
-                        ApplicationArea = All;
-                        Caption = 'Only Std. Payment Terms';
+                        ApplicationArea = all;
+                        Caption = 'Alleen standaard betalingsvoorwaarden';
                         ToolTip = 'Specifies if you want to include shipments with standard payments terms. If you select this option, you must manually invoice all other shipments.';
                     }
                     field(CopyTextLines; CopyTextLines)
                     {
-                        ApplicationArea = All;
-                        Caption = 'Copy Text Lines';
+                        ApplicationArea = all;
+                        Caption = 'Kopieer tekstregels';
                         ToolTip = 'Specifies if you want manually written text on the shipment lines to be copied to the invoice.';
                     }
                 }
