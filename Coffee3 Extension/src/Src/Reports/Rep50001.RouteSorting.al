@@ -15,13 +15,40 @@ report 50001 "Route Sorting"
 
     requestpage
     {
+        SaveValues = true;
 
         layout
         {
-        }
+            area(content)
+            {
+                group(Options)
+                {
+                    Caption = 'Options';
 
-        actions
-        {
+
+                    field(Rayon; Rayonsort)
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Rayon';
+                        ToolTip = 'Rayon';
+
+                        TableRelation = "Area and Customerstatus".Rayoncode;
+                    }
+                    field(Route; routesort)
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Route';
+                        ToolTip = 'Route';
+
+                        trigger OnLookup(var Text: Text): Boolean
+                        begin
+                            Routesort := RouteOnLookup();
+                        end;
+
+                    }
+
+                }
+            }
         }
     }
 
@@ -29,10 +56,12 @@ report 50001 "Route Sorting"
     {
     }
 
-    trigger OnPreReport()
     var
         rayonsort: Integer;
         routesort: Integer;
+
+    trigger OnPreReport()
+    var
         dropcodenummer: Integer;
         hoogstenummer: Integer;
         aantal: Integer;
@@ -145,5 +174,17 @@ report 50001 "Route Sorting"
                 Routes.Modify;
             until Routes.Next = 0;
     end;
-}
 
+    local procedure RouteOnLookup(): Integer
+    var
+        Route: Record Route;
+        Routes: Page Routes;
+    begin
+        Clear(Routes);
+        Routes.LookupMode := true;
+        if Routes.RunModal() = ACTION::LookupOK then begin
+            Routes.GetRecord(Route);
+            exit(Route.Routenummer);
+        end;
+    end;
+}

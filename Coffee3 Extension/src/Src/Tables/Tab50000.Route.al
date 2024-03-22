@@ -95,6 +95,9 @@ table 50000 "Route"
 
     fieldgroups
     {
+        fieldgroup(DropDown; Routenummer)
+        {
+        }
     }
 
     trigger OnModify()

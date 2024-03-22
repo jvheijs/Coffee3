@@ -4,6 +4,7 @@ page 50001 "Areas and Customerstatusses"
     SourceTable = "Area and Customerstatus";
     UsageCategory = Administration;
     ApplicationArea = All;
+    Caption = 'Klantstatus';
 
     layout
     {
