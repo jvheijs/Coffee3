@@ -37,7 +37,7 @@
                   <Width>2.29492cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>6.06576cm</Width>
+                  <Width>5.65185cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -7319,7 +7319,7 @@
                           <TablixBody>
                             <TablixColumns>
                               <TablixColumn>
-                                <Width>18.43528cm</Width>
+                                <Width>18.02137cm</Width>
                               </TablixColumn>
                             </TablixColumns>
                             <TablixRows>
@@ -7943,7 +7943,7 @@
             </Filters>
             <Left>0.12203cm</Left>
             <Height>24.7618cm</Height>
-            <Width>18.43528cm</Width>
+            <Width>18.02137cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -7954,7 +7954,7 @@
         <Height>27.21222cm</Height>
         <Style />
       </Body>
-      <Width>18.55731cm</Width>
+      <Width>18.39856cm</Width>
       <Page>
         <PageHeader>
           <Height>2.24896cm</Height>
@@ -7981,7 +7981,7 @@
                   <MIMEType>image/bmp</MIMEType>
                   <Sizing>FitProportional</Sizing>
                   <Top>0.10583cm</Top>
-                  <Left>2.16009cm</Left>
+                  <Left>1.82764cm</Left>
                   <Height>14mm</Height>
                   <Width>40mm</Width>
                   <ZIndex>1</ZIndex>
@@ -7999,7 +7999,7 @@
               <KeepTogether>true</KeepTogether>
               <Left>12.03528cm</Left>
               <Height>1.78292cm</Height>
-              <Width>6.4cm</Width>
+              <Width>6.10812cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -8164,7 +8164,6 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox64</rd:DefaultName>
-              <Top>0cm</Top>
               <Left>0.12203cm</Left>
               <Height>0.32cm</Height>
               <Width>17.98706cm</Width>

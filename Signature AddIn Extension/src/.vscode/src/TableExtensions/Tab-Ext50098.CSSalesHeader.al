@@ -2,7 +2,7 @@ tableextension 50098 "CS Sig Sales Header" extends "Sales Header"
 {
     fields
     {
-        field(50149; "Signature"; Blob)
+        field(50098; "Signature"; Blob)
         {
             Caption = 'Signature';
             DataClassification = CustomerContent;
