@@ -2,8 +2,8 @@
     "al.enableCodeAnalysis": true,
     "al.backgroundCodeAnalysis": true,
     "al.codeAnalyzers": [
-        //"${CodeCop}",
-        //"${UICop}",
+        "${CodeCop}",
+        "${UICop}",
         "${PerTenantExtensionCop}"
     ]
 }
