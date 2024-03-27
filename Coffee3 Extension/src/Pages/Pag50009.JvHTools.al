@@ -6,6 +6,7 @@ page 50009 "Toolbox John"
     UsageCategory = Lists;
     Permissions = tabledata 112 = RIMD,
                   tabledata 110 = RIMD;
+    // Test John
 
     layout
     {
