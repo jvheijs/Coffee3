@@ -2,7 +2,7 @@ report 50002 "CS Reminder"
 {
     DefaultLayout = RDLC;
     RDLCLayout = './src/Reports/Rep50002/Rep50002.CSReminder.rdlc';
-    Caption = 'Aanmaning';
+    Caption = 'Reminder';
 
     dataset
     {
@@ -531,7 +531,7 @@ report 50002 "CS Reminder"
                         VATAmountLine.GetLine(Number);
                         if not VATClause.Get(VATAmountLine."VAT Clause Code") then
                             CurrReport.Skip();
-                        VATClause.GetDescriptionText("Issued Reminder Header");
+                        VATClause.GetDescription("Issued Reminder Header");
                     end;
 
                     trigger OnPreDataItem()
@@ -728,26 +728,26 @@ report 50002 "CS Reminder"
                     Caption = 'Options';
                     field(ShowInternalInfo; ShowInternalInfo)
                     {
-                        ApplicationArea = all;
+                        ApplicationArea = Basic, Suite;
                         Caption = 'Show Internal Information';
                         ToolTip = 'Specifies if you want the printed report to show information that is only for internal use.';
                     }
                     field(LogInteraction; LogInteraction)
                     {
-                        ApplicationArea = all;
+                        ApplicationArea = Basic, Suite;
                         Caption = 'Log Interaction';
                         Enabled = LogInteractionEnable;
                         ToolTip = 'Specifies if you want the reminder that you print to be recorded as interaction, and to be added to the Interaction Log Entry table.';
                     }
                     field(ShowNotDueAmounts; ShowNotDueAmounts)
                     {
-                        ApplicationArea = all;
+                        ApplicationArea = Basic, Suite;
                         Caption = 'Show Not Due Amounts';
                         ToolTip = 'Specifies if you want to show amounts that are not due from customers.';
                     }
                     field(ShowMIR; ShowMIRLines)
                     {
-                        ApplicationArea = all;
+                        ApplicationArea = Basic, Suite;
                         Caption = 'Show MIR Detail';
                         ToolTip = 'Specifies if you want multiple interest rate details for the journal lines to be included in the report.';
                     }
@@ -766,7 +766,7 @@ report 50002 "CS Reminder"
 
         trigger OnOpenPage()
         begin
-            LogInteraction := SegManagement.FindInteractionTemplateCode(Enum::"Interaction Log Entry Document Type"::"Sales Rmdr.") <> '';
+            LogInteraction := SegManagement.FindInteractTmplCode(8) <> '';
             LogInteractionEnable := LogInteraction;
         end;
     }
@@ -779,7 +779,26 @@ report 50002 "CS Reminder"
     begin
         GLSetup.Get();
         SalesSetup.Get();
-        FormatDocument.SetLogoPosition(SalesSetup."Logo Position on Documents", CompanyInfo1, CompanyInfo2, CompanyInfo3);
+
+        case SalesSetup."Logo Position on Documents" of
+            SalesSetup."Logo Position on Documents"::"No Logo":
+                ;
+            SalesSetup."Logo Position on Documents"::Left:
+                begin
+                    CompanyInfo1.Get();
+                    CompanyInfo1.CalcFields(Picture);
+                end;
+            SalesSetup."Logo Position on Documents"::Center:
+                begin
+                    CompanyInfo2.Get();
+                    CompanyInfo2.CalcFields(Picture);
+                end;
+            SalesSetup."Logo Position on Documents"::Right:
+                begin
+                    CompanyInfo3.Get();
+                    CompanyInfo3.CalcFields(Picture);
+                end;
+        end;
     end;
 
     trigger OnPostReport()
@@ -811,7 +830,6 @@ report 50002 "CS Reminder"
         CurrExchRate: Record "Currency Exchange Rate";
         CuLanguage: Codeunit Language;
         FormatAddr: Codeunit "Format Address";
-        FormatDocument: Codeunit "Format Document";
         SegManagement: Codeunit SegManagement;
         CustAddr: array[8] of Text[100];
         CompanyAddr: array[8] of Text[100];
@@ -848,16 +866,16 @@ report 50002 "CS Reminder"
         NNC_InterestAmountTotal: Decimal;
         NNC_RemainingAmountTotal: Decimal;
         NNC_VATAmountTotal: Decimal;
-
+        [InDataSet]
         LogInteractionEnable: Boolean;
         ShowNotDueAmounts: Boolean;
         TextPageLbl: Label 'Page';
-        PostingDateCaptionLbl: Label 'Posting Date';
-        ReminderNoCaptionLbl: Label 'Reminder No.';
-        BankAccNoCaptionLbl: Label 'Account No.';
+        PostingDateCaptionLbl: Label 'Boekingsdatum';
+        ReminderNoCaptionLbl: Label 'Aanmaningsnr.';       // JvH
+        BankAccNoCaptionLbl: Label 'Rekeningnummer';          // Jvh
         BankNameCaptionLbl: Label 'Bank';
         GiroNoCaptionLbl: Label 'Giro No.';
-        PhoneNoCaptionLbl: Label 'Phone No.';
+        PhoneNoCaptionLbl: Label 'Telefoonnummer';            // JvH
         ReminderCaptionLbl: Label 'Reminder';
         HeaderDimensionsCaptionLbl: Label 'Header Dimensions';
         DocumentDateCaption1Lbl: Label 'Document Date';
@@ -868,14 +886,14 @@ report 50002 "CS Reminder"
         VATIdentifierLbl: Label 'VAT Identifier';
         ContinuedCaptionLbl: Label 'Continued';
         ContinuedCaption1Lbl: Label 'Continued';
-        DueDateCaptionLbl: Label 'Due Date';
+        DueDateCaptionLbl: Label 'Vervaldatum';           // JvH
         VATAmountCaptionLbl: Label 'VAT Amount';
         VATBaseCaptionLbl: Label 'VAT Base';
         VATPercentCaptionLbl: Label 'VAT %';
         TotalCaptionLbl: Label 'Total';
         PageCaptionLbl: Label 'Page';
         DocDateCaptionLbl: Label 'Document Date';
-        HomePageCaptionLbl: Label 'Home Page';
+        HomePageCaptionLbl: Label 'Startpagina';             // JvH
         EMailCaptionLbl: Label 'Email';
         GreetingLbl: Label 'Hello';
         AmtDueLbl: Label 'You are receiving this email to formally notify you that payment owed by you is past due. The payment was due on %1. Enclosed is a copy of invoice with the details of remaining amount.', Comment = '%1 = A due date';
