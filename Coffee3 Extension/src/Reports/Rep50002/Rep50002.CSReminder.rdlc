@@ -9649,7 +9649,7 @@ Cstr(Fields!CompanyInfoEMail.Value)
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <Left>0.1101in</Left>
+            <Left>0.01389in</Left>
             <Height>12.93899cm</Height>
             <Width>18.00212cm</Width>
             <Style>
@@ -9664,10 +9664,10 @@ Cstr(Fields!CompanyInfoEMail.Value)
           <FontSize>8pt</FontSize>
         </Style>
       </Body>
-      <Width>18.48359cm</Width>
+      <Width>18.04317cm</Width>
       <Page>
         <PageHeader>
-          <Height>7.0395cm</Height>
+          <Height>10.17941cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -9691,8 +9691,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>58.49462pt</Top>
-              <Left>0.32435cm</Left>
+              <Top>154.24999pt</Top>
+              <Left>0.07998cm</Left>
               <Height>11pt</Height>
               <Width>6.9454cm</Width>
               <Style>
@@ -9720,8 +9720,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>57.74462pt</Top>
-              <Left>4.86407in</Left>
+              <Top>153.49999pt</Top>
+              <Left>4.76786in</Left>
               <Height>11pt</Height>
               <Width>5.84106cm</Width>
               <ZIndex>1</ZIndex>
@@ -9751,8 +9751,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>68.74462pt</Top>
-              <Left>4.86407in</Left>
+              <Top>164.49999pt</Top>
+              <Left>4.76786in</Left>
               <Height>11pt</Height>
               <Width>5.84106cm</Width>
               <ZIndex>2</ZIndex>
@@ -9782,8 +9782,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>79.74462pt</Top>
-              <Left>4.86407in</Left>
+              <Top>175.49999pt</Top>
+              <Left>4.76786in</Left>
               <Height>11pt</Height>
               <Width>5.84106cm</Width>
               <ZIndex>3</ZIndex>
@@ -9813,8 +9813,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>90.74462pt</Top>
-              <Left>4.86407in</Left>
+              <Top>186.49999pt</Top>
+              <Left>4.76786in</Left>
               <Height>11pt</Height>
               <Width>5.84106cm</Width>
               <ZIndex>4</ZIndex>
@@ -9844,8 +9844,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>101.74462pt</Top>
-              <Left>4.86407in</Left>
+              <Top>197.49999pt</Top>
+              <Left>4.76786in</Left>
               <Height>11pt</Height>
               <Width>5.84106cm</Width>
               <ZIndex>5</ZIndex>
@@ -9876,8 +9876,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>76.74462pt</Top>
-              <Left>4.50269in</Left>
+              <Top>172.49999pt</Top>
+              <Left>4.40648in</Left>
               <Height>11pt</Height>
               <Width>0.52009cm</Width>
               <ZIndex>6</ZIndex>
@@ -9911,8 +9911,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>87.74462pt</Top>
-              <Left>4.48907in</Left>
+              <Top>183.49999pt</Top>
+              <Left>4.39286in</Left>
               <Height>11pt</Height>
               <Width>0.55469cm</Width>
               <ZIndex>7</ZIndex>
@@ -9946,8 +9946,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>98.74462pt</Top>
-              <Left>4.48907in</Left>
+              <Top>194.49999pt</Top>
+              <Left>4.39286in</Left>
               <Height>11pt</Height>
               <Width>0.55469cm</Width>
               <ZIndex>8</ZIndex>
@@ -9981,8 +9981,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>69.49462pt</Top>
-              <Left>0.32435cm</Left>
+              <Top>165.24999pt</Top>
+              <Left>0.07998cm</Left>
               <Height>11pt</Height>
               <Width>6.9454cm</Width>
               <ZIndex>9</ZIndex>
@@ -10012,8 +10012,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>80.49462pt</Top>
-              <Left>0.32435cm</Left>
+              <Top>176.24999pt</Top>
+              <Left>0.07998cm</Left>
               <Height>11pt</Height>
               <Width>6.9454cm</Width>
               <ZIndex>10</ZIndex>
@@ -10043,8 +10043,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>91.49462pt</Top>
-              <Left>0.32435cm</Left>
+              <Top>187.24999pt</Top>
+              <Left>0.07998cm</Left>
               <Height>11pt</Height>
               <Width>6.9454cm</Width>
               <ZIndex>11</ZIndex>
@@ -10075,8 +10075,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>74.74462pt</Top>
-              <Left>7.56335cm</Left>
+              <Top>170.49999pt</Top>
+              <Left>7.31898cm</Left>
               <Height>11pt</Height>
               <Width>1.31128cm</Width>
               <ZIndex>12</ZIndex>
@@ -10110,8 +10110,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>89.74462pt</Top>
-              <Left>7.56335cm</Left>
+              <Top>185.49999pt</Top>
+              <Left>7.31898cm</Left>
               <Height>11pt</Height>
               <Width>1.31128cm</Width>
               <ZIndex>13</ZIndex>
@@ -10145,8 +10145,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>100.74462pt</Top>
-              <Left>7.56335cm</Left>
+              <Top>196.49999pt</Top>
+              <Left>7.31898cm</Left>
               <Height>11pt</Height>
               <Width>1.31128cm</Width>
               <ZIndex>14</ZIndex>
@@ -10179,8 +10179,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>105.69469pt</Top>
-              <Left>0.32435cm</Left>
+              <Top>201.45006pt</Top>
+              <Left>0.07998cm</Left>
               <Height>11pt</Height>
               <Width>2.90319cm</Width>
               <ZIndex>15</ZIndex>
@@ -10211,8 +10211,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>105.69469pt</Top>
-              <Left>3.46099cm</Left>
+              <Top>201.45006pt</Top>
+              <Left>3.21662cm</Left>
               <Height>11pt</Height>
               <Width>3.77765cm</Width>
               <ZIndex>16</ZIndex>
@@ -10243,8 +10243,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>138.69469pt</Top>
-              <Left>0.32435cm</Left>
+              <Top>234.45006pt</Top>
+              <Left>0.07998cm</Left>
               <Height>11pt</Height>
               <Width>2.90319cm</Width>
               <ZIndex>17</ZIndex>
@@ -10275,8 +10275,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>138.69469pt</Top>
-              <Left>3.46099cm</Left>
+              <Top>234.45006pt</Top>
+              <Left>3.21662cm</Left>
               <Height>11pt</Height>
               <Width>3.77765cm</Width>
               <ZIndex>18</ZIndex>
@@ -10307,8 +10307,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>149.69469pt</Top>
-              <Left>0.32435cm</Left>
+              <Top>245.45006pt</Top>
+              <Left>0.07998cm</Left>
               <Height>11pt</Height>
               <Width>2.90319cm</Width>
               <ZIndex>19</ZIndex>
@@ -10339,8 +10339,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>149.69469pt</Top>
-              <Left>3.46099cm</Left>
+              <Top>245.45006pt</Top>
+              <Left>3.21662cm</Left>
               <Height>11pt</Height>
               <Width>3.77765cm</Width>
               <ZIndex>20</ZIndex>
@@ -10371,8 +10371,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>160.69469pt</Top>
-              <Left>0.32435cm</Left>
+              <Top>256.45006pt</Top>
+              <Left>0.07998cm</Left>
               <Height>11pt</Height>
               <Width>2.90319cm</Width>
               <ZIndex>21</ZIndex>
@@ -10403,8 +10403,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>160.69469pt</Top>
-              <Left>3.46099cm</Left>
+              <Top>256.45006pt</Top>
+              <Left>3.21662cm</Left>
               <Height>11pt</Height>
               <Width>3.77765cm</Width>
               <ZIndex>22</ZIndex>
@@ -10435,8 +10435,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>171.69469pt</Top>
-              <Left>0.32435cm</Left>
+              <Top>267.45006pt</Top>
+              <Left>0.07998cm</Left>
               <Height>11pt</Height>
               <Width>2.90319cm</Width>
               <ZIndex>23</ZIndex>
@@ -10467,8 +10467,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>171.69469pt</Top>
-              <Left>3.46099cm</Left>
+              <Top>267.45006pt</Top>
+              <Left>3.21662cm</Left>
               <Height>11pt</Height>
               <Width>3.77765cm</Width>
               <ZIndex>24</ZIndex>
@@ -10499,8 +10499,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>138.74466pt</Top>
-              <Left>4.86407in</Left>
+              <Top>234.50003pt</Top>
+              <Left>4.76786in</Left>
               <Height>11pt</Height>
               <Width>2.36233cm</Width>
               <ZIndex>25</ZIndex>
@@ -10530,8 +10530,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>138.74466pt</Top>
-              <Left>15.0049cm</Left>
+              <Top>234.50003pt</Top>
+              <Left>14.76053cm</Left>
               <Height>11pt</Height>
               <Width>3.26134cm</Width>
               <ZIndex>26</ZIndex>
@@ -10561,8 +10561,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>116.69469pt</Top>
-              <Left>0.32435cm</Left>
+              <Top>212.45006pt</Top>
+              <Left>0.07998cm</Left>
               <Height>11pt</Height>
               <Width>2.90319cm</Width>
               <ZIndex>27</ZIndex>
@@ -10593,8 +10593,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>116.69469pt</Top>
-              <Left>3.46084cm</Left>
+              <Top>212.45006pt</Top>
+              <Left>3.21647cm</Left>
               <Height>11pt</Height>
               <Width>3.7778cm</Width>
               <ZIndex>28</ZIndex>
@@ -10625,8 +10625,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>127.69469pt</Top>
-              <Left>0.32435cm</Left>
+              <Top>223.45006pt</Top>
+              <Left>0.07998cm</Left>
               <Height>11pt</Height>
               <Width>2.90319cm</Width>
               <ZIndex>29</ZIndex>
@@ -10657,8 +10657,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>127.69469pt</Top>
-              <Left>3.46084cm</Left>
+              <Top>223.45006pt</Top>
+              <Left>3.21647cm</Left>
               <Height>11pt</Height>
               <Width>3.7778cm</Width>
               <ZIndex>30</ZIndex>
@@ -10669,6 +10669,30 @@ Cstr(Fields!CompanyInfoEMail.Value)
                 <VerticalAlign>Middle</VerticalAlign>
               </Style>
             </Textbox>
+            <Image Name="CompanyLogo">
+              <Source>Database</Source>
+              <Value>=First(Fields!CompanyInfo2Picture.Value, "DataSet_Result")</Value>
+              <MIMEType>image/jpeg</MIMEType>
+              <Sizing>FitProportional</Sizing>
+              <Left>6.93534cm</Left>
+              <Height>60pt</Height>
+              <Width>17.99cm</Width>
+              <ZIndex>31</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+'BUG!!! Unfortunately we have another bug here'
+'I.e. if the value is 11,5 this will be converted to 0 and logo will then end in the top.'
+'So to solve this issue you 2 options:
+'Option 1: The one I have chosen. Round the number in NAV so you do not have decimals.
+'Option 2: Replace the "," with "."'
+'Resulting in 11.5, and then of course it works :-('
+'The value will never be above 792 pt, so you can safely do this.
+'11 inches * 72 points = 792 pt. 1 inch = 72 points'
+'Your expression would look like this:'
+              </Style>
+            </Image>
             <Textbox Name="IssuedReminderHdrNoCapt">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -10689,8 +10713,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>148.74466pt</Top>
-              <Left>4.86407in</Left>
+              <Top>244.50003pt</Top>
+              <Left>4.76786in</Left>
               <Height>11pt</Height>
               <Width>2.36233cm</Width>
               <ZIndex>31</ZIndex>
@@ -10721,8 +10745,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>149.74466pt</Top>
-              <Left>14.99894cm</Left>
+              <Top>245.50003pt</Top>
+              <Left>14.75457cm</Left>
               <Height>11pt</Height>
               <Width>3.26134cm</Width>
               <ZIndex>32</ZIndex>
@@ -10752,8 +10776,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>160.74466pt</Top>
-              <Left>4.86407in</Left>
+              <Top>256.50003pt</Top>
+              <Left>4.76786in</Left>
               <Height>11pt</Height>
               <Width>2.36233cm</Width>
               <ZIndex>33</ZIndex>
@@ -10786,8 +10810,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>160.74466pt</Top>
-              <Left>14.99894cm</Left>
+              <Top>256.50003pt</Top>
+              <Left>14.75457cm</Left>
               <Height>11pt</Height>
               <Width>3.26134cm</Width>
               <ZIndex>34</ZIndex>
@@ -10817,8 +10841,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>171.74466pt</Top>
-              <Left>4.86407in</Left>
+              <Top>267.50003pt</Top>
+              <Left>4.76786in</Left>
               <Height>11pt</Height>
               <Width>2.36233cm</Width>
               <ZIndex>35</ZIndex>
@@ -10851,8 +10875,8 @@ Cstr(Fields!CompanyInfoEMail.Value)
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>172.74466pt</Top>
-              <Left>14.99894cm</Left>
+              <Top>268.50003pt</Top>
+              <Left>14.75457cm</Left>
               <Height>11pt</Height>
               <Width>3.26134cm</Width>
               <ZIndex>36</ZIndex>
@@ -10862,141 +10886,6 @@ Cstr(Fields!CompanyInfoEMail.Value)
                 <VerticalAlign>Middle</VerticalAlign>
               </Style>
             </Textbox>
-            <Rectangle Name="Rectangle18">
-              <ReportItems>
-                <Line Name="Line1">
-                  <Left>0.03528cm</Left>
-                  <Height>0cm</Height>
-                  <Width>6cm</Width>
-                  <Visibility>
-                    <Hidden>true</Hidden>
-                  </Visibility>
-                  <Style>
-                    <Border>
-                      <Style>Solid</Style>
-                    </Border>
-                  </Style>
-                </Line>
-                <Image Name="CompanyInfoPicture2">
-                  <Source>Database</Source>
-                  <Value>=System.Convert.ToBase64String(Fields!CompanyInfo3Picture.Value)</Value>
-                  <MIMEType>image/bmp</MIMEType>
-                  <Sizing>FitProportional</Sizing>
-                  <Top>0.07056cm</Top>
-                  <Left>0.15084cm</Left>
-                  <Height>14mm</Height>
-                  <Width>40mm</Width>
-                  <ZIndex>1</ZIndex>
-                  <Visibility>
-                    <Hidden>=iif(ISNOTHING(Fields!CompanyInfo3Picture.Value) = True, True, False)</Hidden>
-                  </Visibility>
-                  <DataElementOutput>NoOutput</DataElementOutput>
-                  <Style>
-                    <Border />
-                  </Style>
-                </Image>
-              </ReportItems>
-              <KeepTogether>true</KeepTogether>
-              <Left>0.03152cm</Left>
-              <Height>1.78292cm</Height>
-              <Width>6.03528cm</Width>
-              <ZIndex>37</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-              </Style>
-            </Rectangle>
-            <Rectangle Name="Rectangle10">
-              <ReportItems>
-                <Line Name="Line2">
-                  <Height>0cm</Height>
-                  <Width>6cm</Width>
-                  <Visibility>
-                    <Hidden>true</Hidden>
-                  </Visibility>
-                  <Style>
-                    <Border>
-                      <Style>Solid</Style>
-                    </Border>
-                  </Style>
-                </Line>
-                <Image Name="CompanyInfo1Picture2">
-                  <Source>Database</Source>
-                  <Value>=System.Convert.ToBase64String(Fields!CompanyInfo1Picture.Value)</Value>
-                  <MIMEType>image/bmp</MIMEType>
-                  <Sizing>FitProportional</Sizing>
-                  <Top>0.10583cm</Top>
-                  <Left>0.99564cm</Left>
-                  <Height>14mm</Height>
-                  <Width>40mm</Width>
-                  <ZIndex>1</ZIndex>
-                  <Visibility>
-                    <Hidden>=iif(ISNOTHING(Fields!CompanyInfo1Picture.Value) = True, True, False)</Hidden>
-                  </Visibility>
-                  <DataElementOutput>NoOutput</DataElementOutput>
-                  <Style>
-                    <Border />
-                  </Style>
-                </Image>
-              </ReportItems>
-              <KeepTogether>true</KeepTogether>
-              <Left>6.0668cm</Left>
-              <Height>1.78292cm</Height>
-              <Width>6cm</Width>
-              <ZIndex>38</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-              </Style>
-            </Rectangle>
-            <Rectangle Name="Rectangle9">
-              <ReportItems>
-                <Line Name="Line3">
-                  <Height>0cm</Height>
-                  <Width>6cm</Width>
-                  <Visibility>
-                    <Hidden>true</Hidden>
-                  </Visibility>
-                  <Style>
-                    <Border>
-                      <Style>Solid</Style>
-                    </Border>
-                  </Style>
-                </Line>
-                <Image Name="CompanyInfo2Picture2">
-                  <Source>Database</Source>
-                  <Value>=System.Convert.FromBase64String(System.Convert.ToBase64String(Fields!CompanyInfo2Picture.Value))</Value>
-                  <MIMEType>image/bmp</MIMEType>
-                  <Sizing>FitProportional</Sizing>
-                  <Top>0.10583cm</Top>
-                  <Left>2.16009cm</Left>
-                  <Height>14mm</Height>
-                  <Width>40mm</Width>
-                  <ZIndex>1</ZIndex>
-                  <Visibility>
-                    <Hidden>=iif(ISNOTHING(Fields!CompanyInfo2Picture.Value) = True, True, False)</Hidden>
-                  </Visibility>
-                  <DataElementOutput>NoOutput</DataElementOutput>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                  </Style>
-                </Image>
-              </ReportItems>
-              <KeepTogether>true</KeepTogether>
-              <Left>12.0668cm</Left>
-              <Height>1.78292cm</Height>
-              <Width>6.4cm</Width>
-              <ZIndex>39</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-              </Style>
-            </Rectangle>
           </ReportItems>
           <Style>
             <FontFamily>Segoe UI</FontFamily>
