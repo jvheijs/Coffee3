@@ -785,18 +785,18 @@ report 50002 "CS Reminder"
                 ;
             SalesSetup."Logo Position on Documents"::Left:
                 begin
-                    CompanyInfo1.Get();
-                    CompanyInfo1.CalcFields(Picture);
+                    CompanyInfo3.Get();
+                    CompanyInfo3.CalcFields(Picture);
                 end;
             SalesSetup."Logo Position on Documents"::Center:
                 begin
-                    CompanyInfo2.Get();
-                    CompanyInfo2.CalcFields(Picture);
+                    CompanyInfo1.Get();
+                    CompanyInfo1.CalcFields(Picture);
                 end;
             SalesSetup."Logo Position on Documents"::Right:
                 begin
-                    CompanyInfo3.Get();
-                    CompanyInfo3.CalcFields(Picture);
+                    CompanyInfo2.Get();
+                    CompanyInfo2.CalcFields(Picture);
                 end;
         end;
     end;
