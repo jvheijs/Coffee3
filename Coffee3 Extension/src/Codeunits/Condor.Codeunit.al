@@ -4,13 +4,12 @@ codeunit 50000 "Condor"
     trigger OnRun()
     begin
 
-        gFncFillMyCustomer;
+        gFncFillMyCustomer();
         // lFncTestEnv();
     end;
 
     var
-        gRecCustomer: Record Customer;
-        gRecShip: Record "Ship-to Address";
+
 
     procedure gFncFillMyCustomer()
     var
@@ -24,18 +23,18 @@ codeunit 50000 "Condor"
         // COFF-1.ns
 
         // lRecUser.SETFILTER("User Name",'@'+USERID);
-        lRecMyCustomer.DELETEALL;
-        lRecUser.FINDFIRST;
+        lRecMyCustomer.DELETEALL();
+        lRecUser.FINDFIRST();
         REPEAT
             // MESSAGE('xxx %1 %2', lRecUser."User Name",lRecUser."Contact Email");
             IF lRecUser."Contact Email" <> '' THEN BEGIN
                 lRecSalespersonPurchaser.SETFILTER("E-Mail", lRecUser."Contact Email");
-                IF lRecSalespersonPurchaser.FINDSET THEN BEGIN
+                IF lRecSalespersonPurchaser.FINDSET() THEN BEGIN
                     IF lRecSalespersonPurchaser.Rayonfilter <> '' THEN BEGIN
                         lRecMyCustomer.SETFILTER("User ID", USERID);
 
                         lRecCustomer.SETFILTER(Rayon, lRecSalespersonPurchaser.Rayonfilter);
-                        IF lRecCustomer.FINDSET THEN BEGIN
+                        IF lRecCustomer.FINDSET() THEN BEGIN
                             REPEAT
                                 lRecMyCustomer."User ID" := lRecUser."User Name";
                                 lRecMyCustomer."Customer No." := lRecCustomer."No.";
@@ -43,7 +42,7 @@ codeunit 50000 "Condor"
                                 lRecMyCustomer."Phone No." := lRecCustomer."Phone No.";
                                 lRecShiptoAddress.SETFILTER("Customer No.", lRecCustomer."No.");
                                 lRecShiptoAddress.SETFILTER(Code, 'BEZOEK');
-                                IF lRecShiptoAddress.FINDFIRST THEN BEGIN
+                                IF lRecShiptoAddress.FINDFIRST() THEN BEGIN
                                     lRecMyCustomer.Bezoekadres := lRecShiptoAddress.Address;
                                     lRecMyCustomer."Postcode bezoekadres" := lRecShiptoAddress."Post Code";
                                     lRecMyCustomer."Plaats bezoekadres" := lRecShiptoAddress.City;
@@ -64,13 +63,13 @@ codeunit 50000 "Condor"
                                 lRecMyCustomer."Mark 03" := lRecCustomer."Mark 03";
                                 lRecMyCustomer.Bevyz := lRecCustomer.Bevyz;
                                 lRecMyCustomer."Partner Type Org" := lRecCustomer."Partner Type Org";
-                                lRecMyCustomer.INSERT;
-                            UNTIL lRecCustomer.NEXT = 0;
+                                lRecMyCustomer.INSERT();
+                            UNTIL lRecCustomer.NEXT() = 0;
                         END;
                     END;
                 END;
             END;
-        UNTIL lRecUser.NEXT = 0;
+        UNTIL lRecUser.NEXT() = 0;
 
         // COFF-1.ne
     end;
@@ -84,9 +83,9 @@ codeunit 50000 "Condor"
 
         // COFF-1.ns
         lRecUser.SETFILTER("User Name", '@' + USERID);
-        lRecUser.FINDFIRST;
+        lRecUser.FINDFIRST();
         lRecSalespersonPurchaser.SETFILTER("E-Mail", lRecUser."Contact Email");
-        IF lRecSalespersonPurchaser.FINDSET THEN BEGIN
+        IF lRecSalespersonPurchaser.FINDSET() THEN BEGIN
             EXIT(lRecSalespersonPurchaser.Rayonfilter);
         END;
         // COFF-1.ne
@@ -96,32 +95,33 @@ codeunit 50000 "Condor"
 
     procedure gFncFillSalesLine(pRecSalesHeader: Record "Sales Header")
     var
+        lRecSalesInvoiceLine: Record "Sales Invoice Line";
+        lRecSalesReceivablesSetup: Record "Sales & Receivables Setup";
+        lRecInventoryPostingGroup: Record "Inventory Posting Group";
+        lRecItem: Record Item;
         lRecSalesLine: Record "Sales Line";
         lRecSalesLine1: Record "Sales Line";
         lRecCustStock: Record "Cust. Stock";
         lIntLineNo: Integer;
-        lRecItem: Record Item;
-        lRecInventoryPostingGroup: Record "Inventory Posting Group";
-        lRecSalesReceivablesSetup: Record "Sales & Receivables Setup";
-        lRecSalesInvoiceLine: Record "Sales Invoice Line";
+
     begin
 
         // COFF-1
-        lRecSalesReceivablesSetup.FINDFIRST;
+        lRecSalesReceivablesSetup.FINDFIRST();
 
         // Normale artikelen
         lRecCustStock.SETFILTER("Cust. No.", pRecSalesHeader."Sell-to Customer No.");
-        lRecCustStock.SETFILTER("Check Date", FORMAT(CALCDATE(lRecSalesReceivablesSetup."Max. Historie Time", WORKDATE)) + '..');
-        IF lRecCustStock.FINDFIRST THEN
+        lRecCustStock.SETFILTER("Check Date", FORMAT(CALCDATE(lRecSalesReceivablesSetup."Max. Historie Time", WORKDATE())) + '..');
+        IF lRecCustStock.FINDFIRST() THEN
             REPEAT
                 IF lRecItem.GET(lRecCustStock."Item No.") THEN
-                    IF NOT lRecInventoryPostingGroup.GET(lRecItem."Inventory Posting Group") THEN lRecInventoryPostingGroup.INIT;
+                    IF NOT lRecInventoryPostingGroup.GET(lRecItem."Inventory Posting Group") THEN lRecInventoryPostingGroup.INIT();
                 IF NOT lRecInventoryPostingGroup."Service Item" THEN BEGIN
                     lRecSalesLine1.SETRANGE("Document Type", pRecSalesHeader."Document Type");
                     lRecSalesLine1.SETRANGE("Document No.", pRecSalesHeader."No.");
                     lRecSalesLine1.SETRANGE(Type, lRecSalesLine1.Type::Item);
                     lRecSalesLine1.SETFILTER("No.", lRecCustStock."Item No.");
-                    IF NOT lRecSalesLine1.FINDSET THEN BEGIN
+                    IF NOT lRecSalesLine1.FINDSET() THEN BEGIN
                         lRecSalesLine.VALIDATE("Document Type", pRecSalesHeader."Document Type");
                         lRecSalesLine.VALIDATE("Document No.", pRecSalesHeader."No.");
                         lIntLineNo += 10000;
@@ -129,10 +129,10 @@ codeunit 50000 "Condor"
                         lRecSalesLine.VALIDATE("Sell-to Customer No.", pRecSalesHeader."Sell-to Customer No.");
                         lRecSalesLine.VALIDATE(Type, lRecSalesLine.Type::Item);
                         lRecSalesLine.VALIDATE("No.", lRecCustStock."Item No.");
-                        lRecSalesLine.INSERT;
+                        lRecSalesLine.INSERT();
                     END;
                 END;
-            UNTIL lRecCustStock.NEXT = 0;
+            UNTIL lRecCustStock.NEXT() = 0;
 
         // Service artikelen
         lIntLineNo += 10000;
@@ -143,7 +143,7 @@ codeunit 50000 "Condor"
         lRecSalesLine.VALIDATE("Sell-to Customer No.", pRecSalesHeader."Sell-to Customer No.");
         lRecSalesLine.VALIDATE(Type, 0);
         lRecSalesLine.VALIDATE(Description, '---- Service artikelen');
-        lRecSalesLine.INSERT;
+        lRecSalesLine.INSERT();
         /*
         // Op basis van klant voorraad
         lRecCustStock.SETFILTER("Cust. No.","Sell-to Customer No.");
@@ -172,18 +172,18 @@ codeunit 50000 "Condor"
         */
         //
         lRecSalesInvoiceLine.SETFILTER("Sell-to Customer No.", pRecSalesHeader."Sell-to Customer No.");
-        lRecSalesInvoiceLine.SETFILTER("Posting Date", FORMAT(CALCDATE(lRecSalesReceivablesSetup."Max. Historie Time", WORKDATE)) + '..');
-        IF lRecSalesInvoiceLine.FINDFIRST THEN
+        lRecSalesInvoiceLine.SETFILTER("Posting Date", FORMAT(CALCDATE(lRecSalesReceivablesSetup."Max. Historie Time", WORKDATE())) + '..');
+        IF lRecSalesInvoiceLine.FINDFIRST() THEN
             REPEAT
-                lRecInventoryPostingGroup.INIT;
+                lRecInventoryPostingGroup.INIT();
                 IF lRecItem.GET(lRecSalesInvoiceLine."No.") THEN
-                    IF NOT lRecInventoryPostingGroup.GET(lRecItem."Inventory Posting Group") THEN lRecInventoryPostingGroup.INIT;
+                    IF NOT lRecInventoryPostingGroup.GET(lRecItem."Inventory Posting Group") THEN lRecInventoryPostingGroup.INIT();
                 IF lRecInventoryPostingGroup."Service Item" THEN BEGIN
                     lRecSalesLine1.SETRANGE("Document Type", pRecSalesHeader."Document Type");
                     lRecSalesLine1.SETRANGE("Document No.", pRecSalesHeader."No.");
                     lRecSalesLine1.SETRANGE(Type, lRecSalesLine1.Type::Item);
                     lRecSalesLine1.SETFILTER("No.", lRecSalesInvoiceLine."No.");
-                    IF NOT lRecSalesLine1.FINDSET THEN BEGIN
+                    IF NOT lRecSalesLine1.FINDSET() THEN BEGIN
                         lRecSalesLine.VALIDATE("Document Type", pRecSalesHeader."Document Type");
                         lRecSalesLine.VALIDATE("Document No.", pRecSalesHeader."No.");
                         lIntLineNo += 10000;
@@ -191,10 +191,10 @@ codeunit 50000 "Condor"
                         lRecSalesLine.VALIDATE("Sell-to Customer No.", pRecSalesHeader."Sell-to Customer No.");
                         lRecSalesLine.VALIDATE(Type, lRecSalesLine.Type::Item);
                         lRecSalesLine.VALIDATE("No.", lRecSalesInvoiceLine."No.");
-                        lRecSalesLine.INSERT;
+                        lRecSalesLine.INSERT();
                     END;
                 END;
-            UNTIL lRecSalesInvoiceLine.NEXT = 0;
+            UNTIL lRecSalesInvoiceLine.NEXT() = 0;
     end;
 
     procedure gFncFillCustStock(pRecSalesHeader: Record "Sales Header")
@@ -209,14 +209,14 @@ codeunit 50000 "Condor"
         lRecSalesLine.SETFILTER("Document No.", pRecSalesHeader."No.");
         lRecSalesLine.SETRANGE(Type, lRecSalesLine.Type::Item);
         lRecSalesLine.SETRANGE("Store stock", TRUE);
-        IF NOT lRecSalesLine.FINDFIRST THEN EXIT;
+        IF NOT lRecSalesLine.FINDFIRST() THEN EXIT;
         REPEAT
             lRecCustStock.VALIDATE("Cust. No.", pRecSalesHeader."Sell-to Customer No.");
             lRecCustStock."Item No." := lRecSalesLine."No.";
-            lRecCustStock."Check Date" := WORKDATE;
+            lRecCustStock."Check Date" := WORKDATE();
             lRecCustStock."Quantity in stock" := lRecSalesLine.Stock;
-            IF NOT lRecCustStock.INSERT THEN;
-        UNTIL lRecSalesLine.NEXT = 0;
+            IF NOT lRecCustStock.INSERT() THEN;
+        UNTIL lRecSalesLine.NEXT() = 0;
         // COFF-1.ne
     end;
 
@@ -243,11 +243,11 @@ codeunit 50000 "Condor"
         IF (pRecSalesLine."Document Type" = pRecSalesLine."Document Type"::Order) AND
             (pRecSalesLine.Type = pRecSalesLine.Type::Item) THEN BEGIN
             IF lRecItem.GET(pRecSalesLine."No.") THEN BEGIN
-                IF NOT lRecInventoryPostingGroup.GET(lRecItem."Inventory Posting Group") THEN lRecInventoryPostingGroup.INIT;
+                IF NOT lRecInventoryPostingGroup.GET(lRecItem."Inventory Posting Group") THEN lRecInventoryPostingGroup.INIT();
                 IF lRecInventoryPostingGroup."Service Item" THEN BEGIN
                     lRecServiceContractHeader.SETFILTER("Bill-to Customer No.", pRecSalesLine."Bill-to Customer No.");
                     lRecServiceContractHeader.SETRANGE(Status, lRecServiceContractHeader.Status::Signed);
-                    IF lRecServiceContractHeader.FINDFIRST THEN BEGIN
+                    IF lRecServiceContractHeader.FINDFIRST() THEN BEGIN
                         EXIT(100);
                     END;
                 END;
@@ -268,13 +268,13 @@ codeunit 50000 "Condor"
 
     procedure CS_CustomerCard_MakeNewSalesOrder(var Customer: Record Customer)
     VAR
+        lRecUserSetup: Record 91;
         lRecSalesOrder: Record "Sales Header";
         lRecSalesSetup: Record "Sales & Receivables Setup";
         lCduNoSerMgt: Codeunit NoSeriesManagement;
-        lRecUserSetup: Record 91;
     begin
         lRecSalesSetup.GET();
-        lRecSalesOrder.INIT;
+        lRecSalesOrder.INIT();
         lRecSalesOrder."No." := '';
         lRecSalesOrder."Document Type" := lRecSalesOrder."Document Type"::Order;
         IF lRecSalesOrder."No." = '' THEN BEGIN
@@ -282,12 +282,12 @@ codeunit 50000 "Condor"
             lCduNoSerMgt.InitSeries(lRecSalesSetup."Order Nos.", lRecSalesSetup."Order Nos.", TODAY, lRecSalesOrder."No.", lRecSalesSetup."Order Nos.");
         END;
 
-        lRecSalesOrder.InitRecord;
+        lRecSalesOrder.InitRecord();
         lRecSalesOrder."Sell-to Customer No." := Customer."No.";
         lRecSalesOrder.VALIDATE(lRecSalesOrder."Sell-to Customer No.");
-        lRecSalesOrder.INSERT;
+        lRecSalesOrder.INSERT();
 
-        lRecUserSetup.RESET;
+        lRecUserSetup.RESET();
         lRecUserSetup.SETRANGE(lRecUserSetup."User ID", USERID);
         IF lRecUserSetup.FIND('-') THEN BEGIN
             IF lRecUserSetup."Rayon (in verkoopfactuur)" <> 0 THEN BEGIN
@@ -296,7 +296,7 @@ codeunit 50000 "Condor"
             END;
         END;
         lRecSalesOrder.VALIDATE("Location Code", '40');
-        lRecSalesOrder.MODIFY;
+        lRecSalesOrder.MODIFY();
         PAGE.RUN(PAGE::"Sales Order", lRecSalesOrder);
     end;
 
@@ -310,7 +310,7 @@ codeunit 50000 "Condor"
     begin
         lRecSalesSetup.GET();
 
-        lRecSalesInv.INIT;
+        lRecSalesInv.INIT();
         lRecSalesInv."No." := '';
         lRecSalesInv."Document Type" := lRecSalesInv."Document Type"::Invoice;
         IF lRecSalesInv."No." = '' THEN BEGIN
@@ -319,15 +319,15 @@ codeunit 50000 "Condor"
             lCduNoSerMgt.InitSeries(lRecSalesSetup."Invoice Nos.", lRecSalesSetup."Invoice Nos.", TODAY, lRecSalesInv."No.", lRecSalesSetup."Invoice Nos.");
         END;
 
-        lRecSalesInv.InitRecord;
+        lRecSalesInv.InitRecord();
         lRecSalesInv."Sell-to Customer No." := Customer."No.";
         lRecSalesInv.VALIDATE(lRecSalesInv."Sell-to Customer No.");
-        lRecSalesInv."No. Series" := Text50001;
-        lRecSalesInv."Posting No. Series" := Text50001;
-        lRecSalesInv."Shipping No. Series" := Text50003;
-        lRecSalesInv.INSERT;
-
-        lRecUserSetup.RESET;
+        lRecSalesInv."No. Series" := Txt50001;
+        lRecSalesInv."Posting No. Series" := Txt50001;
+        lRecSalesInv."Shipping No. Series" := Txt50003;
+        lRecSalesInv.INSERT();
+        
+        lRecUserSetup.RESET();
         lRecUserSetup.SETRANGE(lRecUserSetup."User ID", USERID);
         IF lRecUserSetup.FIND('-') THEN BEGIN
             IF lRecUserSetup."Rayon (in verkoopfactuur)" <> 0 THEN BEGIN
@@ -336,7 +336,7 @@ codeunit 50000 "Condor"
             END;
         END;
         lRecSalesInv.VALIDATE("Location Code", '40');
-        lRecSalesInv.MODIFY;
+        lRecSalesInv.MODIFY();
         PAGE.RUN(PAGE::"Sales Invoice", lRecSalesInv);
     end;
 
@@ -349,9 +349,9 @@ codeunit 50000 "Condor"
         lCduCondor: Codeunit Condor;
     begin
         lRecUser.SETFILTER("User Name", USERID);
-        lRecUser.FINDFIRST;
+        lRecUser.FINDFIRST();
         lRecSalespersonPurchaser.SETFILTER("E-Mail", lRecUser."Contact Email");
-        lRecSalespersonPurchaser.FINDFIRST;
+        lRecSalespersonPurchaser.FINDFIRST();
         lRecSalespersonPurchaser.TESTFIELD("No. Series");
         lRecSalesHeader."Document Type" := lRecSalesHeader."Document Type"::Order;
         lRecSalesHeader.VALIDATE("No. Series", lRecSalespersonPurchaser."No. Series");
@@ -372,24 +372,23 @@ codeunit 50000 "Condor"
         ELSE
             lRecSalesHeader.VALIDATE("Location Code", FORMAT(Rec.Rayon));
         lRecSalesHeader.MODIFY(TRUE);
-        COMMIT;
+        COMMIT();
         lRecSalesHeader.SETRANGE("Document Type", lRecSalesHeader."Document Type"::Order);
         lRecSalesHeader.SETFILTER("No.", lRecSalesHeader."No.");
-        lRecSalesHeader.FINDFIRST;
+        lRecSalesHeader.FINDFIRST();
 
         // Maak salesline
         lCduCondor.gFncFillSalesLine(lRecSalesHeader);
-        COMMIT;
+        COMMIT();
 
         lPgeDPSalesOrder.SETRECORD(lRecSalesHeader);
-        lPgeDPSalesOrder.RUN;
+        lPgeDPSalesOrder.RUN();
     end;
 
     var
-        Text50001: Label 'POST-INV';
-        Text50002: Label 'POST-INVP';
-        Text50003: Label 'SHIPMENTS';
-
+        Txt50001: Label 'POST-INV';
+        Txt50002: Label 'POST-INVP';
+        Txt50003: Label 'SHIPMENTS';
 
 }
 

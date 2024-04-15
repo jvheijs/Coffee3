@@ -92,7 +92,7 @@ report 50002 "CS Reminder"
                 column(ReferenceText; ReferenceText)
                 {
                 }
-                column(VatRegNo_IssueReminderHdr; "Issued Reminder Header".GetCustomerVATRegistrationNumber)
+                column(VatRegNo_IssueReminderHdr; "Issued Reminder Header".GetCustomerVATRegistrationNumber())
                 {
                 }
                 column(VATNoText; VATNoText)
@@ -113,7 +113,7 @@ report 50002 "CS Reminder"
                 column(CompanyInfoGiroNo; CompanyInfo."Giro No.")
                 {
                 }
-                column(CompanyInfoVATRegNo; CompanyInfo.GetVATRegistrationNumber)
+                column(CompanyInfoVATRegNo; CompanyInfo.GetVATRegistrationNumber())
                 {
                 }
                 column(CompanyInfoHomePage; CompanyInfo."Home Page")
@@ -185,7 +185,7 @@ report 50002 "CS Reminder"
                 column(GiroNoCaption; GiroNoCaptionLbl)
                 {
                 }
-                column(VATRegNoCaption; "Issued Reminder Header".GetCustomerVATRegistrationNumberLbl)
+                column(VATRegNoCaption; "Issued Reminder Header".GetCustomerVATRegistrationNumberLbl())
                 {
                 }
                 column(PhoneNoCaption; PhoneNoCaptionLbl)
@@ -197,7 +197,7 @@ report 50002 "CS Reminder"
                 column(CustNo_IssueReminderHdrCaption; "Issued Reminder Header".FieldCaption("Customer No."))
                 {
                 }
-                column(CompanyVATRegistrationNoCaption; CompanyInfo.GetVATRegistrationNumberLbl)
+                column(CompanyVATRegistrationNoCaption; CompanyInfo.GetVATRegistrationNumberLbl())
                 {
                 }
                 dataitem(DimensionLoop; "Integer")
@@ -217,7 +217,7 @@ report 50002 "CS Reminder"
                     trigger OnAfterGetRecord()
                     begin
                         if Number = 1 then begin
-                            if not DimSetEntry.FindSet then
+                            if not DimSetEntry.FindSet() then
                                 CurrReport.Break();
                         end else
                             if not Continue then
@@ -255,7 +255,7 @@ report 50002 "CS Reminder"
                     DataItemTableView = SORTING("Reminder No.", "Line No.");
                     column(RemAmt_IssuedReminderLine; "Remaining Amount")
                     {
-                        AutoFormatExpression = GetCurrencyCodeFromHeader;
+                        AutoFormatExpression = GetCurrencyCodeFromHeader();
                         AutoFormatType = 1;
                     }
                     column(Desc_IssuedReminderLine; Description)
@@ -278,7 +278,7 @@ report 50002 "CS Reminder"
                     }
                     column(OriginalAmt_IssuedReminderLine; "Original Amount")
                     {
-                        AutoFormatExpression = GetCurrencyCodeFromHeader;
+                        AutoFormatExpression = GetCurrencyCodeFromHeader();
                         AutoFormatType = 1;
                     }
                     column(DocType_IssuedReminderLine; "Document Type")
@@ -354,7 +354,7 @@ report 50002 "CS Reminder"
                             VATAmountLine."VAT Amount" := "VAT Amount";
                             VATAmountLine."Amount Including VAT" := Amount + "VAT Amount";
                             VATAmountLine."VAT Clause Code" := "VAT Clause Code";
-                            VATAmountLine.InsertLine;
+                            VATAmountLine.InsertLine();
 
                             ReminderInterestAmount := 0;
 
@@ -396,7 +396,7 @@ report 50002 "CS Reminder"
                         Clear(CompanyInfo2.Picture);
                         Clear(CompanyInfo3.Picture);
 
-                        if FindLast then begin
+                        if FindLast() then begin
                             EndLineNo := "Line No." + 1;
                             repeat
                                 ShowNotDueAmounts := TRUE;    // CS2.0
@@ -431,11 +431,11 @@ report 50002 "CS Reminder"
                         SetFilter("Line No.", '>=%1', EndLineNo);
                         if not ShowNotDueAmounts then begin
                             SetFilter(Type, '<>%1', Type::" ");
-                            if FindFirst then
+                            if FindFirst() then
                                 if "Line No." > EndLineNo then begin
                                     SetRange(Type);
                                     SetRange("Line No.", EndLineNo, "Line No." - 1); // find "Open Entries Not Due" line
-                                    if FindLast then
+                                    if FindLast() then
                                         SetRange("Line No.", EndLineNo, "Line No." - 1);
                                 end;
                             SetRange(Type);
@@ -447,22 +447,22 @@ report 50002 "CS Reminder"
                     DataItemTableView = SORTING(Number);
                     column(VATAmtLineAmtIncludVAT; VATAmountLine."Amount Including VAT")
                     {
-                        AutoFormatExpression = "Issued Reminder Line".GetCurrencyCodeFromHeader;
+                        AutoFormatExpression = "Issued Reminder Line".GetCurrencyCodeFromHeader();
                         AutoFormatType = 1;
                     }
                     column(VALVATAmount; VALVATAmount)
                     {
-                        AutoFormatExpression = "Issued Reminder Line".GetCurrencyCodeFromHeader;
+                        AutoFormatExpression = "Issued Reminder Line".GetCurrencyCodeFromHeader();
                         AutoFormatType = 1;
                     }
                     column(VALVATBase; VALVATBase)
                     {
-                        AutoFormatExpression = "Issued Reminder Line".GetCurrencyCodeFromHeader;
+                        AutoFormatExpression = "Issued Reminder Line".GetCurrencyCodeFromHeader();
                         AutoFormatType = 1;
                     }
                     column(VALVATBaseVALVATAmt; VALVATBase + VALVATAmount)
                     {
-                        AutoFormatExpression = "Issued Reminder Line".GetCurrencyCodeFromHeader;
+                        AutoFormatExpression = "Issued Reminder Line".GetCurrencyCodeFromHeader();
                         AutoFormatType = 1;
                     }
                     column(VATAmtLineVAT; VATAmountLine."VAT %")
@@ -487,7 +487,7 @@ report 50002 "CS Reminder"
 
                     trigger OnPreDataItem()
                     begin
-                        if VATAmountLine.GetTotalVATAmount = 0 then
+                        if VATAmountLine.GetTotalVATAmount() = 0 then
                             CurrReport.Break();
 
                         SetRange(Number, 1, VATAmountLine.Count);
@@ -577,7 +577,7 @@ report 50002 "CS Reminder"
                     begin
                         if (not GLSetup."Print VAT specification in LCY") or
                            ("Issued Reminder Header"."Currency Code" = '') or
-                           (VATAmountLine.GetTotalVATAmount = 0)
+                           (VATAmountLine.GetTotalVATAmount() = 0)
                         then
                             CurrReport.Break();
 
@@ -595,7 +595,7 @@ report 50002 "CS Reminder"
                         CustEntry.SetRange("Customer No.", "Issued Reminder Header"."Customer No.");
                         CustEntry.SetRange("Document Type", CustEntry."Document Type"::Reminder);
                         CustEntry.SetRange("Document No.", "Issued Reminder Header"."No.");
-                        if CustEntry.FindFirst then begin
+                        if CustEntry.FindFirst() then begin
                             CustEntry.CalcFields("Amount (LCY)", Amount);
                             CurrFactor := 1 / (CustEntry."Amount (LCY)" / CustEntry.Amount);
                             VALExchRate := StrSubstNo(Text013, Round(1 / CurrFactor * 100, 0.000001), CurrExchRate."Exchange Rate Amount");
@@ -668,8 +668,8 @@ report 50002 "CS Reminder"
                     TotalText := StrSubstNo(Text000, "Currency Code");
                     TotalInclVATText := StrSubstNo(Text001, "Currency Code");
                 end;
-                if not IsReportInPreviewMode then
-                    IncrNoPrinted;
+                if not IsReportInPreviewMode() then
+                    IncrNoPrinted();
 
                 Customer.GetPrimaryContact("Customer No.", PrimaryContact);
                 CalcFields("Additional Fee");
@@ -681,7 +681,7 @@ report 50002 "CS Reminder"
                     AddFeeInclVAT := "Additional Fee";
 
                 CalcFields("Add. Fee per Line");
-                AddFeePerLineInclVAT := "Add. Fee per Line" + CalculateLineFeeVATAmount;
+                AddFeePerLineInclVAT := "Add. Fee per Line" + CalculateLineFeeVATAmount();
 
                 CalcFields("Interest Amount", "VAT Amount");
                 if ("Interest Amount" <> 0) and ("VAT Amount" <> 0) then begin
@@ -803,8 +803,8 @@ report 50002 "CS Reminder"
 
     trigger OnPostReport()
     begin
-        if LogInteraction and not IsReportInPreviewMode then
-            if "Issued Reminder Header".FindSet then
+        if LogInteraction and not IsReportInPreviewMode() then
+            if "Issued Reminder Header".FindSet() then
                 repeat
                     SegManagement.LogDocument(
                       8, "Issued Reminder Header"."No.", 0, 0, DATABASE::Customer, "Issued Reminder Header"."Customer No.",
