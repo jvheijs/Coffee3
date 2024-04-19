@@ -42,9 +42,8 @@ page 50009 "Toolbox John"
                 Image = Process;
                 trigger OnAction()
                 var
-                    recServiceContract: record "Service Contract Header";
-                    recCustomer: Record Customer;
-
+                    RecSalesInvHeader: record "Sales invoice Header";
+                    lRecSalesShipHeader: record "Sales Shipment Header";
                 begin
 
                     error('JvH');
