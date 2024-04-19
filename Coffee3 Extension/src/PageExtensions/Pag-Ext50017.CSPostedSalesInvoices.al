@@ -29,23 +29,24 @@ pageextension 50017 "CS Posted Sales Invoices" extends "Posted Sales Invoices"
         {
             action(ActionName)
             {
+                Image = Process;
                 ApplicationArea = All;
                 trigger OnAction()
                 var
                     SalesInvHeader: Record "Sales Invoice Header";
                 begin
                     CurrPage.SETSELECTIONFILTER(Rec);
-                    IF Rec.FINDFIRST THEN BEGIN
-                        REPEAT
-                            SalesInvHeader.RESET;
+                    if Rec.FINDFIRST() then begin
+                        repeat
+                            SalesInvHeader.RESET();
                             SalesInvHeader.SETRANGE(SalesInvHeader."No.", Rec."No.");
                             SalesInvHeader.SETFILTER(Verzendprofiel, '%1|%2', '1 ALLEEN E-MAIL', '3 PRINT EN EMAIL');
-                            IF SalesInvHeader.FINDFIRST THEN;
-                            SalesInvHeader.EmailRecords(FALSE);
-                        // COMMIT;  // Tijdelijk uitgeschakeld i.v.m. SQL problemen, misschien hierdoor?
-                        UNTIL Rec.NEXT = 0;
-                    END;
-                    Rec.RESET;
+                            if SalesInvHeader.FINDFIRST() then;
+                            SalesInvHeader.EmailRecords(false);
+                        // COMMIT();  // Tijdelijk uitgeschakeld i.v.m. SQL problemen, misschien hierdoor?
+                        until Rec.NEXT() = 0;
+                    end;
+                    Rec.RESET();
                     MESSAGE('Uitgevoerd.');
                 end;
             }

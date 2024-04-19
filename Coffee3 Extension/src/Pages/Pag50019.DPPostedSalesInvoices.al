@@ -11,8 +11,8 @@ page 50019 "DP Posted Sales Invoices"
     PromotedActionCategories = 'New,Process,Report,Invoice,Navigate,Correct';
     RefreshOnActivate = true;
     SourceTable = "Sales Invoice Header";
-    SourceTableView = SORTING("Posting Date")
-                      ORDER(Descending);
+    SourceTableView = sorting("Posting Date")
+                      order(descending);
     ApplicationArea = All;
 
     layout
@@ -197,7 +197,7 @@ page 50019 "DP Posted Sales Invoices"
                 }
                 field(Cancelled; Rec.Cancelled)
                 {
-                    HideValue = NOT Rec.Cancelled;
+                    HideValue = not Rec.Cancelled;
                     Style = Unfavorable;
                     StyleExpr = Rec.Cancelled;
                     ToolTip = 'Specifies if the posted sales invoice has been either corrected or canceled.';
@@ -209,7 +209,7 @@ page 50019 "DP Posted Sales Invoices"
                 }
                 field(Corrective; Rec.Corrective)
                 {
-                    HideValue = NOT Rec.Corrective;
+                    HideValue = not Rec.Corrective;
                     Style = Unfavorable;
                     StyleExpr = Rec.Corrective;
                     ToolTip = 'Specifies if the posted sales invoice is a corrective document.';
@@ -252,7 +252,7 @@ page 50019 "DP Posted Sales Invoices"
             part(IncomingDocAttachFactBox; "Incoming Doc. Attach. FactBox")
             {
                 ShowFilter = false;
-                Visible = NOT IsOfficeAddin;
+                Visible = not IsOfficeAddin;
             }
             systempart(Control1900383207; Links)
             {
@@ -280,7 +280,7 @@ page 50019 "DP Posted Sales Invoices"
                     PromotedCategory = Category4;
                     PromotedIsBig = true;
                     RunObject = Page "Sales Invoice Statistics";
-                    RunPageLink = "No." = FIELD("No.");
+                    RunPageLink = "No." = field("No.");
                     ShortCutKey = 'F7';
                 }
                 action("Co&mments")
@@ -291,8 +291,8 @@ page 50019 "DP Posted Sales Invoices"
                     PromotedCategory = Category4;
                     PromotedIsBig = true;
                     RunObject = Page "Sales Comment Sheet";
-                    RunPageLink = "Document Type" = CONST("Posted Invoice"),
-                                  "No." = FIELD("No.");
+                    RunPageLink = "Document Type" = const("Posted Invoice"),
+                                  "No." = field("No.");
                 }
                 action(Dimensions)
                 {
@@ -347,7 +347,7 @@ page 50019 "DP Posted Sales Invoices"
                 action(CreateInCRM)
                 {
                     Caption = 'Create Invoice in Dynamics CRM';
-                    Enabled = NOT CRMIsCoupledToRecord;
+                    Enabled = not CRMIsCoupledToRecord;
                     Image = NewSalesInvoice;
                     ToolTip = 'Generate the document in the coupled Microsoft Dynamics CRM account.';
 
@@ -374,6 +374,7 @@ page 50019 "DP Posted Sales Invoices"
         {
             action(BatchMailenCondor)
             {
+                Image = Process;
                 Caption = 'Batch Mailen';
 
                 trigger OnAction()
@@ -382,17 +383,17 @@ page 50019 "DP Posted Sales Invoices"
                 begin
                     // CS1.0 <<
                     CurrPage.SetSelectionFilter(Rec);
-                    if Rec.FindFirst then begin
+                    if Rec.FINDFIRST() then begin
                         repeat
-                            SalesInvHeader.Reset;
+                            SalesInvHeader.RESET();
                             SalesInvHeader.SetRange(SalesInvHeader."No.", Rec."No.");
                             SalesInvHeader.SetFilter(Verzendprofiel, '%1|%2', '1 ALLEEN E-MAIL', '3 PRINT EN EMAIL');
-                            if SalesInvHeader.FindFirst then;
+                            if SalesInvHeader.FINDFIRST() then;
                             SalesInvHeader.EmailRecords(false);
-                        // COMMIT;  // Tijdelijk uitgeschakeld i.v.m. SQL problemen, misschien hierdoor?
-                        until Rec.Next = 0;
+                        // COMMIT();  // Tijdelijk uitgeschakeld i.v.m. SQL problemen, misschien hierdoor?
+                        until Rec.Next() = 0;
                     end;
-                    Rec.Reset;
+                    Rec.RESET();
 
                     Message('Uitgevoerd.');
                     // CS1.0 >>
@@ -425,7 +426,7 @@ page 50019 "DP Posted Sales Invoices"
                 //The property 'PromotedCategory' can only be set if the property 'Promoted' is set to 'true'
                 //PromotedCategory = Process;
                 ToolTip = 'Prepare to print the document. A report request window for the document opens where you can specify what to include on the print-out.';
-                Visible = NOT IsOfficeAddin;
+                Visible = not IsOfficeAddin;
 
                 trigger OnAction()
                 var
@@ -460,7 +461,7 @@ page 50019 "DP Posted Sales Invoices"
                 //The property 'PromotedCategory' can only be set if the property 'Promoted' is set to 'true'
                 //PromotedCategory = Category5;
                 ToolTip = 'Find all entries and documents that exist for the document number and posting date on the selected entry or document.';
-                Visible = NOT IsOfficeAddin;
+                Visible = not IsOfficeAddin;
 
                 trigger OnAction()
                 begin
@@ -548,7 +549,7 @@ page 50019 "DP Posted Sales Invoices"
                     PromotedIsBig = true;
                     PromotedOnly = true;
                     RunObject = Page "Customer Card";
-                    RunPageLink = "No." = FIELD("Sell-to Customer No.");
+                    RunPageLink = "No." = field("Sell-to Customer No.");
                     Scope = Repeater;
                     ShortCutKey = 'Shift+F7';
                     ToolTip = 'View or edit detailed information about the customer.';
@@ -556,7 +557,7 @@ page 50019 "DP Posted Sales Invoices"
                 action(ShowCreditMemo)
                 {
                     Caption = 'Show Canceled/Corrective Credit Memo';
-                    Enabled = Rec.Cancelled OR Rec.Corrective;
+                    Enabled = Rec.Cancelled or Rec.Corrective;
                     Image = CreditMemo;
                     //The property 'PromotedCategory' can only be set if the property 'Promoted' is set to 'true'
                     //PromotedCategory = Category4;
@@ -605,7 +606,7 @@ page 50019 "DP Posted Sales Invoices"
     begin
         Rec.SetSecurityFilterOnRespCenter;
         CRMIntegrationEnabled := CRMIntegrationManagement.IsCRMIntegrationEnabled;
-        if Rec.FindFirst then;
+        if Rec.FINDFIRST() then;
         IsOfficeAddin := OfficeMgt.IsPopOut;
 
         Rec.FilterGroup(10);

@@ -67,9 +67,10 @@ pageextension 50003 "CS Customer Card" extends "Customer Card"
         {
             action(Onderhoudsregistratie)
             {
+                Image = Process;
                 ApplicationArea = All;
                 RunObject = Page 50006;
-                RunPageLink = Klantnummer = FIELD("No.");
+                RunPageLink = Klantnummer = field("No.");
             }
         }
 

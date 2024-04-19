@@ -13,7 +13,7 @@ report 50097 "Customer Inventory Found"
     {
         dataitem("Import terminal"; "Import terminal")
         {
-            DataItemTableView = SORTING(Regelsoort) WHERE(Regelsoort = CONST('KV'));
+            DataItemTableView = sorting(Regelsoort) where(Regelsoort = const('KV'));
             column(Volgnr; "Import terminal".Volgnummer)
             {
             }

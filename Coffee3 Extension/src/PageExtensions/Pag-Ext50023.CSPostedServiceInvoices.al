@@ -30,12 +30,12 @@ pageextension 50023 "CS Posted Service Invoices" extends "Posted Service Invoice
                     ShowDialog: Boolean;
                 begin
                     CurrPage.SETSELECTIONFILTER(Rec);
-                    IF Rec.FINDFIRST THEN BEGIN
-                        REPEAT
-                            lRecServInvHeader.RESET;
+                    if Rec.FINDFIRST() then begin
+                        repeat
+                            lRecServInvHeader.RESET();
                             lRecServInvHeader.SETRANGE(lRecServInvHeader."No.", Rec."No.");
                             lRecServInvHeader.SETFILTER(Verzendprofiel, '%1|%2', '1 ALLEEN E-MAIL', '3 PRINT EN EMAIL');
-                            IF lRecServInvHeader.FINDFIRST THEN begin
+                            if lRecServInvHeader.FINDFIRST() then begin
                                 // lRecServInvHeader.SendRecords(); // jvh
                                 //DocumentTypeTxt := ReportDistributionMgt.GetFullDocumentTypeText(rec);
                                 // Oude aanroep functie!!
@@ -50,9 +50,9 @@ pageextension 50023 "CS Posted Service Invoices" extends "Posted Service Invoice
                                 //    DummyReportSelections.Usage::"SM.Invoice".AsInteger(), rec, FieldNo("No."), DocumentTypeTxt,
                                 //    FieldNo("Bill-to Customer No."), false);
                             end;
-                        UNTIL Rec.NEXT = 0;
-                    END;
-                    Rec.RESET;
+                        until Rec.NEXT() = 0;
+                    end;
+                    Rec.RESET();
                     MESSAGE('Uitgevoerd.');
                 end;
 

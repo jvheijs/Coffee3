@@ -103,6 +103,7 @@ page 50025 "Toolbox John-Condor"
         {
             action("DB instellen als testomgeving")
             {
+                Image = Process;
                 trigger OnAction()
                 var
                     lRecShiptoAddress: Record "Ship-to Address";
@@ -120,13 +121,14 @@ page 50025 "Toolbox John-Condor"
             }
             action("Eenmalig code John Verzendadressen")
             {
+                Image = Process;
                 trigger OnAction()
                 var
                     lRecVerzendadressen: record "Ship-to Address";
                     lRecKlant: Record Customer;
                 begin
                     lRecVerzendadressen.Reset();
-                    if lRecVerzendadressen.findset then begin
+                    if lRecVerzendadressen.FINDSET() then begin
                         repeat
                             lRecKlant.get(lRecVerzendadressen."Customer No.");
                             lRecVerzendadressen."E-Mail" := lRecKlant."E-Mail";

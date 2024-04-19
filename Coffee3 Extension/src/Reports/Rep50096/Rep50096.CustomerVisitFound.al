@@ -13,7 +13,7 @@ report 50096 "Customer Visit Found"
     {
         dataitem("Import terminal"; "Import terminal")
         {
-            DataItemTableView = SORTING(Regelsoort) WHERE(Regelsoort = CONST('KB'));
+            DataItemTableView = sorting(Regelsoort) where(Regelsoort = const('KB'));
             column(Volgnr; "Import terminal".Volgnummer)
             {
             }

@@ -125,6 +125,7 @@ page 50002 "DP My Customers"
             }
             action(ServiceItems)
             {
+                Image = Process;
                 Caption = 'Service Artikelen';
                 ApplicationArea = All;
                 Promoted = true;
@@ -136,24 +137,26 @@ page 50002 "DP My Customers"
 
             action(SortRoute)
             {
+                Image = Process;
                 Caption = 'Sort by Route';
                 ApplicationArea = All;
 
                 trigger OnAction()
                 begin
                     Rec.SETCURRENTKEY(Rayon, Routenummer);
-                    Rec.FINDFIRST;
+                    Rec.FINDFIRST();
                 end;
             }
             action(SortName)
             {
+                Image = Process;
                 Caption = 'Sort by Name';
                 ApplicationArea = All;
 
                 trigger OnAction()
                 begin
                     Rec.SETCURRENTKEY(Name);
-                    Rec.FINDFIRST;
+                    Rec.FINDFIRST();
                 end;
             }
             action(Open)
@@ -162,9 +165,9 @@ page 50002 "DP My Customers"
                 Caption = 'Open';
                 Image = ViewDetails;
                 RunObject = Page "Customer Card";
-                RunPageLink = "No." = FIELD("Customer No.");
+                RunPageLink = "No." = field("Customer No.");
                 RunPageMode = View;
-                RunPageView = SORTING("No.");
+                RunPageView = sorting("No.");
                 Scope = Repeater;
                 ShortCutKey = 'Return';
                 ToolTip = 'Open the card for the selected record.';
@@ -219,7 +222,7 @@ page 50002 "DP My Customers"
                 Rec.Name := Customer.Name;
                 Rec."Phone No." := Customer."Phone No.";
                 if MyCustomer.Get(Rec."User ID", Rec."Customer No.") then
-                    Rec.Modify;
+                    Rec.MODIFY();
             end;
     end;
 }

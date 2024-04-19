@@ -11,7 +11,7 @@ report 50016 "Case Number List"
         dataitem("Sales Header"; "Sales Header")
         {
             CalcFields = "Amount Including VAT";
-            DataItemTableView = WHERE("Document Type" = CONST(Order), "Amount Including VAT" = FILTER(<> 0), "Sell-to Customer No." = FILTER('892000' .. '892260'));
+            DataItemTableView = where("Document Type" = const(Order), "Amount Including VAT" = filter(<> 0), "Sell-to Customer No." = filter('892000' .. '892260'));
             RequestFilterFields = Rayon;
             column(Report_Title; GtxtReportTitle)
             {

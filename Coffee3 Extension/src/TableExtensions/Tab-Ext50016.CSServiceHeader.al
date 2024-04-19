@@ -9,7 +9,7 @@ tableextension 50016 "CS Service Header" extends "Service Header"
             Description = 'CS1.0';
             FieldClass = FlowField;
             Editable = false;
-            CalcFormula = Lookup(Customer."Document Sending Profile" WHERE("No." = FIELD("Customer No.")));
+            CalcFormula = lookup(Customer."Document Sending Profile" where("No." = field("Customer No.")));
 
         }
     }

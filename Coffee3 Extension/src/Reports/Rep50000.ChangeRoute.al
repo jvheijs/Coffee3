@@ -10,7 +10,7 @@ report 50000 "Change Route"
     {
         dataitem("Integer"; "Integer")
         {
-            DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1));
+            DataItemTableView = sorting(Number) where(Number = filter(1));
         }
     }
 
@@ -78,22 +78,22 @@ report 50000 "Change Route"
 
     trigger OnPreReport()
     begin
-        RouteRec.Reset;
+        RouteRec.RESET();
         RouteRec.SetRange(RouteRec.Rayonnummer, RayonNieuw);
         RouteRec.SetRange(RouteRec.Routenummer, RouteNieuw);
         if RouteRec.Find('-') then
             Error(Text60000 +
              Text60001, RayonNieuw, RouteNieuw);
 
-        RouteRec.Reset;
+        RouteRec.RESET();
         RouteRec.SetRange(RouteRec.Rayonnummer, RayonOud);
         RouteRec.SetRange(RouteRec.Routenummer, RouteOud);
         if RouteRec.Find('-') then
             repeat
                 RouteRec.Rayonnummer := RayonNieuw;
                 RouteRec.Routenummer := RouteNieuw;
-                RouteRec.Modify;
-                KlantRec.Reset;
+                RouteRec.MODIFY();
+                KlantRec.RESET();
                 KlantRec.SetRange(KlantRec."No.", RouteRec.Klantnummer);
                 KlantRec.Find('-');
                 KlantRec.Rayon := RayonNieuw;
@@ -101,8 +101,8 @@ report 50000 "Change Route"
                 // ATW BCO 240401 begin nieuw
                 KlantRec."Last Date Modified" := WorkDate;
                 // ATW BCO 240401 eind nieuw
-                KlantRec.Modify;
-            until RouteRec.Next = 0;
+                KlantRec.MODIFY();
+            until RouteRec.Next() = 0;
     end;
 
     var

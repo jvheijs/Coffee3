@@ -6,7 +6,7 @@ tableextension 50003 "CS Cust. Ledger Entry" extends "Cust. Ledger Entry"
         {
             caption = 'Quantity Reminders Send';
             FieldClass = FlowField;
-            CalcFormula = Count("Reminder/Fin. Charge Entry" WHERE("Customer Entry No." = FIELD("Entry No."), Type = CONST(Reminder)));
+            CalcFormula = count("Reminder/Fin. Charge Entry" where("Customer Entry No." = field("Entry No."), Type = const(Reminder)));
             Editable = false;
         }
     }

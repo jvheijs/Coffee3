@@ -40,8 +40,8 @@ page 50007 "Maintenance Reg. Fountain"
             }
             part(Control1000000009; "Maintenance Registration Lines")
             {
-                SubPageLink = Klantnummer = FIELD(Klantnummer),
-                              "Onderhoudsregistratie code" = FIELD(Code);
+                SubPageLink = Klantnummer = field(Klantnummer),
+                              "Onderhoudsregistratie code" = field(Code);
             }
         }
     }

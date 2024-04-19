@@ -19,7 +19,7 @@ page 50009 "Toolbox John"
         {
             action("DB instellen als testomgeving")
             {
-                ToolTip = 'Emailadressen enz. aanpassen naar Marc v.O.';
+
                 Image = Process;
                 trigger OnAction()
                 var
@@ -38,24 +38,20 @@ page 50009 "Toolbox John"
             }
             action("Eenmalig code John")
             {
-                ToolTip = 'Eenmalige acties';
+
                 Image = Process;
                 trigger OnAction()
                 var
-                    recServiceContract: record "Service Contract Header";
-                    recCustomer: Record Customer;
-
+                    RecSalesInvHeader: record "Sales invoice Header";
+                    lRecSalesShipHeader: record "Sales Shipment Header";
                 begin
-                    recServiceContract.Reset();
-                    recServiceContract.SetRange(Status, recServiceContract.Status::Signed);
-                    recServiceContract.SetFilter("Payment Method Code", '');
-                    if recServiceContract.FindSet() then
-                        repeat
-                            recCustomer.get(recServiceContract."Customer No.");
-                            recServiceContract.Validate(recServiceContract."Payment Method Code", recCustomer."Payment Method Code");
-                            recServiceContract.Modify();
-                        until recServiceContract.Next() = 0;
-                    message('Contracten aangepast');
+
+                    error('JvH');
+                    lRecSalesShipHeader.RESET();
+                    lRecSalesShipHeader.SetRange("No. Printed", 0);
+                    if lRecSalesShipHeader.FindFirst() then
+                        lRecSalesShipHeader.ModifyAll("No. Printed", 1);
+                    Message('Uitgevoerd 22-02-2024');
                 end;
             }
             action("Alle facturen/verzendingen als afgedrukt")
