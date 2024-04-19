@@ -12,13 +12,13 @@ tableextension 50006 "CS Sales Line" extends "Sales Line"
             var
                 myInt: Integer;
             begin
-                IF (Stock = 0) AND "Store stock" THEN
-                    "Store stock" := FALSE
-                ELSE
-                    IF (Stock = 0) AND NOT "Store stock" THEN
-                        "Store stock" := TRUE;
-                IF Stock > 0 THEN
-                    "Store stock" := TRUE;
+                if (Stock = 0) and "Store stock" then
+                    "Store stock" := false
+                else
+                    if (Stock = 0) and not "Store stock" then
+                        "Store stock" := true;
+                if Stock > 0 then
+                    "Store stock" := true;
             end;
         }
         field(50001; "Store stock"; Boolean)

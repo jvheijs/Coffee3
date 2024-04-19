@@ -19,6 +19,7 @@ page 50009 "Toolbox John"
         {
             action("DB instellen als testomgeving")
             {
+                Image = Process;
                 trigger OnAction()
                 var
                     lRecShiptoAddress: Record "Ship-to Address";
@@ -36,6 +37,7 @@ page 50009 "Toolbox John"
             }
             action("Eenmalig code John")
             {
+                Image = Process;
                 trigger OnAction()
                 var
                     lRecSalesInvHeader: record "Sales invoice Header";
@@ -43,7 +45,7 @@ page 50009 "Toolbox John"
 
                 begin
                     error('JvH');
-                    lRecSalesShipHeader.reset;
+                    lRecSalesShipHeader.RESET();
                     lRecSalesShipHeader.SetRange("No. Printed", 0);
                     if lRecSalesShipHeader.FindFirst() then
                         lRecSalesShipHeader.ModifyAll("No. Printed", 1);

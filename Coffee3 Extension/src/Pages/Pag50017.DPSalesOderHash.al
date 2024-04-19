@@ -4,7 +4,7 @@ page 50017 "DP Sales Order#"
     PageType = Document;
     RefreshOnActivate = true;
     SourceTable = "Sales Header";
-    SourceTableView = WHERE("Document Type" = FILTER(Order));
+    SourceTableView = where("Document Type" = filter(Order));
     ApplicationArea = All;
 
     layout
@@ -110,8 +110,8 @@ page 50017 "DP Sales Order#"
             part("DP Sales Order Line"; "DP Sales Order Line")
             {
                 Caption = 'Lines';
-                SubPageLink = "Document Type" = FIELD("Document Type"),
-                              "Document No." = FIELD("No.");
+                SubPageLink = "Document Type" = field("Document Type"),
+                              "Document No." = field("No.");
                 UpdatePropagation = Both;
             }
             field("CSSignature"; rec."Signature")
@@ -148,10 +148,10 @@ page 50017 "DP Sales Order#"
                     begin
 
                         lRecCustStock.SETFILTER("Cust. No.", Rec."Sell-to Customer No.");
-                        IF NOT lRecCustStock.FINDLAST THEN EXIT;
+                        if not lRecCustStock.FINDLAST() then exit;
                         lRecCustStock.SETFILTER("Check Date", FORMAT(lRecCustStock."Check Date"));
-                        lRecCustStock.FINDFIRST;
-                        REPEAT
+                        lRecCustStock.FINDFIRST();
+                        repeat
                             lRecSalesLine.VALIDATE("Document Type", lRecSalesLine."Document Type"::Order);
                             lRecSalesLine.VALIDATE("Document No.", Rec."No.");
                             lIntLineNo += 10000;
@@ -159,8 +159,8 @@ page 50017 "DP Sales Order#"
                             lRecSalesLine.VALIDATE("Sell-to Customer No.", Rec."Sell-to Customer No.");
                             lRecSalesLine.VALIDATE(Type, lRecSalesLine.Type::Item);
                             lRecSalesLine.VALIDATE("No.", lRecCustStock."Item No.");
-                            lRecSalesLine.INSERT;
-                        UNTIL lRecCustStock.NEXT = 0;
+                            lRecSalesLine.INSERT();
+                        until lRecCustStock.NEXT() = 0;
                     end;
                 }
                 action("Post#")
@@ -180,10 +180,10 @@ page 50017 "DP Sales Order#"
                             AddSignature();
 
                         if HasSignature() then begin
-                            Rec.InPosting := TRUE; // COFF-1
-                            Rec.MODIFY;
-                            COMMIT;
-                            CurrPage.close;
+                            Rec.InPosting := true; // COFF-1
+                            Rec.MODIFY();
+                            COMMIT();
+                            CurrPage.CLOSE();
                         end;
                     end;
                 }
@@ -224,8 +224,8 @@ page 50017 "DP Sales Order#"
                 Caption = 'Service &Items';
                 Image = ServiceItem;
                 RunObject = Page "Service Items";
-                RunPageLink = "Customer No." = FIELD("Sell-to Customer No.");
-                RunPageView = SORTING("Customer No.", "Ship-to Code", "Item No.", "Serial No.");
+                RunPageLink = "Customer No." = field("Sell-to Customer No.");
+                RunPageView = sorting("Customer No.", "Ship-to Code", "Item No.", "Serial No.");
             }
         }
     }
@@ -233,8 +233,8 @@ page 50017 "DP Sales Order#"
     trigger OnAfterGetCurrRecord()
     begin
 
-        IF NOT gRecCustomer.GET(Rec."Bill-to Customer No.") THEN gRecCustomer.INIT;
-        IF NOT gRecCustomerBankAccount.GET(gRecCustomer."No.", gRecCustomer."Preferred Bank Account Code") THEN gRecCustomerBankAccount.INIT;
+        if not gRecCustomer.GET(Rec."Bill-to Customer No.") then gRecCustomer.INIT();
+        if not gRecCustomerBankAccount.GET(gRecCustomer."No.", gRecCustomer."Preferred Bank Account Code") then gRecCustomerBankAccount.INIT();
     end;
 
     trigger OnNextRecord(Steps: Integer): Integer
@@ -278,27 +278,27 @@ page 50017 "DP Sales Order#"
         InstructionMgt: Codeunit "Instruction Mgt.";
     begin
         // BVE. Wanneer wordt deze functie gebruikt? Kan deze weg?
-        IF ApplicationAreaMgmtFacade.IsFoundationEnabled THEN
+        if ApplicationAreaMgmtFacade.IsFoundationEnabled then
             LinesInstructionMgt.SalesCheckAllLinesHaveQuantityAssigned(Rec);
 
         Rec.SendToPosting(PostingCodeunitID);
-        DocumentIsPosted := NOT SalesHeader.GET(Rec."Document Type", Rec."No.");
+        DocumentIsPosted := not SalesHeader.GET(Rec."Document Type", Rec."No.");
 
-        IF Rec."Job Queue Status" = Rec."Job Queue Status"::"Scheduled for Posting" THEN
-            CurrPage.CLOSE;
-        CurrPage.UPDATE(FALSE);
+        if Rec."Job Queue Status" = Rec."Job Queue Status"::"Scheduled for Posting" then
+            CurrPage.CLOSE();
+        CurrPage.UPDATE(false);
 
-        IF PostingCodeunitID <> CODEUNIT::"Sales-Post (Yes/No)" THEN
-            EXIT;
+        if PostingCodeunitID <> CODEUNIT::"Sales-Post (Yes/No)" then
+            exit;
 
         /*
         CASE Navigate OF
           NavigateAfterPost::"Posted Document":
-            IF InstructionMgt.IsEnabled(InstructionMgt.ShowPostedConfirmationMessageCode) THEN
+            if InstructionMgt.IsEnabled(InstructionMgt.ShowPostedConfirmationMessageCode) THEN
               ShowPostedConfirmationMessage;
           NavigateAfterPost::"New Document":
-            IF DocumentIsPosted THEN BEGIN
-              SalesHeader.INIT;
+            if DocumentIsPosted THEN BEGIN
+              SalesHeader.INIT();
               SalesHeader.VALIDATE("Document Type",SalesHeader."Document Type"::Order);
               SalesHeader.INSERT(TRUE);
               PAGE.RUN(PAGE::"Sales Order",SalesHeader);
@@ -315,8 +315,8 @@ page 50017 "DP Sales Order#"
     begin
         SalesInvoiceHeader.SETCURRENTKEY("Pre-Assigned No.");
         SalesInvoiceHeader.SETRANGE("Pre-Assigned No.", PreAssignedNo);
-        IF SalesInvoiceHeader.FINDFIRST THEN
-            IF InstructionMgt.ShowConfirm(OpenPostedSalesInvQst, InstructionMgt.ShowPostedConfirmationMessageCode) THEN
+        if SalesInvoiceHeader.FINDFIRST() then
+            if InstructionMgt.ShowConfirm(OpenPostedSalesInvQst, InstructionMgt.ShowPostedConfirmationMessageCode) then
                 PAGE.RUN(PAGE::"Posted Sales Invoice", SalesInvoiceHeader);
     end;
 
@@ -325,8 +325,8 @@ page 50017 "DP Sales Order#"
         lRecSalesLine: Record "Sales Line";
     begin
         /*
-        IF "Payment Method Code" <> '01' THEN
-          IF CONFIRM('Contante betaling ?',FALSE) THEN BEGIN
+        if "Payment Method Code" <> '01' THEN
+          if CONFIRM('Contante betaling ?',FALSE) THEN BEGIN
             "Payment Method Code" := '01';
             "Payment Terms Code" := '01';
           END;
@@ -334,7 +334,7 @@ page 50017 "DP Sales Order#"
         lRecSalesLine.SETRANGE("Document Type", Rec."Document Type");
         lRecSalesLine.SETFILTER("Document No.", Rec."No.");
         lRecSalesLine.SETRANGE(Quantity, 0);
-        lRecSalesLine.DELETEALL;
+        lRecSalesLine.DELETEALL();
 
         Post(CODEUNIT::"Sales-Post (Yes/No)", NavigateAfterPost::"Posted Document");
 

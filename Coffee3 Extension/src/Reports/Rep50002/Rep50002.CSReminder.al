@@ -8,7 +8,7 @@ report 50002 "CS Reminder"
     {
         dataitem("Issued Reminder Header"; "Issued Reminder Header")
         {
-            DataItemTableView = SORTING("No.");
+            DataItemTableView = sorting("No.");
             RequestFilterFields = "No.";
             RequestFilterHeading = 'Reminder';
             column(No_IssuedReminderHeader; "No.")
@@ -64,7 +64,7 @@ report 50002 "CS Reminder"
             }
             dataitem("Integer"; "Integer")
             {
-                DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
+                DataItemTableView = sorting(Number) where(Number = const(1));
                 column(CompanyInfo1Picture; CompanyInfo1.Picture)
                 {
                 }
@@ -203,7 +203,7 @@ report 50002 "CS Reminder"
                 dataitem(DimensionLoop; "Integer")
                 {
                     DataItemLinkReference = "Issued Reminder Header";
-                    DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1 ..));
+                    DataItemTableView = sorting(Number) where(Number = filter(1 ..));
                     column(DimText; DimText)
                     {
                     }
@@ -217,7 +217,7 @@ report 50002 "CS Reminder"
                     trigger OnAfterGetRecord()
                     begin
                         if Number = 1 then begin
-                            if not DimSetEntry.FindSet then
+                            if not DimSetEntry.FINDSET() then
                                 CurrReport.Break();
                         end else
                             if not Continue then
@@ -250,9 +250,9 @@ report 50002 "CS Reminder"
                 }
                 dataitem("Issued Reminder Line"; "Issued Reminder Line")
                 {
-                    DataItemLink = "Reminder No." = FIELD("No.");
+                    DataItemLink = "Reminder No." = field("No.");
                     DataItemLinkReference = "Issued Reminder Header";
-                    DataItemTableView = SORTING("Reminder No.", "Line No.");
+                    DataItemTableView = sorting("Reminder No.", "Line No.");
                     column(RemAmt_IssuedReminderLine; "Remaining Amount")
                     {
                         AutoFormatExpression = GetCurrencyCodeFromHeader;
@@ -396,10 +396,10 @@ report 50002 "CS Reminder"
                         Clear(CompanyInfo2.Picture);
                         Clear(CompanyInfo3.Picture);
 
-                        if FindLast then begin
+                        if FINDLAST() then begin
                             EndLineNo := "Line No." + 1;
                             repeat
-                                ShowNotDueAmounts := TRUE;    // CS2.0
+                                ShowNotDueAmounts := true;    // CS2.0
                                 Continue :=
                                   not ShowNotDueAmounts and
                                   ("No. of Reminders" = 0) and
@@ -416,9 +416,9 @@ report 50002 "CS Reminder"
                 }
                 dataitem(IssuedReminderLine2; "Issued Reminder Line")
                 {
-                    DataItemLink = "Reminder No." = FIELD("No.");
+                    DataItemLink = "Reminder No." = field("No.");
                     DataItemLinkReference = "Issued Reminder Header";
-                    DataItemTableView = SORTING("Reminder No.", "Line No.");
+                    DataItemTableView = sorting("Reminder No.", "Line No.");
                     column(Desc1_IssuedReminderLine; Description)
                     {
                     }
@@ -431,11 +431,11 @@ report 50002 "CS Reminder"
                         SetFilter("Line No.", '>=%1', EndLineNo);
                         if not ShowNotDueAmounts then begin
                             SetFilter(Type, '<>%1', Type::" ");
-                            if FindFirst then
+                            if FINDFIRST() then
                                 if "Line No." > EndLineNo then begin
                                     SetRange(Type);
                                     SetRange("Line No.", EndLineNo, "Line No." - 1); // find "Open Entries Not Due" line
-                                    if FindLast then
+                                    if FINDLAST() then
                                         SetRange("Line No.", EndLineNo, "Line No." - 1);
                                 end;
                             SetRange(Type);
@@ -444,7 +444,7 @@ report 50002 "CS Reminder"
                 }
                 dataitem(VATCounter; "Integer")
                 {
-                    DataItemTableView = SORTING(Number);
+                    DataItemTableView = sorting(Number);
                     column(VATAmtLineAmtIncludVAT; VATAmountLine."Amount Including VAT")
                     {
                         AutoFormatExpression = "Issued Reminder Line".GetCurrencyCodeFromHeader;
@@ -498,7 +498,7 @@ report 50002 "CS Reminder"
                 }
                 dataitem(VATClauseEntryCounter; "Integer")
                 {
-                    DataItemTableView = SORTING(Number);
+                    DataItemTableView = sorting(Number);
                     column(VATClauseVATIdentifier; VATAmountLine."VAT Identifier")
                     {
                     }
@@ -542,7 +542,7 @@ report 50002 "CS Reminder"
                 }
                 dataitem(VATCounterLCY; "Integer")
                 {
-                    DataItemTableView = SORTING(Number);
+                    DataItemTableView = sorting(Number);
                     column(VALExchRate; VALExchRate)
                     {
                     }
@@ -595,7 +595,7 @@ report 50002 "CS Reminder"
                         CustEntry.SetRange("Customer No.", "Issued Reminder Header"."Customer No.");
                         CustEntry.SetRange("Document Type", CustEntry."Document Type"::Reminder);
                         CustEntry.SetRange("Document No.", "Issued Reminder Header"."No.");
-                        if CustEntry.FindFirst then begin
+                        if CustEntry.FINDFIRST() then begin
                             CustEntry.CalcFields("Amount (LCY)", Amount);
                             CurrFactor := 1 / (CustEntry."Amount (LCY)" / CustEntry.Amount);
                             VALExchRate := StrSubstNo(Text013, Round(1 / CurrFactor * 100, 0.000001), CurrExchRate."Exchange Rate Amount");
@@ -607,7 +607,7 @@ report 50002 "CS Reminder"
                 }
                 dataitem(LetterText; "Integer")
                 {
-                    DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
+                    DataItemTableView = sorting(Number) where(Number = const(1));
                     column(GreetingText; GreetingLbl)
                     {
                     }
@@ -785,7 +785,7 @@ report 50002 "CS Reminder"
     trigger OnPostReport()
     begin
         if LogInteraction and not IsReportInPreviewMode then
-            if "Issued Reminder Header".FindSet then
+            if "Issued Reminder Header".FINDSET() then
                 repeat
                     SegManagement.LogDocument(
                       8, "Issued Reminder Header"."No.", 0, 0, DATABASE::Customer, "Issued Reminder Header"."Customer No.",

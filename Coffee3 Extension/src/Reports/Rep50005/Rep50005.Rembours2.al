@@ -13,7 +13,7 @@ report 50005 "Reimbursement 2"
     {
         dataitem("Rembours etiketten"; "Reimbursement Label")
         {
-            DataItemTableView = WHERE(Afgedrukt = CONST(false), Betalingswijze = FILTER('05'));
+            DataItemTableView = where(Afgedrukt = const(false), Betalingswijze = filter('05'));
             RequestFilterFields = "Code";
             column(CompanyAddr1; CompanyAddr[1])
             {
@@ -58,13 +58,13 @@ report 50005 "Reimbursement 2"
                 FormatAddr.FormatAddr(Addr, Naam, '', '', Adres, '', Plaats, Postcode, '', '');
 
                 Afgedrukt := true;
-                Modify;
+                MODIFY();
             end;
 
             trigger OnPreDataItem()
             begin
                 //CompanyAddr
-                CompanyInfo.Get;
+                CompanyInfo.Get();
                 FormatAddr.Company(CompanyAddr, CompanyInfo);
             end;
         }

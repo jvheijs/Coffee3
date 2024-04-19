@@ -8,7 +8,7 @@ codeunit 50005 "OneShot"
     trigger OnRun()
     begin
 
-        lFncFillRouteAndRayon;
+        lFncFillRouteAndRayon();
 
         MESSAGE('Gereed');
     end;
@@ -25,55 +25,51 @@ codeunit 50005 "OneShot"
 
         SalesShipmentHeader.MODIFYALL(Rayon, 0);
         SalesShipmentHeader.MODIFYALL(Routenummer, 0);
-        IF SalesShipmentHeader.FINDFIRST THEN
-            REPEAT
-                IF SalesShipmentHeader.Rayon = 0 THEN BEGIN
-                    IF Customer.GET(SalesShipmentHeader."Sell-to Customer No.") THEN BEGIN
+        if SalesShipmentHeader.FINDFIRST() then
+            repeat
+                if SalesShipmentHeader.Rayon = 0 then
+                    if Customer.GET(SalesShipmentHeader."Sell-to Customer No.") then begin
                         SalesShipmentHeader.Rayon := Customer.Rayon;
                         SalesShipmentHeader.Routenummer := Customer.Routenummer;
-                        SalesShipmentHeader.MODIFY;
-                    END;
-                END;
-            UNTIL SalesShipmentHeader.NEXT = 0;
+                        SalesShipmentHeader.MODIFY();
+                    end;
+            until SalesShipmentHeader.NEXT() = 0;
 
         SalesInvoiceHeader.MODIFYALL(Rayon, 0);
         SalesInvoiceHeader.MODIFYALL(Routenummer, 0);
-        IF SalesInvoiceHeader.FINDFIRST THEN
-            REPEAT
-                IF SalesInvoiceHeader.Rayon = 0 THEN BEGIN
-                    IF Customer.GET(SalesInvoiceHeader."Sell-to Customer No.") THEN BEGIN
+        if SalesInvoiceHeader.FINDFIRST() then
+            repeat
+                if SalesInvoiceHeader.Rayon = 0 then
+                    if Customer.GET(SalesInvoiceHeader."Sell-to Customer No.") then begin
                         SalesInvoiceHeader.Rayon := Customer.Rayon;
                         SalesInvoiceHeader.Routenummer := Customer.Routenummer;
-                        SalesInvoiceHeader.MODIFY;
-                    END;
-                END;
-            UNTIL SalesInvoiceHeader.NEXT = 0;
+                        SalesInvoiceHeader.MODIFY();
+                    end;
+            until SalesInvoiceHeader.NEXT() = 0;
 
         SalesCrMemoHeader.MODIFYALL(Rayon, 0);
         SalesCrMemoHeader.MODIFYALL(Routenummer, 0);
-        IF SalesCrMemoHeader.FINDFIRST THEN
-            REPEAT
-                IF SalesCrMemoHeader.Rayon = 0 THEN BEGIN
-                    IF Customer.GET(SalesCrMemoHeader."Sell-to Customer No.") THEN BEGIN
+        if SalesCrMemoHeader.FINDFIRST() then
+            repeat
+                if SalesCrMemoHeader.Rayon = 0 then
+                    if Customer.GET(SalesCrMemoHeader."Sell-to Customer No.") then begin
                         SalesCrMemoHeader.Rayon := Customer.Rayon;
                         SalesCrMemoHeader.Routenummer := Customer.Routenummer;
-                        SalesCrMemoHeader.MODIFY;
-                    END;
-                END;
-            UNTIL SalesCrMemoHeader.NEXT = 0;
+                        SalesCrMemoHeader.MODIFY();
+                    end;
+            until SalesCrMemoHeader.NEXT() = 0;
 
         ReturnReceiptHeader.MODIFYALL(Rayon, 0);
         ReturnReceiptHeader.MODIFYALL(Routenummer, 0);
-        IF ReturnReceiptHeader.FINDFIRST THEN
-            REPEAT
-                IF ReturnReceiptHeader.Rayon = 0 THEN BEGIN
-                    IF Customer.GET(ReturnReceiptHeader."Sell-to Customer No.") THEN BEGIN
+        if ReturnReceiptHeader.FINDFIRST() then
+            repeat
+                if ReturnReceiptHeader.Rayon = 0 then
+                    if Customer.GET(ReturnReceiptHeader."Sell-to Customer No.") then begin
                         ReturnReceiptHeader.Rayon := Customer.Rayon;
                         ReturnReceiptHeader.Routenummer := Customer.Routenummer;
-                        ReturnReceiptHeader.MODIFY;
-                    END;
-                END;
-            UNTIL ReturnReceiptHeader.NEXT = 0;
+                        ReturnReceiptHeader.MODIFY();
+                    end;
+            until ReturnReceiptHeader.NEXT() = 0;
     end;
 }
 

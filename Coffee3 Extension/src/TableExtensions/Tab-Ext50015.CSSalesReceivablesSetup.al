@@ -9,7 +9,7 @@ tableextension 50015 "CS Sales & Receivables Setup" extends "Sales & Receivables
             DataClassification = ToBeClassified;
             trigger OnValidate()
             begin
-                IF (COPYSTR("Name exportdirectory", STRLEN("Name exportdirectory"), 1) <> '\') THEN
+                if (COPYSTR("Name exportdirectory", STRLEN("Name exportdirectory"), 1) <> '\') then
                     "Name exportdirectory" := "Name exportdirectory" + '\';
             end;
         }

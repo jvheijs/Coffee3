@@ -15,14 +15,14 @@ tableextension 50013 "CS Customer Bank Account" extends "Customer Bank Account"
     }
 
     local procedure CS_UpdateMandateID()
-    VAR
+    var
         ProposalLine: Record "Proposal Line";
-    BEGIN
+    begin
         // Copied from standard local function UpdateMandateID
         ProposalLine.SETRANGE("Account Type", ProposalLine."Account Type"::Customer);
         ProposalLine.SETRANGE("Account No.", "Customer No.");
         ProposalLine.SETRANGE("Bank Account No.", "Bank Account No.");
-        IF ProposalLine.FINDSET THEN
+        if ProposalLine.FINDSET() then
             ProposalLine.MODIFYALL("Direct Debit Mandate ID", "Direct Debit Mandate ID")
     end;
 }

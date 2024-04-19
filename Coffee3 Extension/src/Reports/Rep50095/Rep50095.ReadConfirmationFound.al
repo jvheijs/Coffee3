@@ -10,7 +10,7 @@ report 50095 "Read Confirmation Found"
     {
         dataitem("Import terminal"; "Import terminal")
         {
-            DataItemTableView = SORTING(Regelsoort) WHERE(Regelsoort = CONST('LB'));
+            DataItemTableView = sorting(Regelsoort) where(Regelsoort = const('LB'));
             column(Volgnr; "Import terminal".Volgnummer)
             {
             }

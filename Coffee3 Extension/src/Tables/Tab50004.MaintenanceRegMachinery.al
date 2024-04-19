@@ -14,11 +14,11 @@ table 50004 "Maintenance Reg. Machinery"
         {
             Caption = 'Customernumber';
             Editable = false;
-            TableRelation = Customer."No." WHERE("No." = FIELD(Klantnummer));
+            TableRelation = Customer."No." where("No." = field(Klantnummer));
         }
         field(3; Klantnaam; Text[100])
         {
-            CalcFormula = Lookup(Customer.Name WHERE("No." = FIELD(Klantnummer)));
+            CalcFormula = lookup(Customer.Name where("No." = field(Klantnummer)));
             Caption = 'Customername';
             Editable = false;
             FieldClass = FlowField;
@@ -31,7 +31,7 @@ table 50004 "Maintenance Reg. Machinery"
             trigger OnValidate()
             begin
                 ArtRec.Get("Type apparaat");
-                //IF ArtRec."Type artikel" <> ArtRec."Type artikel"::"0" THEN
+                //if ArtRec."Type artikel" <> ArtRec."Type artikel"::"0" THEN
                 //  ERROR(Text60000);
             end;
         }
@@ -51,7 +51,7 @@ table 50004 "Maintenance Reg. Machinery"
         }
         field(8; "Omschrijving apparaat"; Text[100])
         {
-            CalcFormula = Lookup(Item.Description WHERE("No." = FIELD("Type apparaat")));
+            CalcFormula = lookup(Item.Description where("No." = field("Type apparaat")));
             Caption = 'Description Machine';
             Editable = false;
             FieldClass = FlowField;
@@ -96,7 +96,7 @@ table 50004 "Maintenance Reg. Machinery"
     begin
         OnderhoudsregelsRec.SetRange(Klantnummer, Klantnummer);
         OnderhoudsregelsRec.SetRange("Onderhoudsregistratie code", Code);
-        OnderhoudsregelsRec.DeleteAll;
+        OnderhoudsregelsRec.DELETEALL();
     end;
 
     var

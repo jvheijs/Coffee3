@@ -209,7 +209,7 @@ page 50010 "Export Terminal List"
         {
             action("Alles markeren")
             {
-
+                Image = Process;
                 trigger OnAction()
                 begin
 
@@ -223,7 +223,7 @@ page 50010 "Export Terminal List"
             }
             action(Doorgaan)
             {
-
+                Image = Process;
                 trigger OnAction()
                 begin
 
@@ -232,17 +232,17 @@ page 50010 "Export Terminal List"
 
                     // Gegevens terminal in hulptabel 50007 zetten
 
-                    Hulptabel50007Rec.Reset;
+                    Hulptabel50007Rec.RESET();
                     Hulptabel50007Rec.ModifyAll("Meenemen in export?", false);
                     Hulptabel50007Rec.ModifyAll(Geexporteerd, false);
 
                     i := 1;
                     while i <> 31 do begin
-                        Hulptabel50007Rec.Reset;
+                        Hulptabel50007Rec.RESET();
                         Hulptabel50007Rec.SetRange(Volgnummer, i);
                         if (Hulptabel50007Rec.Find('-') and (TerminalMeenemen[i] = true)) then begin
                             Hulptabel50007Rec."Meenemen in export?" := true;
-                            Hulptabel50007Rec.Modify;
+                            Hulptabel50007Rec.MODIFY();
                         end;
                         i := i + 1;
                     end;
@@ -250,172 +250,172 @@ page 50010 "Export Terminal List"
                     // Gegevens data-items in hulptabel zetten
 
                     if KlantenMeenemen = true then begin
-                        Hulptabel50007Rec.Reset;
+                        Hulptabel50007Rec.RESET();
                         Hulptabel50007Rec.SetRange(Volgnummer, 31);
                         if Hulptabel50007Rec.Find('-') then begin
                             Hulptabel50007Rec."Meenemen in export?" := true;
-                            Hulptabel50007Rec.Modify;
+                            Hulptabel50007Rec.MODIFY();
                         end;
                     end;
 
                     if ArtikelMeenemen = true then begin
-                        Hulptabel50007Rec.Reset;
+                        Hulptabel50007Rec.RESET();
                         Hulptabel50007Rec.SetRange(Volgnummer, 32);
                         if Hulptabel50007Rec.Find('-') then begin
                             Hulptabel50007Rec."Meenemen in export?" := true;
-                            Hulptabel50007Rec.Modify;
+                            Hulptabel50007Rec.MODIFY();
                         end;
                     end;
 
                     if SneltoetsMeenemen = true then begin
-                        Hulptabel50007Rec.Reset;
+                        Hulptabel50007Rec.RESET();
                         Hulptabel50007Rec.SetRange(Volgnummer, 33);
                         if Hulptabel50007Rec.Find('-') then begin
                             Hulptabel50007Rec."Meenemen in export?" := true;
-                            Hulptabel50007Rec.Modify;
+                            Hulptabel50007Rec.MODIFY();
                         end;
                     end;
 
                     if AutovoorraadMutatiesMeenemen = true then begin
-                        Hulptabel50007Rec.Reset;
+                        Hulptabel50007Rec.RESET();
                         Hulptabel50007Rec.SetRange(Volgnummer, 34);
                         if Hulptabel50007Rec.Find('-') then begin
                             Hulptabel50007Rec."Meenemen in export?" := true;
-                            Hulptabel50007Rec.Modify;
+                            Hulptabel50007Rec.MODIFY();
                         end;
                     end;
 
                     if AutovoorraadPositiesMeenemen = true then begin
-                        Hulptabel50007Rec.Reset;
+                        Hulptabel50007Rec.RESET();
                         Hulptabel50007Rec.SetRange(Volgnummer, 35);
                         if Hulptabel50007Rec.Find('-') then begin
                             Hulptabel50007Rec."Meenemen in export?" := true;
-                            Hulptabel50007Rec.Modify;
+                            Hulptabel50007Rec.MODIFY();
                         end;
                     end;
 
                     if OpenstaandePostenMeenemen = true then begin
-                        Hulptabel50007Rec.Reset;
+                        Hulptabel50007Rec.RESET();
                         Hulptabel50007Rec.SetRange(Volgnummer, 36);
                         if Hulptabel50007Rec.Find('-') then begin
                             Hulptabel50007Rec."Meenemen in export?" := true;
-                            Hulptabel50007Rec.Modify;
+                            Hulptabel50007Rec.MODIFY();
                         end;
                     end;
 
                     if BTWCodesMeenemen = true then begin
-                        Hulptabel50007Rec.Reset;
+                        Hulptabel50007Rec.RESET();
                         Hulptabel50007Rec.SetRange(Volgnummer, 37);
                         if Hulptabel50007Rec.Find('-') then begin
                             Hulptabel50007Rec."Meenemen in export?" := true;
-                            Hulptabel50007Rec.Modify;
+                            Hulptabel50007Rec.MODIFY();
                         end;
                     end;
 
                     if "Soort Bestand" = "Soort Bestand"::Initieel then begin
-                        Hulptabel50007Rec.Reset;
+                        Hulptabel50007Rec.RESET();
                         Hulptabel50007Rec.SetRange(Volgnummer, 39);
                         if Hulptabel50007Rec.Find('-') then
                             Hulptabel50007Rec."Meenemen in export?" := true;
                     end else begin
-                        Hulptabel50007Rec.Reset;
+                        Hulptabel50007Rec.RESET();
                         Hulptabel50007Rec.SetRange(Volgnummer, 39);
                         if Hulptabel50007Rec.Find('-') then
                             Hulptabel50007Rec."Meenemen in export?" := false;
                     end;
-                    Hulptabel50007Rec.Modify;
+                    Hulptabel50007Rec.MODIFY();
 
                     if MemoTekstenMeenemen = true then begin
-                        Hulptabel50007Rec.Reset;
+                        Hulptabel50007Rec.RESET();
                         Hulptabel50007Rec.SetRange(Volgnummer, 38);
                         if Hulptabel50007Rec.Find('-') then begin
                             Hulptabel50007Rec."Meenemen in export?" := true;
-                            Hulptabel50007Rec.Modify;
+                            Hulptabel50007Rec.MODIFY();
                         end;
-                        Hulptabel50007Rec.Reset;
+                        Hulptabel50007Rec.RESET();
                         Hulptabel50007Rec.SetRange(Volgnummer, 40);
                         if Hulptabel50007Rec.Find('-') then begin
                             Hulptabel50007Rec."Omschrijving terminal" := MemoTekst;
-                            Hulptabel50007Rec.Modify;
+                            Hulptabel50007Rec.MODIFY();
                         end;
                     end else begin
-                        Hulptabel50007Rec.Reset;
+                        Hulptabel50007Rec.RESET();
                         Hulptabel50007Rec.SetRange(Volgnummer, 40);
                         if Hulptabel50007Rec.Find('-') then begin
                             Hulptabel50007Rec."Omschrijving terminal" := '';
-                            Hulptabel50007Rec.Modify;
+                            Hulptabel50007Rec.MODIFY();
                         end;
                     end;
 
                     // ATW BCO 240401 begin nieuw
                     if ActieArtikelenMeenemen = true then begin
-                        Hulptabel50007Rec.Reset;
+                        Hulptabel50007Rec.RESET();
                         Hulptabel50007Rec.SetRange(Volgnummer, 41);
                         if Hulptabel50007Rec.Find('-') then begin
                             Hulptabel50007Rec."Meenemen in export?" := true;
-                            Hulptabel50007Rec.Modify;
+                            Hulptabel50007Rec.MODIFY();
                         end;
                     end;
                     // ATW BCO 240401 eind nieuw
 
                     //BEGIN ACA RB
                     if ContactMeenemen = true then begin
-                        Hulptabel50007Rec.Reset;
+                        Hulptabel50007Rec.RESET();
                         Hulptabel50007Rec.SetRange(Volgnummer, 42);
                         if Hulptabel50007Rec.Find('-') then begin
                             Hulptabel50007Rec."Meenemen in export?" := true;
-                            Hulptabel50007Rec.Modify;
+                            Hulptabel50007Rec.MODIFY();
                         end;
                     end;
 
                     if GarantieMeenemen = true then begin
-                        Hulptabel50007Rec.Reset;
+                        Hulptabel50007Rec.RESET();
                         Hulptabel50007Rec.SetRange(Volgnummer, 43);
                         if Hulptabel50007Rec.Find('-') then begin
                             Hulptabel50007Rec."Meenemen in export?" := true;
-                            Hulptabel50007Rec.Modify;
+                            Hulptabel50007Rec.MODIFY();
                         end;
                     end;
 
                     if MemonwMeenemen = true then begin
-                        Hulptabel50007Rec.Reset;
+                        Hulptabel50007Rec.RESET();
                         Hulptabel50007Rec.SetRange(Volgnummer, 44);
                         if Hulptabel50007Rec.Find('-') then begin
                             Hulptabel50007Rec."Meenemen in export?" := true;
-                            Hulptabel50007Rec.Modify;
+                            Hulptabel50007Rec.MODIFY();
                         end;
                     end;
 
                     if BerichtMeenemen = true then begin
-                        Hulptabel50007Rec.Reset;
+                        Hulptabel50007Rec.RESET();
                         Hulptabel50007Rec.SetRange(Volgnummer, 45);
                         if Hulptabel50007Rec.Find('-') then begin
                             Hulptabel50007Rec."Meenemen in export?" := true;
-                            Hulptabel50007Rec.Modify;
+                            Hulptabel50007Rec.MODIFY();
                         end;
                     end;
 
                     if HistorieMeenemen = true then begin
-                        Hulptabel50007Rec.Reset;
+                        Hulptabel50007Rec.RESET();
                         Hulptabel50007Rec.SetRange(Volgnummer, 46);
                         if Hulptabel50007Rec.Find('-') then begin
                             Hulptabel50007Rec."Meenemen in export?" := true;
-                            Hulptabel50007Rec.Modify;
+                            Hulptabel50007Rec.MODIFY();
                         end;
                     end;
                     //EINDE ACA
 
                     // BEGIN VIGEO BB 02-01-2006 FNT-84
-                    //IF AktieveArtikelenExporteren = TRUE THEN BEGIN
-                    //  Hulptabel50007Rec.RESET;
+                    //if AktieveArtikelenExporteren = TRUE THEN BEGIN
+                    //  Hulptabel50007Rec.RESET();
                     //  Hulptabel50007Rec.SETRANGE(Volgnummer,48);
-                    //  IF Hulptabel50007Rec.FIND('-') THEN BEGIN
+                    //  if Hulptabel50007Rec.FIND('-') THEN BEGIN
                     //Hulptabel50007Rec."Meenemen in export?" := TRUE;
-                    //Hulptabel50007Rec.MODIFY;
+                    //Hulptabel50007Rec.MODIFY();
                     //END;
                     //END;
                     // EINDE VIGEO BB
-                    CurrPage.Close;
+                    CurrPage.CLOSE();
                 end;
             }
             action(CreateExportTerminalFile)
@@ -428,7 +428,7 @@ page 50010 "Export Terminal List"
 
                 trigger OnAction()
                 var
-                    CreateTerminalExport: Codeunit "Create Terminal Export File";
+                    CreateTerminalExport: Codeunit "CreateTerminalExportFile";
                 begin
                     CreateTerminalExport.RUN;
                 end;

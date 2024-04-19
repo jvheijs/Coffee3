@@ -37,7 +37,7 @@ tableextension 50019 "CS My Customer" extends "My Customer"
             Description = '2000-901-21';
             Caption = 'Area';
             DataClassification = ToBeClassified;
-            TableRelation = "Area and Customerstatus".Rayoncode WHERE(Rayoncode = FILTER(<> 0), Rayoncode = FIELD(Rayon));
+            TableRelation = "Area and Customerstatus".Rayoncode where(Rayoncode = filter(<> 0), Rayoncode = field(Rayon));
         }
         field(50006; Routenummer; Integer)
         {

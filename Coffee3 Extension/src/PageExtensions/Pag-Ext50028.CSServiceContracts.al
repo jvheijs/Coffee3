@@ -24,16 +24,5 @@ pageextension 50028 "CS Service Contracts" extends "Service Contracts"
             }
         }
 
-        addbefore(Control1902018507)
-        {
-            part("Attached Documents"; "Document Attachment Factbox")
-            {
-                ApplicationArea = All;
-                Caption = 'Attachments';
-                SubPageLink = "Table ID" = CONST(5965),
-                              "No." = FIELD("Contract No."),
-                              "Document Type" = FIELD("Contract Type");
-            }
-        }
     }
 }

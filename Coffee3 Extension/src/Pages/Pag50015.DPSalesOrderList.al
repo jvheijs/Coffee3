@@ -5,7 +5,7 @@ page 50015 "DP SalesOrderList"
     Editable = false;
     PageType = List;
     SourceTable = "Sales Header";
-    SourceTableView = WHERE("Document Type" = CONST(Order));
+    SourceTableView = where("Document Type" = const(Order));
     ApplicationArea = All;
 
     layout
@@ -57,7 +57,7 @@ page 50015 "DP SalesOrderList"
         lCduCondor: Codeunit Condor;
     begin
         Rec.FilterGroup(10);
-        Rec.SetFilter("Location Code", lCduCondor.gFncRayonFilter);
+        Rec.SetFilter("Location Code", lCduCondor.gFncRayonFilter());
         Rec.FilterGroup(0);
     end;
 }

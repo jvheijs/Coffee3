@@ -13,7 +13,7 @@ report 50006 "Service Order CS"
     {
         dataitem("Integer"; "Integer")
         {
-            DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
+            DataItemTableView = sorting(Number) where(Number = const(1));
             column(CompanyInfo2Picture; CompanyInfo2.Picture)
             {
             }
@@ -27,7 +27,7 @@ report 50006 "Service Order CS"
         }
         dataitem("Service Header"; "Service Header")
         {
-            DataItemTableView = SORTING("Document Type", "No.") WHERE("Document Type" = CONST(Order));
+            DataItemTableView = sorting("Document Type", "No.") where("Document Type" = const(Order));
             RequestFilterFields = "Customer No.", "No.";
             RequestFilterHeading = 'Service Order';
             column(ReportTitle; TextReportTitle)
@@ -68,18 +68,18 @@ report 50006 "Service Order CS"
             }
             dataitem(CopyLoop; "Integer")
             {
-                DataItemTableView = SORTING(Number);
+                DataItemTableView = sorting(Number);
                 dataitem(PageLoop; "Integer")
                 {
-                    DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
+                    DataItemTableView = sorting(Number) where(Number = const(1));
                     column(OutputNo; OutputNo)
                     {
                     }
                     dataitem("Service Item Line"; "Service Item Line")
                     {
-                        DataItemLink = "Document Type" = FIELD("Document Type"), "Document No." = FIELD("No.");
+                        DataItemLink = "Document Type" = field("Document Type"), "Document No." = field("No.");
                         DataItemLinkReference = "Service Header";
-                        DataItemTableView = SORTING("Document Type", "Document No.", "Line No.");
+                        DataItemTableView = sorting("Document Type", "Document No.", "Line No.");
                         column(lblMachineType; TextMachineType)
                         {
                         }
@@ -219,8 +219,8 @@ report 50006 "Service Order CS"
 
     trigger OnInitReport()
     begin
-        GLSetup.Get;
-        CompanyInfo.Get;
+        GLSetup.Get();
+        CompanyInfo.Get();
         CompanyInfo.VerifyAndSetPaymentInfo;
         SalesSetup.Get();
         FormatDocument.SetLogoPosition(SalesSetup."Logo Position on Documents", CompanyInfo1, CompanyInfo2, CompanyInfo3);

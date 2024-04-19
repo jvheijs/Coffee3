@@ -19,7 +19,7 @@ tableextension 50001 "CS Customer" extends Customer
             var
                 PostCode: Record "Post Code";
             begin
-                IF PostCode.GET("Postcode bezoekadres") THEN
+                if PostCode.GET("Postcode bezoekadres") then
                     "Plaats bezoekadres" := PostCode.City;
             end;
         }
@@ -50,7 +50,7 @@ tableextension 50001 "CS Customer" extends Customer
             Description = '2000-901-21';
             Caption = 'Area';
             DataClassification = ToBeClassified;
-            TableRelation = "Area and Customerstatus".Rayoncode WHERE(Rayoncode = FILTER(<> 0), Rayoncode = FIELD(Rayon));
+            TableRelation = "Area and Customerstatus".Rayoncode where(Rayoncode = filter(<> 0), Rayoncode = field(Rayon));
         }
         field(50006; Routenummer; Integer)
         {

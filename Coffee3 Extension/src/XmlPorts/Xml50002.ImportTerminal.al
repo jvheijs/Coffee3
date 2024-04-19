@@ -42,31 +42,31 @@ xmlport 50002 "Import Terminal"
     begin
 
         // gegevens importbestand bewerken
-        RecImportTerminal.Reset;
+        RecImportTerminal.RESET();
         if RecImportTerminal.FindSet() then begin
             repeat
                 SoortRegel := CopyStr(RecImportTerminal.Omschrijving, 1, 2);
                 case true of
                     SoortRegel = Text60000:
-                        RecImportTerminal.Delete;
+                        RecImportTerminal.DELETE();
                     SoortRegel = Text60001:
-                        RecImportTerminal.Delete;
+                        RecImportTerminal.DELETE();
                     SoortRegel = ' ':
-                        RecImportTerminal.Delete;
+                        RecImportTerminal.DELETE();
                     SoortRegel = Text60011:
                         begin
                             RecImportTerminal.Regelsoort := SoortRegel;
-                            RecImportTerminal.Modify;
+                            RecImportTerminal.MODIFY();
                         end;
                     SoortRegel = Text60012:
                         begin
                             RecImportTerminal.Regelsoort := SoortRegel;
-                            RecImportTerminal.Modify;
+                            RecImportTerminal.MODIFY();
                         end;
                     SoortRegel = Text60013:
                         begin
                             RecImportTerminal.Regelsoort := SoortRegel;
-                            RecImportTerminal.Modify;
+                            RecImportTerminal.MODIFY();
                         end;
                     SoortRegel = Text60002:
                         begin
@@ -78,14 +78,14 @@ xmlport 50002 "Import Terminal"
                             RecImportTerminal.Factuurnummer := FactuurNummerHeader;
                             RecImportTerminal.Regelsoort := SoortRegel;
                             RecImportTerminal.Omschrijving := ConvertStr(RecImportTerminal.Omschrijving, '.', ',');
-                            RecImportTerminal.Modify;
+                            RecImportTerminal.MODIFY();
                         end;
                     SoortRegel = Text60003:
                         begin
                             RecImportTerminal.Factuurnummer := FactuurNummerHeader;
                             RecImportTerminal.Regelsoort := SoortRegel;
                             RecImportTerminal.Omschrijving := ConvertStr(RecImportTerminal.Omschrijving, '.', ',');
-                            RecImportTerminal.Modify;
+                            RecImportTerminal.MODIFY();
                         end;
                     SoortRegel = Text60004:
                         begin
@@ -97,86 +97,86 @@ xmlport 50002 "Import Terminal"
                             RecImportTerminal.Factuurnummer := FactuurNummerHeader;
                             RecImportTerminal.Regelsoort := SoortRegel;
                             RecImportTerminal.Omschrijving := ConvertStr(RecImportTerminal.Omschrijving, '.', ',');
-                            RecImportTerminal.Modify;
+                            RecImportTerminal.MODIFY();
                         end;
                 end;
-            until RecImportTerminal.Next = 0;
+            until RecImportTerminal.Next() = 0;
         end;
 
         // factuurkop aanmaken
-        RecImportTerminal.Reset;
+        RecImportTerminal.RESET();
         RecImportTerminal.SetCurrentKey(RecImportTerminal.Regelsoort);
         RecImportTerminal.SetRange(Regelsoort, Text60002);
         if RecImportTerminal.FindSet() then begin
             repeat
                 InvoerenFactuurKop;
-            until RecImportTerminal.Next = 0;
+            until RecImportTerminal.Next() = 0;
         end;
 
         // factuurregel aanmaken
-        RecImportTerminal.Reset;
+        RecImportTerminal.RESET();
         RecImportTerminal.SetCurrentKey(RecImportTerminal.Regelsoort);
         RecImportTerminal.SetRange(Regelsoort, Text60003);
         if RecImportTerminal.FindSet() then begin
             repeat
                 InvoerenFactuurRegel;
-            until RecImportTerminal.Next = 0;
+            until RecImportTerminal.Next() = 0;
         end;
 
         // Openstaande posten verwerken
-        RecImportTerminal.Reset;
+        RecImportTerminal.RESET();
         RecImportTerminal.SetCurrentKey(RecImportTerminal.Regelsoort);
         RecImportTerminal.SetRange(Regelsoort, Text60004);
         if RecImportTerminal.FindSet() then begin
             repeat
                 VerwerkenOpenstaandePosten;
-            until RecImportTerminal.Next = 0;
+            until RecImportTerminal.Next() = 0;
             // REPORT.RUN(REPORT::"Openstaande facturen gevonden",FALSE,TRUE);  // CS1.0 niet meer nodig
         end;
 
         //Verwerken leesbevestigingen
-        RecImportTerminal.Reset;
+        RecImportTerminal.RESET();
         RecImportTerminal.SetCurrentKey(RecImportTerminal.Regelsoort);
         RecImportTerminal.SetRange(Regelsoort, Text60011);
         if RecImportTerminal.FindSet() then begin
             repeat
                 VerwerkenLeesbevestigingen;
-            until RecImportTerminal.Next = 0;
+            until RecImportTerminal.Next() = 0;
             REPORT.Run(REPORT::"Read Confirmation Found", false, true);    // CS1.0
         end;
 
         //Verwerken Klantbezoeken
-        RecImportTerminal.Reset;
+        RecImportTerminal.RESET();
         RecImportTerminal.SetCurrentKey(RecImportTerminal.Regelsoort);
         RecImportTerminal.SetRange(Regelsoort, Text60012);
         if RecImportTerminal.FindSet() then begin
             repeat
                 VerwerkenKlantbezoeken;
-            until RecImportTerminal.Next = 0;
+            until RecImportTerminal.Next() = 0;
             REPORT.Run(REPORT::"Customer Visit Found", false, true);       // CS1.0
         end;
 
         //Verwerken klantvoorraden
-        RecImportTerminal.Reset;
+        RecImportTerminal.RESET();
         RecImportTerminal.SetCurrentKey(RecImportTerminal.Regelsoort);
         RecImportTerminal.SetRange(Regelsoort, Text60013);
         if RecImportTerminal.FindSet() then begin
             repeat
                 VerwerkenKlantvoorraden;
-            until RecImportTerminal.Next = 0;
+            until RecImportTerminal.Next() = 0;
             REPORT.Run(REPORT::"Customer Inventory Found", false, true);    // CS1.0
         end;
 
         //Provisietabel vullen
-        VerkoopkopLijst2.Reset;
+        VerkoopkopLijst2.RESET();
         if VerkoopkopLijst2.FindSet() then
             repeat
-                Provisie2.Reset;
+                Provisie2.RESET();
                 Provisie2.SetCurrentKey(Provisie2.Rayon, Provisie2.Route, Provisie2.Datum);
                 Provisie2.SetRange(Provisie2.Rayon, VerkoopkopLijst2.Rayon);
                 Provisie2.SetRange(Provisie2.Route, VerkoopkopLijst2.Routenummer);
                 Provisie2.SetRange(Provisie2.Datum, VerkoopkopLijst2."Posting Date");
-                if not Provisie2.FindFirst then begin
+                if not Provisie2.FINDFIRST() then begin
                     AantalProvisie := 0;
                     AantalAdressen := 0;
                     // CS1.0
@@ -185,10 +185,10 @@ xmlport 50002 "Import Terminal"
 
                     NoOfServiceOrdersGL := 0;
                     NoOfDoubleOrdersGL := 0;
-                    KlantRec2GL.Reset;
-                    KlantRec2GL.DeleteAll;
+                    KlantRec2GL.RESET();
+                    KlantRec2GL.DELETEALL();
 
-                    VerkoopkopLijst.Reset;
+                    VerkoopkopLijst.RESET();
                     VerkoopkopLijst.SetCurrentKey(VerkoopkopLijst.Rayon, VerkoopkopLijst.Routenummer, VerkoopkopLijst."Posting Date");
                     VerkoopkopLijst.SetRange(VerkoopkopLijst.Rayon, VerkoopkopLijst2.Rayon);
                     VerkoopkopLijst.SetRange(VerkoopkopLijst.Routenummer, VerkoopkopLijst2.Routenummer);
@@ -196,9 +196,9 @@ xmlport 50002 "Import Terminal"
                     if VerkoopkopLijst.FindSet() then
                         repeat
                             AantalProvisie := AantalProvisie + 1;
-                        until VerkoopkopLijst.Next = 0;
+                        until VerkoopkopLijst.Next() = 0;
 
-                    Klantrec.Reset;
+                    Klantrec.RESET();
                     Klantrec.SetCurrentKey(Klantrec.Rayon, Klantrec.Routenummer);
                     Klantrec.SetRange(Klantrec.Rayon, VerkoopkopLijst2.Rayon);
                     Klantrec.SetRange(Klantrec.Routenummer, VerkoopkopLijst2.Routenummer);
@@ -210,9 +210,9 @@ xmlport 50002 "Import Terminal"
                                 AantalAdressenFullS := AantalAdressenFullS + 1;
                             if Klantrec."Global Dimension 1 Code" = 'SERVICE' then
                                 AantalAdressenServ := AantalAdressenServ + 1;
-                        until Klantrec.Next = 0;
+                        until Klantrec.Next() = 0;
 
-                    SalesHeaderRec.Reset;
+                    SalesHeaderRec.RESET();
                     SalesHeaderRec.SetCurrentKey(Rayon, Routenummer, "Posting Date");
                     SalesHeaderRec.SetRange(Rayon, VerkoopkopLijst2.Rayon);
                     SalesHeaderRec.SetRange(Routenummer, VerkoopkopLijst2.Routenummer);
@@ -220,25 +220,25 @@ xmlport 50002 "Import Terminal"
                     if SalesHeaderRec.FindSet() then begin
                         repeat
                             if not KlantRec2GL.Get(SalesHeaderRec."Sell-to Customer No.") then begin
-                                KlantRec2GL.Init;
+                                KlantRec2GL.INIT();
                                 KlantRec2GL."No." := SalesHeaderRec."Sell-to Customer No.";
-                                KlantRec2GL.Insert;
+                                KlantRec2GL.INSERT();
                             end else begin
                                 NoOfDoubleOrdersGL := NoOfDoubleOrdersGL + 1;
                             end;
 
-                        until SalesHeaderRec.Next = 0;
+                        until SalesHeaderRec.Next() = 0;
                     end;
 
-                    Provisie.Reset;
+                    Provisie.RESET();
                     Provisie.SetCurrentKey(Provisie.Regelnummer);
                     Provisie.SetRange(Provisie.Regelnummer);
-                    if Provisie.FindLast then
+                    if Provisie.FINDLAST() then
                         LaatsteRegel := Provisie.Regelnummer
                     else
                         LaatsteRegel := 0;
 
-                    Provisie.Init;
+                    Provisie.INIT();
                     Provisie.Regelnummer := LaatsteRegel + 1;
                     Provisie.Datum := VerkoopkopLijst2."Posting Date";
                     Provisie.Rayon := VerkoopkopLijst2.Rayon;
@@ -251,33 +251,33 @@ xmlport 50002 "Import Terminal"
                     Provisie."Aantal gescoorde orders" := AantalProvisie;
                     Provisie."Double Orders" := NoOfDoubleOrdersGL;
                     Provisie."Service Orders" := NoOfServiceOrdersGL;
-                    Provisie.Insert;
+                    Provisie.INSERT();
                 end;
-            until VerkoopkopLijst2.Next = 0;
+            until VerkoopkopLijst2.Next() = 0;
 
 
         //PDT-lijst uitprinten
-        VerkoopkopLijst.Reset;
+        VerkoopkopLijst.RESET();
         VerkoopkopLijst.SetCurrentKey(VerkoopkopLijst."PDT-lijst afgedrukt");
         VerkoopkopLijst.SetRange(VerkoopkopLijst."PDT-lijst afgedrukt", false);
-        if VerkoopkopLijst.FindFirst then
+        if VerkoopkopLijst.FINDFIRST() then
             REPORT.Run(REPORT::"PDT-List", false, true, VerkoopkopLijst); // CS1.0
 
-        if VerkoopkopLijst.FindFirst then
+        if VerkoopkopLijst.FINDFIRST() then
             repeat
                 VerkoopkopLijst."PDT-lijst afgedrukt" := true
-            until VerkoopkopLijst.Next = 0;
+            until VerkoopkopLijst.Next() = 0;
 
         // zaaknummerslijst uitdraaien
-        VKRep.Reset;
-        if VKRep.FindFirst then
+        VKRep.RESET();
+        if VKRep.FINDFIRST() then
             REPORT.Run(REPORT::"Case Number List", false, true, VKRep);  // CS1.0 wel nodig
         Message('Klaar');
     end;
 
     trigger OnPreXmlPort()
     begin
-        ImpTermRec.DeleteAll;
+        ImpTermRec.DELETEALL();
     end;
 
     var
@@ -377,31 +377,31 @@ xmlport 50002 "Import Terminal"
 
         Teken := CopyStr(RecImportTerminal.Omschrijving, 29, 1);
 
-        RecVerkKop.Reset;
-        RecVerkKop.Init;
+        RecVerkKop.RESET();
+        RecVerkKop.INIT();
         if Teken = '+' then begin
             //RecVerkKop."Document Type" := RecVerkKop."Document Type"::Invoice;
             RecVerkKop."Document Type" := RecVerkKop."Document Type"::Order;                  // CS-W-1901_006
-            RecImportTerminal2.Reset;
+            RecImportTerminal2.RESET();
             RecImportTerminal2.SetRange(Regelsoort, Text60003);
             RecImportTerminal2.SetRange(Factuurnummer, RecImportTerminal.Factuurnummer);
             if RecImportTerminal2.Find('-') then begin
                 repeat
                     RecImportTerminal2.Factuur := true;
-                    RecImportTerminal2.Modify;
-                until RecImportTerminal2.Next = 0;
+                    RecImportTerminal2.MODIFY();
+                until RecImportTerminal2.Next() = 0;
             end;
         end else begin
             //RecVerkKop."Document Type" := RecVerkKop."Document Type"::"Credit Memo";
             RecVerkKop."Document Type" := RecVerkKop."Document Type"::"Return Order";         // CS-W-1901_006
-            RecImportTerminal2.Reset;
+            RecImportTerminal2.RESET();
             RecImportTerminal2.SetRange(Regelsoort, Text60003);
             RecImportTerminal2.SetRange(Factuurnummer, RecImportTerminal.Factuurnummer);
             if RecImportTerminal2.Find('-') then begin
                 repeat
                     RecImportTerminal2.Creditnota := true;
-                    RecImportTerminal2.Modify;
-                until RecImportTerminal2.Next = 0;
+                    RecImportTerminal2.MODIFY();
+                until RecImportTerminal2.Next() = 0;
             end;
         end;
 
@@ -441,7 +441,7 @@ xmlport 50002 "Import Terminal"
         RecVerkKop."Posting No." := RecVerkKop."No.";
         // CS1.1
 
-        RecVerkKop.Insert;
+        RecVerkKop.INSERT();
     end;
 
     procedure InvoerenFactuurRegel()
@@ -455,21 +455,21 @@ xmlport 50002 "Import Terminal"
     begin
 
         if RecImportTerminal.Factuur = true then begin
-            RecVerkKop2.Reset;
+            RecVerkKop2.RESET();
             RecVerkKop2.SetCurrentKey(RecVerkKop2."Document Type", RecVerkKop2."No.");
             //RecVerkKop2.SETRANGE(RecVerkKop2."Document Type",RecVerkRegel."Document Type"::Invoice);
             RecVerkKop2.SetRange(RecVerkKop2."Document Type", RecVerkRegel."Document Type"::Order);            // CS-W-1901_006
             RecVerkKop2.SetRange(RecVerkKop2."No.", RecImportTerminal.Factuurnummer);
-            if RecVerkKop2.FindFirst then
+            if RecVerkKop2.FINDFIRST() then
                 ReleaseSalesDoc.Reopen(RecVerkKop2);
         end;
         if RecImportTerminal.Creditnota = true then begin
-            RecVerkKop2.Reset;
+            RecVerkKop2.RESET();
             RecVerkKop2.SetCurrentKey(RecVerkKop2."Document Type", RecVerkKop2."No.");
             //RecVerkKop2.SETRANGE(RecVerkKop2."Document Type",RecVerkRegel."Document Type"::"credit memo");
             RecVerkKop2.SetRange(RecVerkKop2."Document Type", RecVerkRegel."Document Type"::"Return Order");  // CS-W-1901_006
             RecVerkKop2.SetRange(RecVerkKop2."No.", RecImportTerminal.Factuurnummer);
-            if RecVerkKop2.FindFirst then
+            if RecVerkKop2.FINDFIRST() then
                 ReleaseSalesDoc.Reopen(RecVerkKop2);
         end;
 
@@ -481,8 +481,8 @@ xmlport 50002 "Import Terminal"
         Waarde2 := CopyStr(RecImportTerminal.Omschrijving, 8, 2);         // aantal
         Evaluate(VarAantal, Waarde2);
 
-        RecVerkRegel.Reset;
-        RecVerkRegel.Init;
+        RecVerkRegel.RESET();
+        RecVerkRegel.INIT();
         if RecImportTerminal.Factuur = true then
             //RecVerkRegel."Document Type" := RecVerkRegel."Document Type"::Invoice;
             RecVerkRegel."Document Type" := RecVerkRegel."Document Type"::Order;                 // CS-W-1901_006
@@ -491,7 +491,7 @@ xmlport 50002 "Import Terminal"
             RecVerkRegel."Document Type" := RecVerkRegel."Document Type"::"Return Order";        // CS-W-1901_006
 
         RecVerkRegel."Document No." := RecImportTerminal.Factuurnummer;
-        RecVerkRegel2.Reset;
+        RecVerkRegel2.RESET();
         RecVerkRegel2.SetRange("Document Type", RecVerkRegel."Document Type");
         RecVerkRegel2.SetRange("Document No.", RecVerkRegel."Document No.");
         if RecVerkRegel2.Find('+') then
@@ -499,12 +499,12 @@ xmlport 50002 "Import Terminal"
         else
             RegelNummer := 10000;
         RecVerkRegel."Line No." := RegelNummer;
-        RecVerkRegel.Insert;                                                                   // CS-W-1901_006
+        RecVerkRegel.INSERT();                                                                   // CS-W-1901_006
         RecVerkRegel.Type := RecVerkRegel.Type::Item;
         RecVerkRegel."No." := CopyStr(RecImportTerminal.Omschrijving, 3, 4);
         RecVerkRegel.Validate(RecVerkRegel."No.");
 
-        //IF RecVerkRegel."Document Type" = RecVerkRegel."Document Type"::Invoice THEN BEGIN
+        //if RecVerkRegel."Document Type" = RecVerkRegel."Document Type"::Invoice THEN BEGIN
         if RecVerkRegel."Document Type" = RecVerkRegel."Document Type"::Order then begin             // CS-W-1901_006
             if Teken = '+' then
                 RecVerkRegel.Validate(Quantity, VarAantal)                                                 // CS-W-1901_006
@@ -523,23 +523,23 @@ xmlport 50002 "Import Terminal"
 
         RecVerkRegel.Validate(RecVerkRegel."Unit Price");
         RecVerkRegel."Location Code" := CopyStr(RecImportTerminal.Factuurnummer, 1, 2);
-        RecVerkKop2.Reset;
+        RecVerkKop2.RESET();
         RecVerkKop2.SetRange("Document Type", RecVerkRegel."Document Type");
         RecVerkKop2.SetRange("No.", RecVerkRegel."Document No.");
-        if RecVerkKop2.FindFirst then
+        if RecVerkKop2.FINDFIRST() then
             RecVerkKop2."Location Code" := RecVerkRegel."Location Code";
         ReleaseSalesDoc.Reopen(RecVerkKop2);
-        RecVerkKop2.Modify;
-        RecVerkKop2.Reset;
+        RecVerkKop2.MODIFY();
+        RecVerkKop2.RESET();
 
         //RecVerkKop2.SETRANGE("Document Type",RecVerkKop2."Document Type"::"Credit Memo");
         RecVerkKop2.SetRange("Document Type", RecVerkKop2."Document Type"::"Return Order");           // CS-W-1901_006
         RecVerkKop2.SetRange(RecVerkKop2."No.", RecVerkRegel."Document No.");
-        if RecVerkKop2.FindFirst then
+        if RecVerkKop2.FINDFIRST() then
             RecVerkKop2."Location Code" := RecVerkRegel."Location Code";
-        RecVerkKop2.Modify;
-        //RecVerkRegel.INSERT;
-        RecVerkRegel.Modify;                                                                         // CS-W-1901_006
+        RecVerkKop2.MODIFY();
+        //RecVerkRegel.INSERT();
+        RecVerkRegel.MODIFY();                                                                         // CS-W-1901_006
 
         ReleaseSalesDoc.Run(RecVerkKop2);
     end;
@@ -550,9 +550,9 @@ xmlport 50002 "Import Terminal"
         OPBetalingswijze := CopyStr(RecImportTerminal.Omschrijving, 18, 1);
         OPBetalingswijze := '0' + OPBetalingswijze;
 
-        RecVerkoopfactuur.Reset;
+        RecVerkoopfactuur.RESET();
         RecVerkoopfactuur.SetRange("No.", FactuurNummerHeader);
-        if RecVerkoopfactuur.FindFirst then begin
+        if RecVerkoopfactuur.FINDFIRST() then begin
             if (RecVerkoopfactuur."Payment Method Code" <> OPBetalingswijze) then begin
                 case true of
                     (RecVerkoopfactuur."Payment Method Code" = '02') and (OPBetalingswijze = '04'):
@@ -585,9 +585,9 @@ xmlport 50002 "Import Terminal"
                 end;
             end;
             RecVerkoopfactuur."Payment Method Code" := OPBetalingswijze;
-            RecVerkoopfactuur.Modify;
+            RecVerkoopfactuur.MODIFY();
             RecImportTerminal."Openstaande factuur gevonden" := true;
-            RecImportTerminal.Modify;
+            RecImportTerminal.MODIFY();
         end;
     end;
 
@@ -596,17 +596,17 @@ xmlport 50002 "Import Terminal"
     begin
         KlantNummer := CopyStr(RecImportTerminal.Omschrijving, 12, 6);
 
-        RecKlantenPost.Reset;
+        RecKlantenPost.RESET();
         RecKlantenPost.SetCurrentKey("Document Type", "Document No.", "Customer No.");
         RecKlantenPost.SetRange("Document Type", RecKlantenPost."Document Type"::Invoice);
         RecKlantenPost.SetRange("Document No.", RecVerkoopfactuur."No.");
         RecKlantenPost.SetRange("Customer No.", KlantNummer);
-        if RecKlantenPost.FindFirst then begin
+        if RecKlantenPost.FINDFIRST() then begin
             if OPBetalingswijze = '04' then
                 RecKlantenPost."Transaction Mode Code" := Text60006
             else
                 RecKlantenPost."Transaction Mode Code" := '';
-            RecKlantenPost.Modify;
+            RecKlantenPost.MODIFY();
         end;
     end;
 
@@ -628,25 +628,25 @@ xmlport 50002 "Import Terminal"
         Teken := CopyStr(RecImportTerminal.Omschrijving, 29, 1);
 
         // Laatste regelnummer opzoeken
-        DagbRegel.Reset;
+        DagbRegel.RESET();
         DagbRegel.SetRange("Journal Template Name", Text60007);
         DagbRegel.SetRange("Journal Batch Name", Text60008);
-        if DagbRegel.FindLast then
+        if DagbRegel.FINDLAST() then
             LaatsteRegelNummer := DagbRegel."Line No." + 10000
         else
             LaatsteRegelNummer := 10000;
 
         // Dagboekregel maken
-        DagbRegel.Init;
+        DagbRegel.INIT();
         DagbRegel."Journal Template Name" := Text60007;
         DagbRegel."Journal Batch Name" := Text60008;
         DagbRegel."Line No." := LaatsteRegelNummer;
         DagbRegel."Posting Date" := RecVerkoopfactuur."Posting Date";
         DagbRegel."Document Type" := DagbRegel."Document Type"::Payment;
-        Dagboekbatch.Reset;
+        Dagboekbatch.RESET();
         Dagboekbatch.SetRange("Journal Template Name", Text60007);
         Dagboekbatch.SetRange(Name, Text60008);
-        if Dagboekbatch.FindFirst then begin
+        if Dagboekbatch.FINDFIRST() then begin
             DagbRegel."Document No." := NrReeksBeheer.GetNextNo(Dagboekbatch."Posting No. Series", DagbRegel."Posting Date", true);
         end;
         DagbRegel."Account Type" := DagbRegel."Account Type"::Customer;
@@ -655,7 +655,7 @@ xmlport 50002 "Import Terminal"
         DagbRegel."Bal. Account No." := '10005';
         DagbRegel."Currency Code" := RecVerkoopfactuur."Currency Code";
         // Te vereffenen klantenpost erbij zoeken
-        RecKlantenPost2.Reset;
+        RecKlantenPost2.RESET();
         RecKlantenPost2.SetCurrentKey("Document Type", "Document No.", "Customer No.");
         RecKlantenPost2.SetRange("Document Type", RecKlantenPost."Document Type"::Invoice);
         RecKlantenPost2.SetRange("Document No.", RecVerkoopfactuur."No.");
@@ -680,8 +680,8 @@ xmlport 50002 "Import Terminal"
             RecKlantenPost2."Applies-to ID" := DagbRegel."Document No.";
             // ATW BCO 160201
             RecKlantenPost2."Transaction Mode Code" := '';
-            RecKlantenPost2.Modify;
-            DagbRegel.Insert;
+            RecKlantenPost2.MODIFY();
+            DagbRegel.INSERT();
         end;
     end;
 
@@ -699,10 +699,10 @@ xmlport 50002 "Import Terminal"
         Evaluate(Confdate, CopyStr(RecImportTerminal.Omschrijving, 15, 2) + CopyStr(RecImportTerminal.Omschrijving, 17, 2) +
                                   CopyStr(RecImportTerminal.Omschrijving, 19, 2));
 
-        CustMessRec.Reset;
+        CustMessRec.RESET();
         if CustMessRec.Get("CustNo.", Messdate) then begin
             CustMessRec."Confirm Date" := Confdate;
-            CustMessRec.Modify;
+            CustMessRec.MODIFY();
         end;
     end;
 
@@ -736,12 +736,12 @@ xmlport 50002 "Import Terminal"
         Description := CopyStr(RecImportTerminal.Omschrijving, 38, 15);
 
         if not VisitRec.Get("Cust.No.", "Date Visited", "Time Visited") then begin
-            VisitRec.Init;
+            VisitRec.INIT();
             VisitRec."Cust. No." := "Cust.No.";
             VisitRec."Date Visited" := "Date Visited";
             VisitRec."Time Visited" := "Time Visited";
             VisitRec."Document No." := "Doc. No";
-            VisitRec.Insert;
+            VisitRec.INSERT();
         end;
 
         if ("Serial No." <> '') and (Description <> '') then begin
@@ -758,7 +758,7 @@ xmlport 50002 "Import Terminal"
                 end else begin
                     "RegelNr." := 10000;
                 end;
-                OnderhoudsRegInsRec.Init;
+                OnderhoudsRegInsRec.INIT();
                 OnderhoudsRegInsRec."Onderhoudsregistratie code" := OnderhoudRec.Code;
                 OnderhoudsRegInsRec.Klantnummer := OnderhoudRec.Klantnummer;
                 OnderhoudsRegInsRec.Regelnummer := "RegelNr.";
@@ -766,7 +766,7 @@ xmlport 50002 "Import Terminal"
                 OnderhoudsRegInsRec.Omschrijving := Description;
                 OnderhoudsRegInsRec.Gebruiker := UserId;
                 OnderhoudsRegInsRec."Omschrijving 2" := Text60014;
-                OnderhoudsRegInsRec.Insert;
+                OnderhoudsRegInsRec.INSERT();
             end;
         end;
     end;
@@ -790,12 +790,12 @@ xmlport 50002 "Import Terminal"
         Evaluate(Quantity, CopyStr(RecImportTerminal.Omschrijving, 19, 2));
 
         if not CheckStockRec.Get("Cust.No.", "Item No.", "Check Date") then begin
-            CheckStockRec.Init;
+            CheckStockRec.INIT();
             CheckStockRec."Cust. No." := "Cust.No.";
             CheckStockRec."Item No." := "Item No.";
             CheckStockRec."Check Date" := "Check Date";
             CheckStockRec."Quantity in stock" := Quantity;
-            CheckStockRec.Insert;
+            CheckStockRec.INSERT();
         end;
     end;
 }

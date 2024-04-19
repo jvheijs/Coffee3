@@ -48,7 +48,7 @@ xmlport 50001 "Export terminal"
     trigger OnPreXmlPort()
     begin
         // Bepaal voor welke terminal een exportbestand moet worden aangemaakt
-        Hulptabel50007Rec.Reset;
+        Hulptabel50007Rec.RESET();
         Hulptabel50007Rec.SetRange("Meenemen in export?", true);
         Hulptabel50007Rec.SetRange(Geexporteerd, false);
         if Hulptabel50007Rec.Find('-') then

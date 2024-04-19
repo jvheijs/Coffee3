@@ -6,7 +6,6 @@ codeunit 50004 "Development John"
 
     trigger OnRun()
     var
-        lRecBestanden: record 50016;
     begin
 
         Message('Uitgevoerd');

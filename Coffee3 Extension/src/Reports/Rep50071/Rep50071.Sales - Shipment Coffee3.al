@@ -11,7 +11,7 @@ report 50071 "Sales - Shipment Coffee3"
     {
         dataitem("Sales Shipment Header"; "Sales Shipment Header")
         {
-            DataItemTableView = SORTING("No.");
+            DataItemTableView = sorting("No.");
             RequestFilterFields = "No.", "Sell-to Customer No.", "No. Printed";
             RequestFilterHeading = 'Posted Sales Shipment';
             column(No_SalesShptHeader; "No.")
@@ -37,10 +37,10 @@ report 50071 "Sales - Shipment Coffee3"
             }
             dataitem(CopyLoop; "Integer")
             {
-                DataItemTableView = SORTING(Number);
+                DataItemTableView = sorting(Number);
                 dataitem(PageLoop; "Integer")
                 {
-                    DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
+                    DataItemTableView = sorting(Number) where(Number = const(1));
                     column(CompanyInfo2Picture; CompanyInfo2.Picture)
                     {
                     }
@@ -185,7 +185,7 @@ report 50071 "Sales - Shipment Coffee3"
                     dataitem(DimensionLoop1; "Integer")
                     {
                         DataItemLinkReference = "Sales Shipment Header";
-                        DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1 ..));
+                        DataItemTableView = sorting(Number) where(Number = filter(1 ..));
                         column(DimText; DimText)
                         {
                         }
@@ -196,11 +196,11 @@ report 50071 "Sales - Shipment Coffee3"
                         trigger OnAfterGetRecord();
                         begin
                             if Number = 1 then begin
-                                if not DimSetEntry1.FINDSET then
-                                    CurrReport.BREAK;
+                                if not DimSetEntry1.FINDSET() then
+                                    CurrReport.BREAK();
                             end else
                                 if not Continue then
-                                    CurrReport.BREAK;
+                                    CurrReport.BREAK();
 
                             CLEAR(DimText);
                             Continue := false;
@@ -218,20 +218,20 @@ report 50071 "Sales - Shipment Coffee3"
                                     Continue := true;
                                     exit;
                                 end;
-                            until DimSetEntry1.NEXT = 0;
+                            until DimSetEntry1.NEXT() = 0;
                         end;
 
                         trigger OnPreDataItem();
                         begin
                             if not ShowInternalInfo then
-                                CurrReport.BREAK;
+                                CurrReport.BREAK();
                         end;
                     }
                     dataitem("Sales Shipment Line"; "Sales Shipment Line")
                     {
-                        DataItemLink = "Document No." = FIELD("No.");
+                        DataItemLink = "Document No." = field("No.");
                         DataItemLinkReference = "Sales Shipment Header";
-                        DataItemTableView = SORTING("Document No.", "Line No.");
+                        DataItemTableView = sorting("Document No.", "Line No.");
                         column(Description_SalesShptLine; Description)
                         {
                         }
@@ -279,7 +279,7 @@ report 50071 "Sales - Shipment Coffee3"
                         }
                         dataitem(DimensionLoop2; "Integer")
                         {
-                            DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1 ..));
+                            DataItemTableView = sorting(Number) where(Number = filter(1 ..));
                             column(DimText1; DimText)
                             {
                             }
@@ -290,11 +290,11 @@ report 50071 "Sales - Shipment Coffee3"
                             trigger OnAfterGetRecord();
                             begin
                                 if Number = 1 then begin
-                                    if not DimSetEntry2.FINDSET then
-                                        CurrReport.BREAK;
+                                    if not DimSetEntry2.FINDSET() then
+                                        CurrReport.BREAK();
                                 end else
                                     if not Continue then
-                                        CurrReport.BREAK;
+                                        CurrReport.BREAK();
 
                                 CLEAR(DimText);
                                 Continue := false;
@@ -312,18 +312,18 @@ report 50071 "Sales - Shipment Coffee3"
                                         Continue := true;
                                         exit;
                                     end;
-                                until DimSetEntry2.NEXT = 0;
+                                until DimSetEntry2.NEXT() = 0;
                             end;
 
                             trigger OnPreDataItem();
                             begin
                                 if not ShowInternalInfo then
-                                    CurrReport.BREAK;
+                                    CurrReport.BREAK();
                             end;
                         }
                         dataitem(DisplayAsmInfo; "Integer")
                         {
-                            DataItemTableView = SORTING(Number);
+                            DataItemTableView = sorting(Number);
                             column(PostedAsmLineItemNo; BlanksForIndent + PostedAsmLine."No.")
                             {
                             }
@@ -358,9 +358,9 @@ report 50071 "Sales - Shipment Coffee3"
                             trigger OnPreDataItem();
                             begin
                                 if not DisplayAssemblyInformation then
-                                    CurrReport.BREAK;
+                                    CurrReport.BREAK();
                                 if not AsmHeaderExists then
-                                    CurrReport.BREAK;
+                                    CurrReport.BREAK();
 
                                 PostedAsmLine.SETRANGE("Document No.", PostedAsmHeader."No.");
                                 SETRANGE(Number, 1, PostedAsmLine.COUNT);
@@ -382,7 +382,7 @@ report 50071 "Sales - Shipment Coffee3"
 
                             LinNo := "Line No.";
                             if not ShowCorrectionLines and Correction then
-                                CurrReport.SKIP;
+                                CurrReport.SKIP();
 
                             DimSetEntry2.SETRANGE("Dimension Set ID", "Dimension Set ID");
                             if DisplayAssemblyInformation then
@@ -406,17 +406,17 @@ report 50071 "Sales - Shipment Coffee3"
                             while MoreLines and (Description = '') and ("No." = '') and (Quantity = 0) do
                                 MoreLines := NEXT(-1) <> 0;
                             if not MoreLines then
-                                CurrReport.BREAK;
+                                CurrReport.BREAK();
                             SETRANGE("Line No.", 0, "Line No.");
                         end;
                     }
                     dataitem(Total; "Integer")
                     {
-                        DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
+                        DataItemTableView = sorting(Number) where(Number = const(1));
                     }
                     dataitem(Total2; "Integer")
                     {
-                        DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
+                        DataItemTableView = sorting(Number) where(Number = const(1));
                         column(BilltoCustNo_SalesShptHeader; "Sales Shipment Header"."Bill-to Customer No.")
                         {
                         }
@@ -454,12 +454,12 @@ report 50071 "Sales - Shipment Coffee3"
                         trigger OnPreDataItem();
                         begin
                             if not ShowCustAddr then
-                                CurrReport.BREAK;
+                                CurrReport.BREAK();
                         end;
                     }
                     dataitem(ItemTrackingLine; "Integer")
                     {
-                        DataItemTableView = SORTING(Number);
+                        DataItemTableView = sorting(Number);
                         column(TrackingSpecBufferNo; TrackingSpecBuffer."Item No.")
                         {
                         }
@@ -498,7 +498,7 @@ report 50071 "Sales - Shipment Coffee3"
                         }
                         dataitem(TotalItemTracking; "Integer")
                         {
-                            DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
+                            DataItemTableView = sorting(Number) where(Number = const(1));
                             column(Quantity1; TotalQty)
                             {
                             }
@@ -512,7 +512,7 @@ report 50071 "Sales - Shipment Coffee3"
                                 TrackingSpecBuffer.NEXT;
 
                             if not ShowCorrectionLines and TrackingSpecBuffer.Correction then
-                                CurrReport.SKIP;
+                                CurrReport.SKIP();
                             if TrackingSpecBuffer.Correction then
                                 TrackingSpecBuffer."Quantity (Base)" := -TrackingSpecBuffer."Quantity (Base)";
 
@@ -535,7 +535,7 @@ report 50071 "Sales - Shipment Coffee3"
                         trigger OnPreDataItem();
                         begin
                             if TrackingSpecCount = 0 then
-                                CurrReport.BREAK;
+                                CurrReport.BREAK();
 
                             SETRANGE(Number, 1, TrackingSpecCount);
                             TrackingSpecBuffer.SETCURRENTKEY("Source ID", "Source Type", "Source Subtype", "Source Batch Name",
@@ -600,9 +600,9 @@ report 50071 "Sales - Shipment Coffee3"
                 // Signature
                 "Sales Shipment Header".CalcFields("Signature");
                 if "Sales Shipment Header"."Signature".HasValue then begin
-                    gRecCompanyInformationTmp.Init;
+                    gRecCompanyInformationTmp.INIT();
                     gRecCompanyInformationTmp.Picture := "Sales Shipment Header"."Signature";
-                    if not gRecCompanyInformationTmp.Insert then gRecCompanyInformationTmp.Modify;
+                    if not gRecCompanyInformationTmp.Insert then gRecCompanyInformationTmp.MODIFY();
                     gRecCompanyInformationTmp.CalcFields(Picture);
                 end;
             end;

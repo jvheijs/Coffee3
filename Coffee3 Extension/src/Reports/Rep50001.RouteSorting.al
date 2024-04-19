@@ -72,25 +72,25 @@ report 50001 "Route Sorting"
         maxroutenummer: Integer;
         maxrayonnummer: Integer;
     begin
-        Routes.Reset;
+        Routes.RESET();
         if rayonsort <> 0 then
             Routes.SetRange(Routes.Rayonnummer, rayonsort);
         if routesort <> 0 then
             Routes.SetRange(Routes.Routenummer, routesort);
         if Routes.FindSet() then
             repeat
-                klant.Reset;
+                klant.RESET();
                 klant.SetRange(klant."No.", Routes.Klantnummer);
-                klant.FindFirst;
+                klant.FINDFIRST();
                 Routes.Postcodesorteren := klant."Postcode bezoekadres";
                 Routes.dropcodenieuw := 0;
-                Routes.Modify;
-            until Routes.Next = 0;
+                Routes.MODIFY();
+            until Routes.Next() = 0;
 
         if rayonsort <> 0 then begin
             if routesort <> 0 then begin
                 // zowel rayon als route ingevuld
-                Routes.Reset;
+                Routes.RESET();
                 Routes.SetRange(Routes.Rayonnummer, rayonsort);
                 Routes.SetRange(Routes.Routenummer, routesort);
                 Routes.SetFilter(Routes.Dropcode, '>0');
@@ -100,11 +100,11 @@ report 50001 "Route Sorting"
                     repeat
                         dropcodenummer := dropcodenummer + 1;
                         Routes.dropcodenieuw := dropcodenummer;
-                        Routes.Modify;
-                    until Routes.Next = 0;
+                        Routes.MODIFY();
+                    until Routes.Next() = 0;
             end else begin
                 // alleen rayon ingevuld
-                Routes.Reset;
+                Routes.RESET();
                 Routes.SetRange(Routes.Rayonnummer, rayonsort);
                 Routes.SetFilter(Routes.Dropcode, '>0');
                 Routes.SetCurrentKey(Routes.Rayonnummer, Routes.Routenummer);
@@ -121,8 +121,8 @@ report 50001 "Route Sorting"
                             repeat
                                 dropcodenummer := dropcodenummer + 1;
                                 Routes.dropcodenieuw := dropcodenummer;
-                                Routes.Modify;
-                            until Routes.Next = 0;
+                                Routes.MODIFY();
+                            until Routes.Next() = 0;
                     until routenummer = maxroutenummer;
             end;
         end else begin
@@ -131,7 +131,7 @@ report 50001 "Route Sorting"
 
             end else begin
                 // geen rayon en geen route ingevuld
-                Routes.Reset;
+                Routes.RESET();
                 Routes.SetFilter(Routes.Dropcode, '>0');
                 Routes.SetCurrentKey(Routes.Rayonnummer, Routes.Routenummer);
                 Routes.Find('+');
@@ -154,8 +154,8 @@ report 50001 "Route Sorting"
                                     repeat
                                         dropcodenummer := dropcodenummer + 1;
                                         Routes.dropcodenieuw := dropcodenummer;
-                                        Routes.Modify;
-                                    until Routes.Next = 0;
+                                        Routes.MODIFY();
+                                    until Routes.Next() = 0;
                             until routenummer = maxroutenummer;
                     until rayonnummer = maxrayonnummer;
             end;
@@ -163,7 +163,7 @@ report 50001 "Route Sorting"
 
         Commit;
 
-        Routes.Reset;
+        Routes.RESET();
         Routes.SetFilter(dropcodenieuw, StrSubstNo('<>%1', '0'));
         if Routes.FindSet() then
             repeat
@@ -171,8 +171,8 @@ report 50001 "Route Sorting"
                 Routes.Validate(Routes.Dropcode);
                 Routes.wijzigen;
                 Routes.dropcodenieuw := 0;
-                Routes.Modify;
-            until Routes.Next = 0;
+                Routes.MODIFY();
+            until Routes.Next() = 0;
     end;
 
     local procedure RouteOnLookup(): Integer

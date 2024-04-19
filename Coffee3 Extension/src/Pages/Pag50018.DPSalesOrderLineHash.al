@@ -6,7 +6,7 @@ page 50018 "DP Sales Order Line#"
     LinksAllowed = false;
     PageType = ListPart;
     SourceTable = "Sales Line";
-    SourceTableView = WHERE(Quantity = FILTER(<> 0));
+    SourceTableView = where(Quantity = filter(<> 0));
     ApplicationArea = All;
 
     layout

@@ -7,7 +7,7 @@ tableextension 50012 "CS Ship-to Address" extends "Ship-to Address"
             Description = '2000-901-21';
             Caption = 'Area';
             FieldClass = FlowField;
-            CalcFormula = Lookup(Customer.Rayon WHERE("No." = FIELD("Customer No.")));
+            CalcFormula = lookup(Customer.Rayon where("No." = field("Customer No.")));
             Editable = false;
         }
         field(50006; Routenummer; Integer)
@@ -15,7 +15,7 @@ tableextension 50012 "CS Ship-to Address" extends "Ship-to Address"
             Description = '2000-901-21';
             Caption = 'Round Number';
             FieldClass = FlowField;
-            CalcFormula = Lookup(Customer.Routenummer WHERE("No." = FIELD("Customer No.")));
+            CalcFormula = lookup(Customer.Routenummer where("No." = field("Customer No.")));
             Editable = false;
         }
     }

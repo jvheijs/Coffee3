@@ -28,9 +28,10 @@ pageextension 50019 "CS Ship-to Address List" extends "Ship-to Address List"
         {
             action("Customer Card")
             {
+                Image = Process;
                 ApplicationArea = All;
                 RunObject = Page "Customer Card";
-                RunPageLink = "No." = FIELD("Customer No.");
+                RunPageLink = "No." = field("Customer No.");
             }
         }
     }

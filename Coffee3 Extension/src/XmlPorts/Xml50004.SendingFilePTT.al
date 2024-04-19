@@ -16,7 +16,7 @@ xmlport 50004 "Sending File PTT"
             {
                 MaxOccurs = Once;
                 XmlName = 'Header';
-                SourceTableView = SORTING(Number) WHERE(Number = CONST(1));
+                SourceTableView = sorting(Number) where(Number = const(1));
                 textelement(HeaderTxt)
                 {
                     MaxOccurs = Once;
@@ -95,12 +95,12 @@ xmlport 50004 "Sending File PTT"
                 trigger OnAfterGetRecord()
                 begin
                     "Rembours etiketten".PTTEtiketGeprint := true;
-                    "Rembours etiketten".Modify;
+                    "Rembours etiketten".MODIFY();
                 end;
 
                 trigger OnPreXmlItem()
                 begin
-                    RemboursetiketRec.Reset;
+                    RemboursetiketRec.RESET();
                     RemboursetiketRec.SetRange(Locatie, '40');
                     RemboursetiketRec.SetFilter(Betalingswijze, '02|03|04|05');
 
@@ -126,7 +126,7 @@ xmlport 50004 "Sending File PTT"
                                 LaatsteTekenGevonden := false;
                                 while (LaatsteTekenGevonden = false) and (Positie2 < 10) do begin
                                     LaatsteTeken := CopyStr(RemboursetiketRec."Huisnummer afleveradres", Positie2 + 1, 1);
-                                    //      IF NOT (LaatsteTeken IN ['0','1','2','3','4','5','6','7','8','9','-']) THEN
+                                    //      if NOT (LaatsteTeken IN ['0','1','2','3','4','5','6','7','8','9','-']) THEN
                                     if not (LaatsteTeken in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']) then
                                         LaatsteTekenGevonden := true
                                     else begin
@@ -147,11 +147,11 @@ xmlport 50004 "Sending File PTT"
                                 RemboursetiketRec."Straatnaam afleveradres" := AdresString;
                                 RemboursetiketRec."Huisnummer afleveradres" := '';
                             end;
-                            RemboursetiketRec.Modify;
-                        until RemboursetiketRec.Next = 0;
+                            RemboursetiketRec.MODIFY();
+                        until RemboursetiketRec.Next() = 0;
                     end;
 
-                    "Rembours etiketten".Reset;
+                    "Rembours etiketten".RESET();
                     "Rembours etiketten".SetRange(Locatie, '40');
 
                     "Rembours etiketten".SetFilter(Betalingswijze, '02|03|04|05');

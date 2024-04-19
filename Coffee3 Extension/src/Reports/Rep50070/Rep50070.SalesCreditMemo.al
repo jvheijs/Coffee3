@@ -15,7 +15,7 @@ report 50070 "Sales Credit-Memo"
     {
         dataitem("Integer"; "Integer")
         {
-            DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
+            DataItemTableView = sorting(Number) where(Number = const(1));
             column(CompanyInfo2Picture; CompanyInfo2.Picture)
             {
             }
@@ -44,7 +44,7 @@ report 50070 "Sales Credit-Memo"
         }
         dataitem("Sales Cr.Memo Header"; "Sales Cr.Memo Header")
         {
-            DataItemTableView = SORTING("No.");
+            DataItemTableView = sorting("No.");
             RequestFilterFields = "Sell-to Customer No.", "No.";
             RequestFilterHeading = 'Posted Sales Invoice';
             column(No_ServInvHdr; "No.")
@@ -127,10 +127,10 @@ report 50070 "Sales Credit-Memo"
             }
             dataitem(CopyLoop; "Integer")
             {
-                DataItemTableView = SORTING(Number);
+                DataItemTableView = sorting(Number);
                 dataitem(PageLoop; "Integer")
                 {
-                    DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
+                    DataItemTableView = sorting(Number) where(Number = const(1));
                     column(HomePage; CompanyInfo."Home Page")
                     {
                     }
@@ -268,9 +268,9 @@ report 50070 "Sales Credit-Memo"
                     }
                     dataitem("Sales Cr.Memo Line"; "Sales Cr.Memo Line")
                     {
-                        DataItemLink = "Document No." = FIELD("No.");
+                        DataItemLink = "Document No." = field("No.");
                         DataItemLinkReference = "Sales Cr.Memo Header";
-                        DataItemTableView = SORTING("Document No.", "Line No.");
+                        DataItemTableView = sorting("Document No.", "Line No.");
                         column(LineAmt_ServInvLine; "Line Amount")
                         {
                             AutoFormatExpression = GetCurrencyCode;
@@ -399,7 +399,7 @@ report 50070 "Sales Credit-Memo"
                             if (Type = Type::"G/L Account") and (not ShowInternalInfo) then
                                 "No." := '';
 
-                            VATAmountLine.Init;
+                            VATAmountLine.INIT();
                             VATAmountLine."VAT Identifier" := "VAT Identifier";
                             VATAmountLine."VAT Calculation Type" := "VAT Calculation Type";
                             VATAmountLine."Tax Group Code" := "Tax Group Code";
@@ -424,21 +424,21 @@ report 50070 "Sales Credit-Memo"
 
                         trigger OnPreDataItem()
                         begin
-                            VATAmountLine.DeleteAll;
-                            SalesShipmentBuffer.Reset;
-                            SalesShipmentBuffer.DeleteAll;
+                            VATAmountLine.DELETEALL();
+                            SalesShipmentBuffer.RESET();
+                            SalesShipmentBuffer.DELETEALL();
                             FirstValueEntryNo := 0;
                             MoreLines := Find('+');
                             while MoreLines and (Description = '') and ("No." = '') and (Quantity = 0) and (Amount = 0) do
                                 MoreLines := Next(-1) <> 0;
                             if not MoreLines then
-                                CurrReport.Break;
+                                CurrReport.Break();
                             SetRange("Line No.", 0, "Line No.");
                         end;
                     }
                     dataitem(VATCounter; "Integer")
                     {
-                        DataItemTableView = SORTING(Number);
+                        DataItemTableView = sorting(Number);
                         column(VATAmtLineVATBase; VATAmountLine."VAT Base")
                         {
                             AutoFormatExpression = "Sales Cr.Memo Header"."Currency Code";
@@ -493,7 +493,7 @@ report 50070 "Sales Credit-Memo"
                     }
                     dataitem(VATClauseEntryCounter; "Integer")
                     {
-                        DataItemTableView = SORTING(Number);
+                        DataItemTableView = sorting(Number);
                         column(VATClauseVATIdentifier; VATAmountLine."VAT Identifier")
                         {
                         }
@@ -525,7 +525,7 @@ report 50070 "Sales Credit-Memo"
                         begin
                             VATAmountLine.GetLine(Number);
                             if not VATClause.Get(VATAmountLine."VAT Clause Code") then
-                                CurrReport.Skip;
+                                CurrReport.Skip();
                             VATClause.TranslateDescription("Sales Cr.Memo Header"."Language Code");
                         end;
 
@@ -537,7 +537,7 @@ report 50070 "Sales Credit-Memo"
                     }
                     dataitem(VatCounterLCY; "Integer")
                     {
-                        DataItemTableView = SORTING(Number);
+                        DataItemTableView = sorting(Number);
                         column(VALSpecLCYHeader; VALSpecLCYHeader)
                         {
                         }
@@ -578,7 +578,7 @@ report 50070 "Sales Credit-Memo"
                             if (not GLSetup."Print VAT specification in LCY") or
                                ("Sales Cr.Memo Header"."Currency Code" = '')
                             then
-                                CurrReport.Break;
+                                CurrReport.Break();
 
                             SetRange(Number, 1, VATAmountLine.Count);
 
@@ -594,7 +594,7 @@ report 50070 "Sales Credit-Memo"
                     }
                     dataitem(Total; "Integer")
                     {
-                        DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
+                        DataItemTableView = sorting(Number) where(Number = const(1));
                         column(SelltoCustNo_ServInvHdr; "Sales Cr.Memo Header"."Ship-to Code")
                         {
                         }
@@ -626,7 +626,7 @@ report 50070 "Sales Credit-Memo"
                         trigger OnPreDataItem()
                         begin
                             if not ShowShippingAddr then
-                                CurrReport.Break;
+                                CurrReport.Break();
                         end;
                     }
                 }
@@ -680,7 +680,7 @@ report 50070 "Sales Credit-Memo"
                 DimSetEntry1.SetRange("Dimension Set ID", "Dimension Set ID");
 
                 if "Salesperson Code" = '' then begin
-                    SalesPurchPerson.Init;
+                    SalesPurchPerson.INIT();
                     SalesPersonText := '';
                 end else begin
                     SalesPurchPerson.Get("Salesperson Code");
@@ -798,9 +798,9 @@ report 50070 "Sales Credit-Memo"
 
     trigger OnInitReport()
     begin
-        GLSetup.Get;
-        CompanyInfo.Get;
-        SalesSetup.Get;
+        GLSetup.Get();
+        CompanyInfo.Get();
+        SalesSetup.Get();
         CompanyInfo.VerifyAndSetPaymentInfo;
         FormatDocument.SetLogoPosition(SalesSetup."Logo Position on Documents", CompanyInfo1, CompanyInfo2, CompanyInfo3);
     end;
@@ -947,7 +947,7 @@ report 50070 "Sales Credit-Memo"
         if SalesInvoiceLine.Find('-') then
             repeat
                 SalesShipmentLine.Quantity := SalesShipmentLine.Quantity - SalesInvoiceLine.Quantity;
-            until SalesInvoiceLine.Next = 0;
+            until SalesInvoiceLine.Next() = 0;
     end;
 
 
@@ -958,7 +958,7 @@ report 50070 "Sales Credit-Memo"
         SalesShipmentBuffer.SetRange("Posting Date", PostingDate);
         if SalesShipmentBuffer.Find('-') then begin
             SalesShipmentBuffer.Quantity := SalesShipmentBuffer.Quantity + QtyOnShipment;
-            SalesShipmentBuffer.Modify;
+            SalesShipmentBuffer.MODIFY();
             exit;
         end;
 
@@ -969,7 +969,7 @@ report 50070 "Sales Credit-Memo"
         SalesShipmentBuffer."No." := SalesInvoiceLine."No.";
         SalesShipmentBuffer.Quantity := QtyOnShipment;
         SalesShipmentBuffer."Posting Date" := PostingDate;
-        SalesShipmentBuffer.Insert;
+        SalesShipmentBuffer.INSERT();
         NextEntryNo := NextEntryNo + 1
     end;
 

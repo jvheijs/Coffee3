@@ -51,7 +51,7 @@ tableextension 50005 "CS Sales Header" extends "Sales Header"
             Description = 'CS1.0';
             FieldClass = FlowField;
             Editable = false;
-            CalcFormula = Lookup(Customer."Document Sending Profile" WHERE("No." = FIELD("Sell-to Customer No.")));
+            CalcFormula = lookup(Customer."Document Sending Profile" where("No." = field("Sell-to Customer No.")));
         }
         field(50021; SalesPersonOrder; Boolean)
         {

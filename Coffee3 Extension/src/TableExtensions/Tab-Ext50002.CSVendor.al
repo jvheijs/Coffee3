@@ -19,7 +19,7 @@ tableextension 50002 "CS Vendor" extends Vendor
             var
                 myInt: Integer;
             begin
-                IF NOT CONFIRM(PartnerTypeMismatchMsg, FALSE) THEN
+                if not CONFIRM(PartnerTypeMismatchMsg, false) then
                     ERROR('')
             end;
         }

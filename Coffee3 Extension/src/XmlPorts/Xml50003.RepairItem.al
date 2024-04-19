@@ -36,25 +36,25 @@ xmlport 50003 "Repair Item"
                         'Apparaten':
                             begin
                                 ItemRec."Type artikel" := ItemRec."Type artikel"::Apparaten;
-                                ItemRec.Modify;
+                                ItemRec.MODIFY();
                             end;
                         'Handelsgoederen':
                             begin
                                 ItemRec."Type artikel" := ItemRec."Type artikel"::Handelsgoederen;
-                                ItemRec.Modify;
+                                ItemRec.MODIFY();
                             end;
                         'Service-onderdelen':
                             begin
                                 ItemRec."Type artikel" := ItemRec."Type artikel"::"Service-onderdelen";
-                                ItemRec.Modify;
+                                ItemRec.MODIFY();
                             end;
                         'Controle artikel':
                             begin
                                 ItemRec."Type artikel" := ItemRec."Type artikel"::"Controle artikel";
-                                ItemRec.Modify;
+                                ItemRec.MODIFY();
                             end;
                     end;
-                    ItemRec.Modify;
+                    ItemRec.MODIFY();
                 end;
             }
 

@@ -14,6 +14,7 @@
     "privacyStatement":  "",
     "help":  "",
     "target":  "Cloud",
+
     "screenshots":  [
 
                     ],
@@ -36,7 +37,9 @@
                      "GenerateCaptions"
                  ],
     "resourceExposurePolicy":  {
-                                   "allowDebugging":  true
+                                   "allowDebugging":  true, 
+                                   "allowDownloadingSource": true, 
+                                   "includeSourceInSymbolFile": true
                                },
     "internalsVisibleTo":  [
 

@@ -4,7 +4,7 @@ page 50011 "DP Sales Order"
     PageType = Document;
     RefreshOnActivate = true;
     SourceTable = "Sales Header";
-    SourceTableView = WHERE("Document Type" = FILTER(Order));
+    SourceTableView = where("Document Type" = filter(Order));
     ApplicationArea = all;
 
     layout
@@ -109,8 +109,8 @@ page 50011 "DP Sales Order"
             {
                 ApplicationArea = all;
                 Caption = 'Lines';
-                SubPageLink = "Document Type" = FIELD("Document Type"),
-                              "Document No." = FIELD("No.");
+                SubPageLink = "Document Type" = field("Document Type"),
+                              "Document No." = field("No.");
                 UpdatePropagation = Both;
             }
 
@@ -154,9 +154,9 @@ page 50011 "DP Sales Order"
                     begin
 
                         lRecCustStock.SetFilter("Cust. No.", Rec."Sell-to Customer No.");
-                        if not lRecCustStock.FindLast then exit;
+                        if not lRecCustStock.FINDLAST() then exit;
                         lRecCustStock.SetFilter("Check Date", Format(lRecCustStock."Check Date"));
-                        lRecCustStock.FindFirst;
+                        lRecCustStock.FINDFIRST();
                         repeat
                             lRecSalesLine.Validate("Document Type", lRecSalesLine."Document Type"::Order);
                             lRecSalesLine.Validate("Document No.", Rec."No.");
@@ -165,8 +165,8 @@ page 50011 "DP Sales Order"
                             lRecSalesLine.Validate("Sell-to Customer No.", Rec."Sell-to Customer No.");
                             lRecSalesLine.Validate(Type, lRecSalesLine.Type::Item);
                             lRecSalesLine.Validate("No.", lRecCustStock."Item No.");
-                            lRecSalesLine.Insert;
-                        until lRecCustStock.Next = 0;
+                            lRecSalesLine.INSERT();
+                        until lRecCustStock.Next() = 0;
                     end;
                 }
                 action(Post2)
@@ -191,8 +191,8 @@ page 50011 "DP Sales Order"
                     begin
 
                         /*
-                        IF "Payment Method Code" <> '01' THEN
-                          IF CONFIRM('Contante betaling ?',FALSE) THEN BEGIN
+                        if "Payment Method Code" <> '01' THEN
+                          if CONFIRM('Contante betaling ?',FALSE) THEN BEGIN
                             "Payment Method Code" := '01';
                             "Payment Terms Code" := '01';
                           END;
@@ -203,20 +203,20 @@ page 50011 "DP Sales Order"
                         lRecSalesLine.SetRange("Document Type", Rec."Document Type");
                         lRecSalesLine.SetFilter("Document No.", Rec."No.");
                         lRecSalesLine.SetFilter(Type, '>0');
-                        lRecSalesLine.FindFirst;
+                        lRecSalesLine.FINDFIRST();
                         repeat
                             if (lRecSalesLine.Quantity = 0) and not lRecSalesLine."Store stock" then
-                                lRecSalesLine.Delete;
-                        until lRecSalesLine.Next = 0;
+                                lRecSalesLine.DELETE();
+                        until lRecSalesLine.Next() = 0;
 
                         // lRecSalesLine.SETRANGE(Quantity,0);
-                        // lRecSalesLine.DELETEALL;
+                        // lRecSalesLine.DELETEALL();
                         Rec.InPosting := false;
                         Commit;
 
                         lRecSalesHeader.SetRange("Document Type", lRecSalesHeader."Document Type"::Order);
                         lRecSalesHeader.SetFilter("No.", Rec."No.");
-                        lRecSalesHeader.FindFirst;
+                        lRecSalesHeader.FINDFIRST();
                         lPgeDPSalesOrder.SETTABLEVIEW(lRecSalesHeader);
                         lPgeDPSalesOrder.RUNMODAL;
 
@@ -225,23 +225,23 @@ page 50011 "DP Sales Order"
                         Commit;
                         lRecSalesHeader.SetRange("Document Type", lRecSalesHeader."Document Type"::Order);
                         lRecSalesHeader.SetFilter("No.", Rec."No.");
-                        lRecSalesHeader.FindFirst;
+                        lRecSalesHeader.FINDFIRST();
                         Rec.SetRange("Document Type", lRecSalesHeader."Document Type"::Order);
                         Rec.SetFilter("No.", Rec."No.");
-                        Rec.FindFirst;
+                        Rec.FINDFIRST();
 
                         if Rec.InPosting then begin
-                            // IF "Payment Method Code" <> '01' THEN
+                            // if "Payment Method Code" <> '01' THEN
                             if Confirm('Contante betaling ?', false) then begin
                                 Rec.Validate("Payment Method Code", '01');
                                 Rec.Validate("Payment Terms Code", '01');
-                                Rec.Modify;
+                                Rec.MODIFY();
                             end;
 
                             if lRecCustomer.Get(lRecSalesHeader."Bill-to Customer No.") then begin
                                 if lRecCustomer."E-Mail" = '' then begin
                                     lRecCustomer."E-Mail" := 'Marc.vanOudheusden@coffee3.nl';
-                                    lRecCustomer.Modify;
+                                    lRecCustomer.MODIFY();
                                     Commit;
                                 end;
                             end;
@@ -253,7 +253,7 @@ page 50011 "DP Sales Order"
 
                         /*
                         lRecSalesInvoiceHeader.SETFILTER("No.",lRecSalesHeader."No.");
-                        IF lRecSalesInvoiceHeader.FINDFIRST THEN BEGIN
+                        if lRecSalesInvoiceHeader.FINDFIRST() THEN BEGIN
                           lRecSalesInvoiceHeader.EmailRecords(FALSE);
                         END;
                         */
@@ -300,8 +300,8 @@ page 50011 "DP Sales Order"
                 Image = ServiceItem;
                 ApplicationArea = all;
                 RunObject = Page "Service Items";
-                RunPageLink = "Customer No." = FIELD("Sell-to Customer No.");
-                RunPageView = SORTING("Customer No.", "Ship-to Code", "Item No.", "Serial No.");
+                RunPageLink = "Customer No." = field("Sell-to Customer No.");
+                RunPageView = sorting("Customer No.", "Ship-to Code", "Item No.", "Serial No.");
             }
         }
     }
@@ -329,7 +329,7 @@ page 50011 "DP Sales Order"
         DocumentIsPosted := not SalesHeader.Get(Rec."Document Type", Rec."No.");
 
         if Rec."Job Queue Status" = Rec."Job Queue Status"::"Scheduled for Posting" then
-            CurrPage.Close;
+            CurrPage.CLOSE();
         CurrPage.Update(false);
 
         if PostingCodeunitID <> CODEUNIT::"Sales-Post (Yes/No)" then
@@ -338,11 +338,11 @@ page 50011 "DP Sales Order"
         /*
         CASE Navigate OF
           NavigateAfterPost::"Posted Document":
-            IF InstructionMgt.IsEnabled(InstructionMgt.ShowPostedConfirmationMessageCode) THEN
+            if InstructionMgt.IsEnabled(InstructionMgt.ShowPostedConfirmationMessageCode) THEN
               ShowPostedConfirmationMessage;
           NavigateAfterPost::"New Document":
-            IF DocumentIsPosted THEN BEGIN
-              SalesHeader.INIT;
+            if DocumentIsPosted THEN BEGIN
+              SalesHeader.INIT();
               SalesHeader.VALIDATE("Document Type",SalesHeader."Document Type"::Order);
               SalesHeader.INSERT(TRUE);
               PAGE.RUN(PAGE::"Sales Order",SalesHeader);
@@ -359,7 +359,7 @@ page 50011 "DP Sales Order"
     begin
         SalesInvoiceHeader.SetCurrentKey("Pre-Assigned No.");
         SalesInvoiceHeader.SetRange("Pre-Assigned No.", PreAssignedNo);
-        if SalesInvoiceHeader.FindFirst then
+        if SalesInvoiceHeader.FINDFIRST() then
             if InstructionMgt.ShowConfirm(OpenPostedSalesInvQst, InstructionMgt.ShowPostedConfirmationMessageCode) then
                 PAGE.Run(PAGE::"Posted Sales Invoice", SalesInvoiceHeader);
     end;

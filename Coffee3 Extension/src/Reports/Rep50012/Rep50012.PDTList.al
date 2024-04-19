@@ -14,7 +14,7 @@ report 50012 "PDT-List"
     {
         dataitem("Sales Header"; "Sales Header")
         {
-            DataItemTableView = SORTING("Document Type", Rayon, "No.") WHERE("Document Type" = FILTER(Order | "Return Order"));
+            DataItemTableView = sorting("Document Type", Rayon, "No.") where("Document Type" = filter(Order | "Return Order"));
             RequestFilterFields = Rayon;
             column(Report_Title; GtxtReportTitle)
             {
@@ -87,8 +87,8 @@ report 50012 "PDT-List"
             }
             dataitem("Sales Line"; "Sales Line")
             {
-                DataItemLink = "Document Type" = FIELD("Document Type"), "Document No." = FIELD("No.");
-                DataItemTableView = SORTING("Document Type", "Document No.", "Line No.");
+                DataItemLink = "Document Type" = field("Document Type"), "Document No." = field("No.");
+                DataItemTableView = sorting("Document Type", "Document No.", "Line No.");
                 column(SL_No; "No.")
                 {
                 }
@@ -148,12 +148,12 @@ report 50012 "PDT-List"
 
     trigger OnPostReport()
     begin
-        if not gBooTest and gTmpSalesRec.FindSet then begin
+        if not gBooTest and gTmpSalesRec.FINDSET() then begin
             repeat
                 "Sales Header".Get(gTmpSalesRec."Document Type", gTmpSalesRec."No.");
                 "Sales Header"."PDT-lijst afgedrukt" := true;
-                "Sales Header".Modify;
-            until gTmpSalesRec.Next = 0;
+                "Sales Header".MODIFY();
+            until gTmpSalesRec.Next() = 0;
         end;
     end;
 

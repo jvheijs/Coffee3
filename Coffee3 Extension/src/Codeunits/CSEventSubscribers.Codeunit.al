@@ -1,11 +1,11 @@
-codeunit 50003 "CS Event Subscribers"
+codeunit 50003 "CSEventSubscribers"
 {
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Format Address", 'OnBeforeServiceCrMemoShipTo', '', false, false)]
     local procedure OnBeforeServiceCrMemoShipTo(var AddrArray: array[8] of Text[100]; CustAddr: array[8] of Text[100]; var ServiceCrMemoHeader: Record "Service Cr.Memo Header"; var IsHandled: Boolean; var Result: Boolean);
     var
         ShipToAddr: Record "Ship-to Address";
     begin
-        if ServiceCrMemoHeader."Ship-to Code" <> '' then begin
+        if ServiceCrMemoHeader."Ship-to Code" <> '' then
             if ShipToAddr.Get(ServiceCrMemoHeader."Customer No.", ServiceCrMemoHeader."Ship-to Code") then begin
                 ServiceCrMemoHeader."Ship-to Name" := ShipToAddr.Name;
                 ServiceCrMemoHeader."Ship-to Name 2" := ShipToAddr."Name 2";
@@ -20,7 +20,6 @@ codeunit 50003 "CS Event Subscribers"
                 ServiceCrMemoHeader."Ship-to Fax No." := ShipToAddr."Fax No.";
                 ServiceCrMemoHeader."Ship-to E-Mail" := ShipToAddr."E-Mail";
             end;
-        end;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Format Address", 'OnBeforeSalesCrMemoShipTo', '', false, false)]
@@ -28,7 +27,7 @@ codeunit 50003 "CS Event Subscribers"
     var
         ShipToAddr: Record "Ship-to Address";
     begin
-        if SalesCrMemoHeader."Ship-to Code" <> '' then begin
+        if SalesCrMemoHeader."Ship-to Code" <> '' then
             if ShipToAddr.Get(SalesCrMemoHeader."Sell-to Customer No.", SalesCrMemoHeader."Ship-to Code") then begin
                 SalesCrMemoHeader."Ship-to Name" := ShipToAddr.Name;
                 SalesCrMemoHeader."Ship-to Name 2" := ShipToAddr."Name 2";
@@ -40,7 +39,6 @@ codeunit 50003 "CS Event Subscribers"
                 SalesCrMemoHeader."Ship-to County" := ShipToAddr.County;
                 SalesCrMemoHeader."Ship-to Contact" := ShipToAddr.Contact;
             end;
-        end;
     end;
 
 
@@ -53,20 +51,19 @@ codeunit 50003 "CS Event Subscribers"
     [EventSubscriber(ObjectType::Table, 36, 'OnAfterOnInsert', '', false, false)]
     local procedure CS_SalesHeader_OnAfterOnInsert(var SalesHeader: Record "Sales Header")
     begin
-        IF SalesHeader."Document Type" IN [SalesHeader."Document Type"::Invoice, SalesHeader."Document Type"::"Credit Memo"] THEN
+        if SalesHeader."Document Type" in [SalesHeader."Document Type"::Invoice, SalesHeader."Document Type"::"Credit Memo"] then
             SalesHeader."Posting No." := SalesHeader."No.";
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post (Yes/No)", 'OnBeforeConfirmSalesPost', '', false, false)]
     local procedure OnBeforeConfirmSalesPost(var SalesHeader: Record "Sales Header"; var HideDialog: Boolean; var IsHandled: Boolean; var DefaultOption: Integer; var PostAndSend: Boolean);
     begin
-        if SalesHeader."Document Type" = SalesHeader."Document Type"::Order then begin
-            IF SalesHeader."Combine Shipments" THEN BEGIN
-                SalesHeader.Ship := TRUE;
-                SalesHeader.Invoice := FALSE;
+        if SalesHeader."Document Type" = SalesHeader."Document Type"::Order then
+            if SalesHeader."Combine Shipments" then begin
+                SalesHeader.Ship := true;
+                SalesHeader.Invoice := false;
                 HideDialog := true;
             end;
-        end;
     end;
 
     [EventSubscriber(ObjectType::Table, 36, 'OnAfterValidateEvent', 'Sell-to Customer No.', false, false)]
@@ -76,50 +73,48 @@ codeunit 50003 "CS Event Subscribers"
         lRecUserSetup: Record "User Setup";
         Cust: Record Customer;
     begin
-        IF NOT Rec.imported AND NOT Rec.SalesPersonOrder and not Rec."Combine Shipments" THEN BEGIN
-            IF CONFIRM(Text50005) THEN BEGIN
-                Rec.Afhalen := TRUE;
-            END ELSE BEGIN
-                Rec.Afhalen := FALSE;
+        if not Rec.imported and not Rec.SalesPersonOrder and not Rec."Combine Shipments" then
+            if CONFIRM(Text50005) then
+                Rec.Afhalen := true
+            else begin
+                Rec.Afhalen := false;
                 Cust.GET(Rec."Sell-to Customer No.");
-                IF (Cust."Payment Method Code" = '01') THEN
-                    IF CONFIRM(Text50006) THEN BEGIN
+                if (Cust."Payment Method Code" = '01') then
+                    if CONFIRM(Text50006) then begin
                         Rec.VALIDATE("Payment Method Code", '05');
                         Rec.VALIDATE("Payment Terms Code", '05');
-                    END ELSE
+                    end else
                         Rec.VALIDATE("Payment Method Code", Cust."Payment Method Code");
-            END;
-        END;
+            end;
 
-        IF lRecUserSetup.GET(UserId) THEN
-            IF (lRecUserSetup."Rayon (in verkoopfactuur)" <> 0) THEN BEGIN
+        if lRecUserSetup.GET(UserId) then
+            if (lRecUserSetup."Rayon (in verkoopfactuur)" <> 0) then begin
                 Rec.Rayon := lRecUserSetup."Rayon (in verkoopfactuur)";
                 Rec.Routenummer := 0;
-            END;
+            end;
 
-        IF ShipToRecL.GET(Rec."Sell-to Customer No.", 'BEZOEK') THEN
+        if ShipToRecL.GET(Rec."Sell-to Customer No.", 'BEZOEK') then
             Rec.VALIDATE("Ship-to Code", 'BEZOEK');
     end;
 
     [EventSubscriber(ObjectType::Table, 36, 'OnAfterValidateEvent', 'No.', false, false)]
     local procedure CS_SalesHeader_OnAfterValidate_No(var Rec: Record "Sales Header"; var xRec: Record "Sales Header"; CurrFieldNo: Integer)
     begin
-        IF Rec.SalesPersonOrder AND (Rec."Document Type" = Rec."Document Type"::Order) THEN BEGIN
+        if Rec.SalesPersonOrder and (Rec."Document Type" = Rec."Document Type"::Order) then begin
             Rec.VALIDATE("No. Series", 'VFRAYON2');
             Rec.VALIDATE("Posting No. Series", 'VFRAYON2');
             Rec."Posting No." := Rec."No.";
-        END;
+        end;
     end;
 
     [EventSubscriber(ObjectType::Table, 36, 'OnAfterValidateEvent', 'Location Code', false, false)]
     local procedure CS_SalesHeader_OnAfterValidate_LocationCode(var Rec: Record "Sales Header"; var xRec: Record "Sales Header"; CurrFieldNo: Integer)
     begin
-        IF Rec."Document Type" IN [Rec."Document Type"::Order, Rec."Document Type"::"Return Order"] THEN BEGIN
-            IF (Rec."Location Code" = '40') THEN
+        if Rec."Document Type" in [Rec."Document Type"::Order, Rec."Document Type"::"Return Order"] then
+            if (Rec."Location Code" = '40') then
                 Rec."Posting No." := ''
-            ELSE
+            else
                 Rec."Posting No." := Rec."No.";
-        END;
     end;
 
     [EventSubscriber(ObjectType::Table, 36, 'OnAfterInitRecord', '', false, false)]
@@ -142,8 +137,8 @@ codeunit 50003 "CS Event Subscribers"
     begin
         Rec.GetSalesHeader(SalesHeader, Currency);
 
-        IF SalesHeader.SalesPersonOrder AND
-           (Rec."Document Type" = Rec."Document Type"::Order) THEN BEGIN
+        if SalesHeader.SalesPersonOrder and
+           (Rec."Document Type" = Rec."Document Type"::Order) then begin
             // Laatste bestelling
             lRecSalesInvoiceLine.SETCURRENTKEY("Sell-to Customer No.", "Shipment Date");
             lRecSalesInvoiceLine.SETRANGE("Sell-to Customer No.", SalesHeader."Sell-to Customer No.");
@@ -163,35 +158,35 @@ codeunit 50003 "CS Event Subscribers"
             Rec."DateStock-1" := 0D;
             Rec."DateStock-2" := 0D;
 
-            IF lRecSalesInvoiceLine.FINDLAST THEN BEGIN
+            if lRecSalesInvoiceLine.FINDLAST() then begin
                 Rec.LastOrder := lRecSalesInvoiceLine.Quantity;
                 Rec.DateLastOrder := lRecSalesInvoiceLine."Shipment Date";
-                IF lRecSalesInvoiceLine.NEXT(-1) <> 0 THEN BEGIN
+                if lRecSalesInvoiceLine.NEXT(-1) <> 0 then begin
                     Rec."LastOrder-1" := lRecSalesInvoiceLine.Quantity;
                     Rec."DateLastOrder-1" := lRecSalesInvoiceLine."Shipment Date";
-                END;
-                IF lRecSalesInvoiceLine.NEXT(-1) <> 0 THEN BEGIN
+                end;
+                if lRecSalesInvoiceLine.NEXT(-1) <> 0 then begin
                     Rec."LastOrder-2" := lRecSalesInvoiceLine.Quantity;
                     Rec."DateLastOrder-2" := lRecSalesInvoiceLine."Shipment Date";
-                END;
-            END;
+                end;
+            end;
 
             lRecCustStock.SETFILTER("Cust. No.", rec."Sell-to Customer No.");
             lRecCustStock.SETFILTER("Item No.", rec."No.");
-            IF lRecCustStock.FINDLAST THEN BEGIN
+            if lRecCustStock.FINDLAST() then begin
                 rec."Stock-0" := lRecCustStock."Quantity in stock";
                 rec."DateStock-0" := lRecCustStock."Check Date";
-            END;
-            IF lRecCustStock.NEXT(-1) <> 0 THEN BEGIN
+            end;
+            if lRecCustStock.NEXT(-1) <> 0 then begin
                 rec."Stock-1" := lRecCustStock."Quantity in stock";
                 rec."DateStock-1" := lRecCustStock."Check Date";
-            END;
-            IF lRecCustStock.NEXT(-1) <> 0 THEN BEGIN
+            end;
+            if lRecCustStock.NEXT(-1) <> 0 then begin
                 rec."Stock-2" := lRecCustStock."Quantity in stock";
                 rec."DateStock-2" := lRecCustStock."Check Date";
-            END;
+            end;
 
-        END;
+        end;
         Rec."Line Discount %" := gCduCondor.gFncSalesLineDiscount(Rec);
     end;
 
@@ -199,7 +194,7 @@ codeunit 50003 "CS Event Subscribers"
     local procedure CS_SalesLine_OnBeforeValidateShipmentDate(sender: Record "Sales Line"; var IsHandled: Boolean)
     begin
         sender.GetSalesHeader(SalesHeader, Currency);
-        IF SalesHeader."Tijd terminal" <> 0T THEN
+        if SalesHeader."Tijd terminal" <> 0T then
             sender.SetHasBeenShown();
     end;
 
@@ -214,7 +209,7 @@ codeunit 50003 "CS Event Subscribers"
     var
         ShipToRecL: Record "Ship-to Address";
     begin
-        IF ShipToRecL.GET(Rec."Customer No.", 'BEZOEK') THEN
+        if ShipToRecL.GET(Rec."Customer No.", 'BEZOEK') then
             Rec.VALIDATE("Ship-to Code", ShipToRecL.Code);
     end;
 
@@ -231,10 +226,10 @@ codeunit 50003 "CS Event Subscribers"
         CustomerRec: Record Customer;
     begin
         //  Remboursbestand vullen
-        IF SalesHeader."Document Type" IN [SalesHeader."Document Type"::Invoice, SalesHeader."Document Type"::Order] THEN BEGIN
-            IF (SalesHeader."Payment Method Code" IN ['05']) THEN BEGIN
-                IF (SalesHeader.Afhalen = FALSE) THEN BEGIN
-                    RemboursRec.INIT;
+        if SalesHeader."Document Type" in [SalesHeader."Document Type"::Invoice, SalesHeader."Document Type"::Order] then begin
+            if (SalesHeader."Payment Method Code" in ['05']) then begin
+                if (SalesHeader.Afhalen = false) then begin
+                    RemboursRec.INIT();
                     if SalesInvHdrNo <> '' then
                         RemboursRec.Code := SalesInvHdrNo
                     else
@@ -248,13 +243,13 @@ codeunit 50003 "CS Event Subscribers"
                     CustLedgerEntry.CALCFIELDS(CustLedgerEntry."Amount (LCY)");
                     RemboursRec.Bedrag := CustLedgerEntry."Amount (LCY)";
                     RemboursRec.Bankrekeningnr := SalesHeader."Bank Account Code";
-                    RemboursRec.Afgedrukt := FALSE;
+                    RemboursRec.Afgedrukt := false;
                     RemboursRec.Aflevernaam := SalesHeader."Ship-to Name";
                     RemboursRec."Afl.contactpersoon" := SalesHeader."Ship-to Contact";
                     RemboursRec.Afleverland := SalesHeader."Bill-to Country/Region Code";
-                    IF RemboursRec.Afleverland = '' THEN RemboursRec.Afleverland := 'NL';
+                    if RemboursRec.Afleverland = '' then RemboursRec.Afleverland := 'NL';
                     RemboursRec."Aantal colli" := SalesHeader."Aantal colli";
-                    RemboursRec.PTTEtiketGeprint := FALSE;
+                    RemboursRec.PTTEtiketGeprint := false;
                     RemboursRec.Locatie := SalesHeader."Location Code";
                     RemboursRec.Betalingswijze := SalesHeader."Payment Method Code";
                     RemboursRec.Leveringswijze := '2';
@@ -264,13 +259,13 @@ codeunit 50003 "CS Event Subscribers"
                         else
                             RemboursRec.Email := '';
                     end;
-                    RemboursRec.INSERT;
-                END;
-            END;
-            IF (SalesHeader."Payment Method Code" IN ['02', '03', '04']) AND
-                (SalesHeader."Location Code" = '40') AND (SalesHeader.Afhalen = FALSE)
-            THEN BEGIN
-                RemboursRec.INIT;
+                    RemboursRec.INSERT();
+                end;
+            end;
+            if (SalesHeader."Payment Method Code" in ['02', '03', '04']) and
+                (SalesHeader."Location Code" = '40') and (SalesHeader.Afhalen = false)
+            then begin
+                RemboursRec.INIT();
                 if SalesInvHdrNo <> '' then
                     RemboursRec.Code := SalesInvHdrNo
                 else
@@ -283,13 +278,13 @@ codeunit 50003 "CS Event Subscribers"
                 CustLedgerEntry.CALCFIELDS(CustLedgerEntry."Amount (LCY)");
                 RemboursRec.Bedrag := CustLedgerEntry."Amount (LCY)";
                 RemboursRec.Bankrekeningnr := SalesHeader."Bank Account Code";
-                RemboursRec.Afgedrukt := TRUE;
+                RemboursRec.Afgedrukt := true;
                 RemboursRec.Aflevernaam := SalesHeader."Ship-to Name";
                 RemboursRec."Afl.contactpersoon" := SalesHeader."Ship-to Contact";
                 RemboursRec.Afleverland := SalesHeader."Bill-to Country/Region Code";
-                IF RemboursRec.Afleverland = '' THEN RemboursRec.Afleverland := 'NL';
+                if RemboursRec.Afleverland = '' then RemboursRec.Afleverland := 'NL';
                 RemboursRec."Aantal colli" := SalesHeader."Aantal colli";
-                RemboursRec.PTTEtiketGeprint := FALSE;
+                RemboursRec.PTTEtiketGeprint := false;
                 RemboursRec.Locatie := SalesHeader."Location Code";
                 RemboursRec.Betalingswijze := SalesHeader."Payment Method Code";
                 RemboursRec.Leveringswijze := '1';
@@ -299,13 +294,13 @@ codeunit 50003 "CS Event Subscribers"
                     else
                         RemboursRec.Email := '';
                 end;
-                RemboursRec.INSERT;
-            END;
-        END;
+                RemboursRec.INSERT();
+            end;
+        end;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnBeforeSalesInvHeaderInsert', '', false, false)]
-    Local procedure CS_SalesPost_OnBeforeSalesInvHeaderInsert(var SalesInvHeader: Record "Sales Invoice Header"; var SalesHeader: Record "Sales Header")
+    local procedure CS_SalesPost_OnBeforeSalesInvHeaderInsert(var SalesInvHeader: Record "Sales Invoice Header"; var SalesHeader: Record "Sales Header")
     begin
         SalesInvHeader."CS Shipment Date" := SalesInvHeader."Shipment Date";
         SalesInvHeader."CS Bill-to Customer No." := SalesInvHeader."Bill-to Customer No.";

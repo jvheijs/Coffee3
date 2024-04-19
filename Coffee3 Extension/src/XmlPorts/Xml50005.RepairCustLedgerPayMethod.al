@@ -33,7 +33,7 @@ xmlport 50005 "Repair Cust Ledger Pay. Method"
                 begin
                     if lRecCustLedger.Get(Volgnr) then begin
                         lRecCustLedger."Payment Method Code" := Betaalwijze;
-                        lRecCustLedger.Modify;
+                        lRecCustLedger.MODIFY();
                     end;
                 end;
             }

@@ -9,19 +9,19 @@ report 50004 "Condor Combine Shipments"
     {
         dataitem(SalesOrderHeader; "Sales Header")
         {
-            DataItemTableView = SORTING("Document Type", "No.") WHERE("Document Type" = CONST(Order), "Combine Shipments" = CONST(true));
+            DataItemTableView = sorting("Document Type", "No.") where("Document Type" = const(Order), "Combine Shipments" = const(true));
             RequestFilterFields = "Sell-to Customer No.", "Bill-to Customer No.";
             RequestFilterHeading = 'Sales Order';
             dataitem("Sales Shipment Header"; "Sales Shipment Header")
             {
-                DataItemLink = "Order No." = FIELD("No.");
-                DataItemTableView = SORTING("Order No.");
+                DataItemLink = "Order No." = field("No.");
+                DataItemTableView = sorting("Order No.");
                 RequestFilterFields = "Posting Date";
                 RequestFilterHeading = 'Posted Sales Shipment';
                 dataitem("Sales Shipment Line"; "Sales Shipment Line")
                 {
-                    DataItemLink = "Document No." = FIELD("No.");
-                    DataItemTableView = SORTING("Document No.", "Line No.");
+                    DataItemLink = "Document No." = field("No.");
+                    DataItemTableView = sorting("Document No.", "Line No.");
 
                     trigger OnAfterGetRecord()
                     var
@@ -71,12 +71,12 @@ report 50004 "Condor Combine Shipments"
                     begin
                         SalesShipmentLine.SetRange("Document No.", "Document No.");
                         SalesShipmentLine.SetRange(Type, Type::"Charge (Item)");
-                        if SalesShipmentLine.FindSet then
+                        if SalesShipmentLine.FINDSET() then
                             repeat
                                 SalesLineInvoice.SetRange("Document Type", SalesLineInvoice."Document Type"::Invoice);
                                 SalesLineInvoice.SetRange("Document No.", SalesHeader."No.");
                                 SalesLineInvoice.SetRange("Shipment Line No.", SalesShipmentLine."Line No.");
-                                if SalesLineInvoice.FindFirst then
+                                if SalesLineInvoice.FINDFIRST() then
                                     SalesGetShpt.GetItemChargeAssgnt(SalesShipmentLine, SalesLineInvoice."Qty. to Invoice");
                             until SalesShipmentLine.Next() = 0;
                     end;
@@ -133,7 +133,7 @@ report 50004 "Condor Combine Shipments"
             trigger OnPostDataItem()
             begin
                 CurrReport.Language := GlobalLanguage;
-                Window.Close;
+                Window.CLOSE();
                 if SalesHeader."No." <> '' then begin // Not the first time
                     FinalizeSalesInvHeader;
                     OnSalesShipmentHeaderOnAfterFinalizeSalesInvHeader(SalesHeader, NoOfSalesInvErrors, PostInv, HideDialog);
@@ -337,7 +337,7 @@ report 50004 "Condor Combine Shipments"
     local procedure InsertSalesInvHeader()
     begin
         Clear(SalesHeader);
-        SalesHeader.Init;
+        SalesHeader.INIT();
         SalesHeader."Document Type" := SalesHeader."Document Type"::Invoice;
         SalesHeader."No." := '';
         OnBeforeSalesInvHeaderInsert(SalesHeader, SalesOrderHeader);
@@ -353,7 +353,7 @@ report 50004 "Condor Combine Shipments"
         SalesHeader."Shortcut Dimension 2 Code" := SalesOrderHeader."Shortcut Dimension 2 Code";
         SalesHeader."Dimension Set ID" := SalesOrderHeader."Dimension Set ID";
         OnBeforeSalesInvHeaderModify(SalesHeader, SalesOrderHeader);
-        SalesHeader.Modify;
+        SalesHeader.MODIFY();
         Commit();
         HasAmount := false;
 
@@ -403,12 +403,12 @@ report 50004 "Condor Combine Shipments"
     begin
     end;
 
-    [IntegrationEvent(TRUE, false)]
+    [IntegrationEvent(true, false)]
     local procedure OnBeforePreReport()
     begin
     end;
 
-    [IntegrationEvent(TRUE, false)]
+    [IntegrationEvent(true, false)]
     local procedure OnBeforePostReport()
     begin
     end;
