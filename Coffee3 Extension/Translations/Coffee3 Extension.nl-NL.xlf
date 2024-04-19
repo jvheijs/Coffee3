@@ -3294,7 +3294,7 @@
         </trans-unit>
         <trans-unit id="Report 4034894651 - NamedType 2295386186" size-unit="char" translate="yes" xml:space="preserve">
           <source>Invoice</source>
-          <target>Factureren</target>
+          <target>Factuur</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales Invoice - NamedType ReportTitle</note>
         </trans-unit>

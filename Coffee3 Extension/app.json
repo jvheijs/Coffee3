@@ -2,7 +2,7 @@
     "id":  "734255dc-82de-4c7b-a244-40e244417ece",
     "name":  "Coffee3 Extension",
     "publisher":  "Condor Solutions",
-    "version":  "1.0.0.42",
+    "version":  "1.0.0.47",
     "brief":  "",
     "description":  "",
     "platform":  "23.0.0.0",
@@ -23,7 +23,7 @@
                              "id":  "a40ea3e1-c99e-4e0b-ae2f-a69fa11566b4",
                              "publisher":  "Condor Solutions",
                              "name":  "Signature AddIn Extension",
-                             "version":  "1.0.0.10"
+                             "version":  "1.0.0.12"
                          }
                      ],
     "idRanges":  [

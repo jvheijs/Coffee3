@@ -19,6 +19,7 @@ page 50009 "Toolbox John"
         {
             action("DB instellen als testomgeving")
             {
+
                 Image = Process;
                 trigger OnAction()
                 var
@@ -37,13 +38,15 @@ page 50009 "Toolbox John"
             }
             action("Eenmalig code John")
             {
+
                 Image = Process;
                 trigger OnAction()
                 var
-                    lRecSalesInvHeader: record "Sales invoice Header";
-                    lRecSalesShipHeader: record "Sales Shipment Header";
+                    recServiceContract: record "Service Contract Header";
+                    recCustomer: Record Customer;
 
                 begin
+
                     error('JvH');
                     lRecSalesShipHeader.RESET();
                     lRecSalesShipHeader.SetRange("No. Printed", 0);
@@ -52,6 +55,33 @@ page 50009 "Toolbox John"
                     Message('Uitgevoerd 22-02-2024');
                 end;
             }
+            action("Alle facturen/verzendingen als afgedrukt")
+            {
+                ToolTip = 'Alle facturen/verzendingen op afgedrukt 0 zetten i.v.m. mailen';
+                Image = Process;
+                trigger OnAction()
+
+                var
+                    SalesHeaderPrint: record "Sales invoice Header";
+                    SalesShipHeaderPrint: Record "Sales Shipment Header";
+                begin
+                    error('Pas op met gebruiken');
+                    SalesHeaderPrint.Reset();
+                    SalesHeaderPrint.SetRange("No. Printed", 0);
+                    SalesHeaderPrint.SetRange(SalesPersonOrder, true);
+                    if SalesHeaderPrint.FindFirst() then
+                        SalesHeaderPrint.ModifyAll("No. Printed", 1);
+
+                    SalesShipHeaderPrint.reset();
+                    SalesShipHeaderPrint.SetRange("No. Printed", 0);
+                    if SalesShipHeaderPrint.FindFirst() then
+                        SalesShipHeaderPrint.ModifyAll("No. Printed", 1);
+
+                    Message('Alle verkoopfacturen op geprint gezet');
+
+                end;
+            }
+
         }
     }
 }
