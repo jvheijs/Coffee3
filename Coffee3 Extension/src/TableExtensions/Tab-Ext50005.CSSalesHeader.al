@@ -70,6 +70,15 @@ tableextension 50005 "CS Sales Header" extends "Sales Header"
             DataClassification = ToBeClassified;
             Editable = false;
         }
+    
+        field(50050; "Signature"; Blob)
+        {
+            Caption = 'Signature';
+            DataClassification = CustomerContent;
+            SubType = Bitmap;
+        }
+ 
+
     }
 
     keys
@@ -80,4 +89,20 @@ tableextension 50005 "CS Sales Header" extends "Sales Header"
 
         }
     }
+    procedure SignDocument(var Base64Text: Text)
+    var
+        Base64Cu: Codeunit "Base64 Convert";
+        RecordRef: RecordRef;
+        OutStream: OutStream;
+        TempBlob: Codeunit "Temp Blob";
+        ImageBase64String: Text;
+    begin
+        Base64Text := Base64Text.Replace('data:image/png;base64,', '');
+        TempBlob.CreateOutStream(OutStream);
+        Base64Cu.FromBase64(Base64Text, OutStream);
+        RecordRef.GetTable(Rec);
+        TempBlob.ToRecordRef(RecordRef, Rec.FieldNo("Signature"));
+        RecordRef.Modify();
+    end;
+
 }
