@@ -45,6 +45,13 @@ tableextension 50010 "CS Sales Invoice Header" extends "Sales Invoice Header"
             Caption = 'VertegenwoordigersOrder';
             DataClassification = ToBeClassified;
         }
+        field(50041; "Signature"; Blob)
+        {
+            Caption = 'Signature';
+            Subtype = Bitmap;
+            DataClassification = ToBeClassified;
+        }
+
         field(50050; "CS Bill-to Customer No."; Code[20])
         {
             Description = 'Mirror the Bill-to Customer No. field in order to add to the custom keys.';
@@ -57,12 +64,6 @@ tableextension 50010 "CS Sales Invoice Header" extends "Sales Invoice Header"
             Description = 'Mirror the Shipment Date field in order to add to the custom keys.';
             DataClassification = ToBeClassified;
             Editable = false;
-        }
-        field(50041; "Signature"; Blob)
-        {
-            Caption = 'Signature';
-            Subtype = Bitmap;
-            DataClassification = ToBeClassified;
         }
     }
 
