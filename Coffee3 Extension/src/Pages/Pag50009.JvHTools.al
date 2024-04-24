@@ -64,19 +64,20 @@ page 50009 "Toolbox John"
                     SalesHeaderPrint: record "Sales invoice Header";
                     SalesShipHeaderPrint: Record "Sales Shipment Header";
                 begin
-                    error('Pas op met gebruiken');
-                    SalesHeaderPrint.Reset();
-                    SalesHeaderPrint.SetRange("No. Printed", 0);
-                    SalesHeaderPrint.SetRange(SalesPersonOrder, true);
-                    if SalesHeaderPrint.FindFirst() then
-                        SalesHeaderPrint.ModifyAll("No. Printed", 1);
+                    if confirm('Alle facturen/verzendingen als geprint zetten', false) then begin
+                        SalesHeaderPrint.Reset();
+                        SalesHeaderPrint.SetRange("No. Printed", 0);
+                        SalesHeaderPrint.SetRange(SalesPersonOrder, true);
+                        if SalesHeaderPrint.FindFirst() then
+                            SalesHeaderPrint.ModifyAll("No. Printed", 1);
 
-                    SalesShipHeaderPrint.reset();
-                    SalesShipHeaderPrint.SetRange("No. Printed", 0);
-                    if SalesShipHeaderPrint.FindFirst() then
-                        SalesShipHeaderPrint.ModifyAll("No. Printed", 1);
+                        SalesShipHeaderPrint.reset();
+                        SalesShipHeaderPrint.SetRange("No. Printed", 0);
+                        if SalesShipHeaderPrint.FindFirst() then
+                            SalesShipHeaderPrint.ModifyAll("No. Printed", 1);
 
-                    Message('Alle verkoopfacturen op geprint gezet');
+                        Message('Alle verkoopfacturen op geprint gezet');
+                    end;
 
                 end;
             }
