@@ -70,14 +70,14 @@ tableextension 50005 "CS Sales Header" extends "Sales Header"
             DataClassification = ToBeClassified;
             Editable = false;
         }
-    
-        field(50050; "Signature"; Blob)
+
+        field(50041; "Signature"; Blob)
         {
             Caption = 'Signature';
             DataClassification = CustomerContent;
             SubType = Bitmap;
         }
- 
+
 
     }
 
