@@ -5230,6 +5230,73 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension CS Vendor - Field Telefoonnr. contactpersoon - Property Caption</note>
         </trans-unit>
+
+        <trans-unit id="TableExtension 1668621162 - Field 616523964 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 994825818">
+          <source>Open Service Quotes</source>
+          <target>Open Serviceoffertes - </target>          
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CS Service Cue - Field CS Open Service Quotes - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1668621162 - Field 2925057604 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 994825818">
+          <source>Service Orders - to Follow-up</source>
+          <target></target>               
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CS Service Cue - Field CS Ser. Orders - to Follow-up - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1668621162 - Field 4082495761 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 994825818">
+          <source>Service Orders - Finished</source>
+          <target>Serviceorders - Voltooid</target>               
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CS Service Cue - Field CS Service Orders - Finished - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1668621162 - Field 979250707 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 994825818">
+          <source>Service Orders - in Process</source>
+          <target>Serviceorders - Verwerkt</target>               
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CS Service Cue - Field CS Service Orders - in Process - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1668621162 - Field 3787972162 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 994825818">
+          <source>Service Orders - Inactive</source>
+          <target>Serviceorders - Inactief</target>               
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CS Service Cue - Field CS Service Orders - Inactive - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1668621162 - Field 3581538590 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 994825818">
+          <source>Service Orders - Today</source>
+          <target>Serviceorders - Vandaag</target>               
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CS Service Cue - Field CS Service Orders - Today - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2813462268 - Control 4082495761 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3161236875">
+          <source>Specifies the finished service orders that are displayed in the Service Cue on the Role Center. The documents are filtered by today's date.</source>
+          <target></target>           
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Serv. Dispatcher Activities - Control CS Service Orders - Finished - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2813462268 - Control 979250707 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3161236875">
+          <source>Specifies the number of in process service orders that are displayed in the Service Cue on the Role Center. The documents are filtered by today's date.</source>
+          <target></target>           
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Serv. Dispatcher Activities - Control CS Service Orders - in Process - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2813462268 - Control 3787972162 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3161236875">
+          <source>Specifies the number of inactive service orders that are displayed in the Service Cue on the Role Center. The documents are filtered by today's date.</source>
+          <target></target>           
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Serv. Dispatcher Activities - Control CS Service Orders - Inactive - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2813462268 - Control 3581538590 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3161236875">
+          <source>Specifies the number of in-service orders that are displayed in the Service Cue on the Role Center. The documents are filtered by today's date.</source>
+          <target></target>           
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Serv. Dispatcher Activities - Control CS Service Orders - Today - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2813462268 - Control 616523964 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3161236875">
+          <source>Specifies the number of open service quotes that are displayed in the Service Cue on the Role Center.</source>
+          <target></target>           
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Serv. Dispatcher Activities - Control CS Open Service Quotes - Property ToolTip</note>
+        </trans-unit>                
       </group>
     </body>
   </file>
