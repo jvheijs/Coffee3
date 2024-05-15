@@ -10,7 +10,7 @@ codeunit 50000 "Condor"
 
     var
 
-procedure gFncFillMyCustomer()
+    procedure gFncFillMyCustomer()
     var
         lRecUser: Record User;
         lRecSalespersonPurchaser: Record "Salesperson/Purchaser";
@@ -25,38 +25,51 @@ procedure gFncFillMyCustomer()
         lRecMyCustomer.DELETEALL();
 
         lRecUser.FindSet();
-        repeat
+        REPEAT
             // MESSAGE('xxx %1 %2', lRecUser."User Name",lRecUser."Contact Email");
-            if lRecUser."Contact Email" <> '' then begin
+            IF lRecUser."Contact Email" <> '' THEN BEGIN
                 lRecSalespersonPurchaser.SETFILTER("E-Mail", lRecUser."Contact Email");
-                if lRecSalespersonPurchaser.FindFirst() then
-                    if lRecSalespersonPurchaser.Rayonfilter <> '' then begin
+                IF lRecSalespersonPurchaser.FINDSET THEN BEGIN
+                    IF lRecSalespersonPurchaser.Rayonfilter <> '' THEN BEGIN
                         lRecMyCustomer.SETFILTER("User ID", USERID);
 
                         lRecCustomer.SETFILTER(Rayon, lRecSalespersonPurchaser.Rayonfilter);
-                        if lRecCustomer.FINDSET() then
-                            repeat
+                        IF lRecCustomer.FINDSET THEN BEGIN
+                            REPEAT
                                 lRecMyCustomer."User ID" := lRecUser."User Name";
                                 lRecMyCustomer."Customer No." := lRecCustomer."No.";
                                 lRecMyCustomer.Name := lRecCustomer.Name;
                                 lRecMyCustomer."Phone No." := lRecCustomer."Phone No.";
                                 lRecShiptoAddress.SETFILTER("Customer No.", lRecCustomer."No.");
                                 lRecShiptoAddress.SETFILTER(Code, 'BEZOEK');
-
-                                if lRecShiptoAddress.FINDFIRST() then begin
-                                    lRecMyCustomer.Bezoekadres := copystr(lRecShiptoAddress.Address, 1, 60);
-                                    lRecMyCustomer."Postcode bezoekadres" := copystr(lRecShiptoAddress."Post Code", 1, 10);
+                                IF lRecShiptoAddress.FINDFIRST THEN BEGIN
+                                    lRecMyCustomer.Bezoekadres := lRecShiptoAddress.Address;
+                                    lRecMyCustomer."Postcode bezoekadres" := lRecShiptoAddress."Post Code";
                                     lRecMyCustomer."Plaats bezoekadres" := lRecShiptoAddress.City;
-                                end else begin
-                                    lRecMyCustomer.Bezoekadres := copystr(lRecCustomer.Address, 1, 60);
-                                    lRecMyCustomer."Postcode bezoekadres" := copystr(lRecCustomer."Post Code", 1, 10);
+                                END ELSE BEGIN
+                                    lRecMyCustomer.Bezoekadres := lRecCustomer.Address;
+                                    lRecMyCustomer."Postcode bezoekadres" := lRecCustomer."Post Code";
                                     lRecMyCustomer."Plaats bezoekadres" := lRecCustomer.City;
-                                end;
-                            until lRecCustomer.NEXT() = 0;
-                    end;
-            end;
-        until lRecUser.NEXT() = 0;
-
+                                END;
+                                lRecMyCustomer."GSM-nummer" := lRecCustomer."GSM-nummer";
+                                lRecMyCustomer.Klantstatus := lRecCustomer.Klantstatus;
+                                lRecMyCustomer.Rayon := lRecCustomer.Rayon;
+                                lRecMyCustomer.Routenummer := lRecCustomer.Routenummer;
+                                lRecMyCustomer.Dropcode := lRecCustomer.Dropcode;
+                                lRecMyCustomer."Cust.Memo1" := lRecCustomer."Cust.Memo1";
+                                lRecMyCustomer."Cust.Memo2" := lRecCustomer."Cust.Memo2";
+                                lRecMyCustomer."Mark 01" := lRecCustomer."Mark 01";
+                                lRecMyCustomer."Mark 02" := lRecCustomer."Mark 02";
+                                lRecMyCustomer."Mark 03" := lRecCustomer."Mark 03";
+                                lRecMyCustomer.Bevyz := lRecCustomer.Bevyz;
+                                lRecMyCustomer."Partner Type Org" := lRecCustomer."Partner Type Org";
+                                lRecMyCustomer.INSERT;
+                            UNTIL lRecCustomer.NEXT = 0;
+                        END;
+                    END;
+                END;
+            END;
+        UNTIL lRecUser.NEXT = 0;
         // COFF-1.ne
     end;
 

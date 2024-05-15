@@ -36,7 +36,7 @@ page 50009 "Toolbox John"
                     Message('Alle afleveradressen/klanten omgezet.');
                 end;
             }
-            action("Eenmalig code John")
+            action("Eenmalig code John Condor CU")
             {
 
                 Image = Process;
@@ -44,14 +44,15 @@ page 50009 "Toolbox John"
                 var
                     RecSalesInvHeader: record "Sales invoice Header";
                     lRecSalesShipHeader: record "Sales Shipment Header";
+                    CondorCU: Codeunit Condor;
                 begin
-
-                    error('JvH');
-                    lRecSalesShipHeader.RESET();
-                    lRecSalesShipHeader.SetRange("No. Printed", 0);
-                    if lRecSalesShipHeader.FindFirst() then
-                        lRecSalesShipHeader.ModifyAll("No. Printed", 1);
-                    Message('Uitgevoerd 22-02-2024');
+                    CondorCU.run;
+                    // error('JvH');
+                    // lRecSalesShipHeader.RESET();
+                    // lRecSalesShipHeader.SetRange("No. Printed", 0);
+                    // if lRecSalesShipHeader.FindFirst() then
+                    //     lRecSalesShipHeader.ModifyAll("No. Printed", 1);
+                    // Message('Uitgevoerd 22-02-2024');
                 end;
             }
             action("Alle facturen/verzendingen als afgedrukt")
