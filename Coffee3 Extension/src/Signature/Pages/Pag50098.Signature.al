@@ -1,8 +1,5 @@
 page 50050 Signature
 {
-    CaptionML = DEU = 'Unterschrift',
-                ENU = 'Signature',
-                NLD = 'Handtekening';
     DeleteAllowed = false;
     Editable = false;
     InsertAllowed = false;

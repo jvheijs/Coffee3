@@ -353,7 +353,7 @@ codeunit 50003 "CSEventSubscribers"
         Currency: Record Currency;
         gCduCondor: Codeunit Condor;
 
-        Text50005: Label 'Will the delivery be collected?';
+        Text50005: Label 'Wordt de bestelling afgehaald?';
         Text50006: Label 'Wilt u de betalingswijze wijzigen van KONTANT naar PTT-REMBOURS voor deze factuur?';
 
 }
