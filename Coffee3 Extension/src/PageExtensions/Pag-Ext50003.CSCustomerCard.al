@@ -78,8 +78,10 @@ pageextension 50003 "CS Customer Card" extends "Customer Card"
         {
             action(MakeNewSalesOrder)
             {
+                Caption = 'Maar nieuwe verkooporder';
                 ApplicationArea = All;
                 Image = NewSalesInvoice;
+                ToolTip = 'Maak een nieuwe verkooporder voor deze klant';
                 trigger OnAction()
                 begin
                     CondorFunc.CS_CustomerCard_MakeNewSalesOrder(Rec);
@@ -87,11 +89,13 @@ pageextension 50003 "CS Customer Card" extends "Customer Card"
             }
             action(MakeNewSalesInvoice)
             {
+                Caption = 'Maak nieuwe verkoopfactuur';
                 ApplicationArea = All;
                 Image = NewSalesInvoice;
+                ToolTip = 'Maak een nieuwe verkoopfactuur voor deze klant';
                 trigger OnAction()
                 begin
-                    CondorFunc.CS_CustomerCard_MakeNewSalesOrder(Rec);
+                    CondorFunc.CS_CustomerCard_MakeNewSalesInvoice(Rec);
                 end;
             }
         }

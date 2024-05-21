@@ -5,6 +5,9 @@
     },
     {
       "path": "Coffee3 Extension"
+    },
+    {
+      "path": ".alpackages"
     }
   ],
   "settings": {}
