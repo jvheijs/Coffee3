@@ -43,6 +43,6 @@ pageextension 50001 "CS Serv. Dispatcher Activities" extends "Service Dispatcher
 
     trigger OnOpenPage()
     begin
-        Rec.SetUserFilter();
+        Rec.SetLocationFilter();
     end;
 }

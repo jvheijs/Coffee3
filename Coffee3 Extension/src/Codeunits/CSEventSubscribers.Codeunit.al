@@ -317,6 +317,14 @@ codeunit 50003 "CSEventSubscribers"
             SalesShptHeader."Signature" := SalesHeader."Signature";
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Service-Post", OnBeforeServiceInvHeaderInsert, '', false, false)]
+    local procedure "Service-Post_OnBeforeServiceInvHeaderInsert"(var ServiceInvoiceHeader: Record "Service Invoice Header"; ServiceHeader: Record "Service Header");
+    begin
+        ServiceHeader.calcfields("Signature");
+        if SalesHeader."Signature".HasValue then
+            ServiceInvoiceHeader."Signature" := ServiceHeader."Signature";
+    end;
+
     [EventSubscriber(ObjectType::Table, Database::"Sales Shipment Line", 'OnBeforeInsertInvLineFromShptLine', '', false, false)]
     local procedure CS_SalesShipmentLine_OnBeforeInsertInvLineFromShptLine(var SalesShptLine: Record "Sales Shipment Line"; SalesLine: Record "Sales Line");
     begin
@@ -346,6 +354,32 @@ codeunit 50003 "CSEventSubscribers"
     local procedure CS_AssemblyHeader_OnValidateItemNoOnAfterGetDefaultBin(var AssemblyHeader: Record "Assembly Header")
     begin
         AssemblyHeader.SetWarningsOff();
+    end;
+
+    [EventSubscriber(ObjectType::Table, database::"Service Item Line", 'OnAfterInsertEvent', '', false, false)]
+    local procedure CS_ServiceItemLine_OnAfterInsert(var Rec: Record "Service Item Line")
+    var
+        ServiceItemLine: Record "Service Item Line";
+        DefaultServiceLines: Record "CS Default Service Lines";
+        ServiceLine: Record "Service Line";
+    begin
+        if DefaultServiceLines.IsEmpty() then
+            exit;
+
+        ServiceItemLine.SetRange("Document Type", Rec."Document Type");
+        ServiceItemLine.SetRange("Document No.", Rec."Document No.");
+        If ServiceItemLine.Count() = 1 then
+            if DefaultServiceLines.FindSet() then
+                repeat
+                    ServiceLine.init();
+                    ServiceLine."Document Type" := Rec."Document Type";
+                    ServiceLine."Document No." := Rec."Document No.";
+                    ServiceLine."Line No." := DefaultServiceLines."Line No.";
+                    ServiceLine."Service Item Line No." := Rec."Line No.";
+                    ServiceLine.validate(Type, DefaultServiceLines.Type);
+                    ServiceLine.Validate("No.", DefaultServiceLines."No.");
+                    ServiceLine.Insert(true);
+                until DefaultServiceLines.Next() = 0;
     end;
 
     var
