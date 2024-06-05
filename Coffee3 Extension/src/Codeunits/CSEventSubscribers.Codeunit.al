@@ -356,4 +356,11 @@ codeunit 50003 "CSEventSubscribers"
         Text50005: Label 'Wordt de bestelling afgehaald?';
         Text50006: Label 'Wilt u de betalingswijze wijzigen van KONTANT naar PTT-REMBOURS voor deze factuur?';
 
+    [EventSubscriber(ObjectType::Codeunit, codeunit::"Document-Mailing", OnBeforeSendEmail, '', false, false)]
+
+    local procedure OnbeforeSendMail(var TempEmailItem: record "Email Item" temporary)
+    begin
+        //TempEmailItem."Send CC" := '';    
+        TempEmailItem."Send BCC" := 'no-reply@coffee3.nl';
+    end;
 }
