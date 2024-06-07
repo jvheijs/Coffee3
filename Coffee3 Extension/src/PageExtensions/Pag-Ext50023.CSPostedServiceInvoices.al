@@ -30,7 +30,7 @@ pageextension 50023 "CS Posted Service Invoices" extends "Posted Service Invoice
                     ShowDialog: Boolean;
                 begin
                     CurrPage.SETSELECTIONFILTER(Rec);
-                    if Rec.FINDFIRST() then begin
+                    if Rec.FINDFIRST() then
                         repeat
                             lRecServInvHeader.RESET();
                             lRecServInvHeader.SETRANGE(lRecServInvHeader."No.", Rec."No.");
@@ -51,7 +51,6 @@ pageextension 50023 "CS Posted Service Invoices" extends "Posted Service Invoice
                                 //    FieldNo("Bill-to Customer No."), false);
                             end;
                         until Rec.NEXT() = 0;
-                    end;
                     Rec.RESET();
                     MESSAGE('Uitgevoerd.');
                 end;

@@ -36,7 +36,7 @@ pageextension 50017 "CS Posted Sales Invoices" extends "Posted Sales Invoices"
                     SalesInvHeader: Record "Sales Invoice Header";
                 begin
                     CurrPage.SETSELECTIONFILTER(Rec);
-                    if Rec.FINDFIRST() then begin
+                    if Rec.FINDFIRST() then
                         repeat
                             SalesInvHeader.RESET();
                             SalesInvHeader.SETRANGE(SalesInvHeader."No.", Rec."No.");
@@ -45,7 +45,7 @@ pageextension 50017 "CS Posted Sales Invoices" extends "Posted Sales Invoices"
                             SalesInvHeader.EmailRecords(false);
                         // COMMIT();  // Tijdelijk uitgeschakeld i.v.m. SQL problemen, misschien hierdoor?
                         until Rec.NEXT() = 0;
-                    end;
+
                     Rec.RESET();
                     MESSAGE('Uitgevoerd.');
                 end;

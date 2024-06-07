@@ -30,7 +30,9 @@ report 50078 "Service Invoice"
             column(CompanyInfo3Picture; CompanyInfo3.Picture)
             {
             }
-
+            column(Signature; TempCompanyInformation.Picture)
+            {
+            }
             column(FtrLabel1; FtrLabel1)
             {
             }
@@ -408,6 +410,32 @@ report 50078 "Service Invoice"
                         {
                         }
 
+                        dataitem("Service Comment Line"; "Service Comment Line")
+                        {
+                            DataItemLink = "No." = field("Document No."), "Table Line No." = field("Line No.");
+                            DataItemLinkReference = "Service Invoice Line";
+                            DataItemTableView = sorting("No.", "Line No.") where("Table Name" = const("Service Invoice Line"), "Table Subtype" = filter("Table Subtype"::"0"));
+
+                            column(LineNo_ServCommentLine; "Line No.")
+                            {
+                            }
+                            column(Type_ServCommentLine; Type)
+                            {
+                            }
+                            column(Date_ServCommentLine; FORMAT(Date, 0, 4))
+                            {
+                            }
+                            column(Comment_ServCommentLine; Comment)
+                            {
+                            }
+
+                            trigger OnAfterGetRecord()
+                            begin
+                                if Comment = '' then
+                                    CurrReport.Skip();
+                            end;
+                        }
+
                         trigger OnAfterGetRecord()
                         begin
                             if (Type = Type::"G/L Account") and (not ShowInternalInfo) then
@@ -450,6 +478,7 @@ report 50078 "Service Invoice"
                                 CurrReport.Break();
                             SetRange("Line No.", 0, "Line No.");
                         end;
+
                     }
                     dataitem(VATCounter; "Integer")
                     {
@@ -682,6 +711,7 @@ report 50078 "Service Invoice"
             trigger OnAfterGetRecord()
             var
                 lRecPayMethod: Record "Payment Method";
+                Signature: Record "CS Signature";
             begin
                 if "Language Code" <> '' then
                     CurrReport.Language := CuLanguage.GetLanguageID("Language Code");
@@ -747,6 +777,16 @@ report 50078 "Service Invoice"
                     ShowShippingAddr := true;
                 end else
                     ShowShippingAddr := false;
+
+                // Signature
+                if Signature.get(Database::"Service Invoice Header", "Service Invoice Header"."No.", 0) then begin
+                    TempCompanyInformation.INIT();
+                    Signature.CalcFields(Signature);
+                    TempCompanyInformation.Picture := Signature.Signature;
+                    if not TempCompanyInformation.Insert() then
+                        TempCompanyInformation.MODIFY();
+                    TempCompanyInformation.CalcFields(Picture);
+                end;
             end;
         }
     }
@@ -837,6 +877,7 @@ report 50078 "Service Invoice"
         CompanyInfo1: Record "Company Information";
         CompanyInfo2: Record "Company Information";
         CompanyInfo3: Record "Company Information";
+        TempCompanyInformation: Record "Company Information" temporary;
         SalesSetup: Record "Sales & Receivables Setup";
         Cust: Record Customer;
         VATAmountLine: Record "VAT Amount Line" temporary;

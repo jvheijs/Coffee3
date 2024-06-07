@@ -580,6 +580,7 @@ report 50071 "Sales - Shipment Coffee3"
 
             trigger OnAfterGetRecord();
             var
+                Signature: Record "CS Signature";
                 lTxtPicturePath: Text[50];
                 lCodOrderNo: Code[20];
             begin
@@ -598,11 +599,12 @@ report 50071 "Sales - Shipment Coffee3"
                           "Campaign No.", "Posting Description", '');
 
                 // Signature
-                "Sales Shipment Header".CalcFields("Signature");
-                if "Sales Shipment Header"."Signature".HasValue then begin
+                if Signature.get(Database::"Sales Shipment Header", "Sales Shipment Header"."No.", 0) then begin
                     gRecCompanyInformationTmp.INIT();
-                    gRecCompanyInformationTmp.Picture := "Sales Shipment Header"."Signature";
-                    if not gRecCompanyInformationTmp.Insert then gRecCompanyInformationTmp.MODIFY();
+                    Signature.CalcFields(Signature);
+                    gRecCompanyInformationTmp.Picture := Signature.Signature;
+                    if not gRecCompanyInformationTmp.Insert() then
+                        gRecCompanyInformationTmp.MODIFY();
                     gRecCompanyInformationTmp.CalcFields(Picture);
                 end;
             end;

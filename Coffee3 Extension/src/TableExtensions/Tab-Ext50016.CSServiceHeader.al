@@ -3,11 +3,11 @@ tableextension 50016 "CS Service Header" extends "Service Header"
     Description = 'CS1.0';
     fields
     {
-        field(50000; "Signature"; Blob)
+
+        field(50001; "Status Signing"; enum "CS Status Signing")
         {
-            Caption = 'Signature';
+            Caption = 'Status Signature';
             DataClassification = CustomerContent;
-            SubType = Bitmap;
         }
 
         field(50020; Verzendprofiel; Code[20])
