@@ -587,7 +587,7 @@
                   <Width>2.29492cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.89175cm</Width>
+                  <Width>5.78592cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -8264,6 +8264,26 @@
                                 <FontSize>8pt</FontSize>
                               </Style>
                             </Tablix>
+                            <Image Name="Signature">
+                              <Source>Database</Source>
+                              <Value>=System.Convert.FromBase64String(System.Convert.ToBase64String(Last(Fields!Signature.Value, "DataSet_Result")))</Value>
+                              <MIMEType>image/bmp</MIMEType>
+                              <Sizing>FitProportional</Sizing>
+                              <Top>0.17639cm</Top>
+                              <Left>6.85691cm</Left>
+                              <Height>22.59101mm</Height>
+                              <Width>111.3015mm</Width>
+                              <ZIndex>1</ZIndex>
+                              <Visibility>
+                                <Hidden>=iif(ISNOTHING(Last(Fields!Signature.Value, "DataSet_Result")) = True, True, False)</Hidden>
+                              </Visibility>
+                              <DataElementOutput>NoOutput</DataElementOutput>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
                           </ReportItems>
                           <KeepTogether>true</KeepTogether>
                           <Style>
@@ -8650,8 +8670,8 @@
               </Filter>
             </Filters>
             <Left>0.20315cm</Left>
-            <Height>24.96561cm</Height>
-            <Width>18.26127cm</Width>
+            <Height>24.96563cm</Height>
+            <Width>18.15544cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -8659,10 +8679,10 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>25.1639cm</Height>
+        <Height>25.13744cm</Height>
         <Style />
       </Body>
-      <Width>18.56788cm</Width>
+      <Width>18.46442cm</Width>
       <Page>
         <PageHeader>
           <Height>2.01083cm</Height>

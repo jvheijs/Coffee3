@@ -178,12 +178,10 @@ page 50017 "DP Sales Order#"
 
                     trigger OnAction()
                     begin
-                        if HasSignature() = false then begin
-                            AddSignature();
-                            SelectLatestVersion();
-                        end;
-
-                        if HasSignature() then begin
+                        if not RecSignature.HasSignature(rec."No.", rec."Document Type".AsInteger(), database::"Sales Header") then begin
+                            RecSignature.OpenSignaturePage(rec."No.", rec."Document Type".AsInteger(), database::"Sales Header");
+                            CurrPage.UPDATE(false);
+                        end else begin
                             Rec.InPosting := true; // COFF-1
                             Rec.MODIFY();
                             COMMIT();
@@ -236,7 +234,8 @@ page 50017 "DP Sales Order#"
 
     trigger OnAfterGetRecord()
     begin
-        HasSignature();
+        if RecSignature.get(database::"Sales Header", rec."No.", rec."Document Type".AsInteger()) then
+            RecSignature.CalcFields(Signature);
     end;
 
     trigger OnAfterGetCurrRecord()
@@ -264,24 +263,6 @@ page 50017 "DP Sales Order#"
         gBlnSignatureDataSet: Boolean;
         gRecCustomer: Record Customer;
         gRecCustomerBankAccount: Record "Customer Bank Account";
-
-    local procedure HasSignature(): Boolean;
-    begin
-        if RecSignature.GET(database::"Sales Header", rec."No.", rec."Document Type".AsInteger()) then
-            RecSignature.CalcFields("Signature");
-        exit(RecSignature.Signature.HasValue());
-    end;
-
-    local procedure AddSignature();
-    var
-        Signature: Page Signature;
-    begin
-        Signature.SetDocNo(rec."No.");
-        Signature.SetDocType(rec."Document Type".AsInteger());
-        Signature.SetTable(Database::"Sales Header");
-        Signature.SetWithExit();
-        Signature.RunModal();
-    end;
 
     local procedure Post(PostingCodeunitID: Integer; Navigate: Option)
     var

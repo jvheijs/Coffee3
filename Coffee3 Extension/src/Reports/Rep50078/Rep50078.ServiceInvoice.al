@@ -30,9 +30,6 @@ report 50078 "Service Invoice"
             column(CompanyInfo3Picture; CompanyInfo3.Picture)
             {
             }
-            column(Signature; TempCompanyInformation.Picture)
-            {
-            }
             column(FtrLabel1; FtrLabel1)
             {
             }
@@ -133,6 +130,12 @@ report 50078 "Service Invoice"
             {
             }
             column(DelAddrCaption; DeliveryAddressCaptionLbl)
+            {
+            }
+            column(Signature; SignatureRec.Signature)
+            {
+            }
+            column(testfefefefewfcccccccccccccccccccccccccccccw; TEST)
             {
             }
             dataitem(CopyLoop; "Integer")
@@ -711,7 +714,6 @@ report 50078 "Service Invoice"
             trigger OnAfterGetRecord()
             var
                 lRecPayMethod: Record "Payment Method";
-                Signature: Record "CS Signature";
             begin
                 if "Language Code" <> '' then
                     CurrReport.Language := CuLanguage.GetLanguageID("Language Code");
@@ -779,13 +781,9 @@ report 50078 "Service Invoice"
                     ShowShippingAddr := false;
 
                 // Signature
-                if Signature.get(Database::"Service Invoice Header", "Service Invoice Header"."No.", 0) then begin
-                    TempCompanyInformation.INIT();
-                    Signature.CalcFields(Signature);
-                    TempCompanyInformation.Picture := Signature.Signature;
-                    if not TempCompanyInformation.Insert() then
-                        TempCompanyInformation.MODIFY();
-                    TempCompanyInformation.CalcFields(Picture);
+                if SignatureRec.get(Database::"Service Invoice Header", "Service Invoice Header"."No.", 0) then begin
+                    SignatureRec.CalcFields(Signature);
+                    test := 'TEST SIGNATURE';
                 end;
             end;
         }
@@ -877,7 +875,7 @@ report 50078 "Service Invoice"
         CompanyInfo1: Record "Company Information";
         CompanyInfo2: Record "Company Information";
         CompanyInfo3: Record "Company Information";
-        TempCompanyInformation: Record "Company Information" temporary;
+        SignatureRec: Record "CS Signature";
         SalesSetup: Record "Sales & Receivables Setup";
         Cust: Record Customer;
         VATAmountLine: Record "VAT Amount Line" temporary;
@@ -981,6 +979,8 @@ report 50078 "Service Invoice"
         gTxtPayMethodLbl: Label 'Betalingsmethode';
         gDecTotalLineDiscAmout: Decimal;
         LineDiscAmtCaptionLbl: Label 'Totale korting EUR';
+        //TODO remove
+        TEST: text[20];
 
 
     procedure InitLogInteraction()

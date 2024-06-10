@@ -14,10 +14,21 @@ pageextension 50025 "CS Service Order" extends "Service Order"
             field("CSSignature"; RecSignature."Signature")
             {
                 Caption = 'Signature';
+                ToolTip = 'Signature';
                 ApplicationArea = All;
                 Editable = false;
             }
         }
+
+        addafter("Contract No.")
+        {
+            field("CS Location Code"; Rec."Location Code")
+            {
+                ApplicationArea = Location;
+                ToolTip = 'Specifies the code of the location (for example, warehouse or distribution center) of the items specified on the service item lines.';
+            }
+        }
+
         modify(Invoicing)
         {
             Visible = false;
@@ -48,9 +59,25 @@ pageextension 50025 "CS Service Order" extends "Service Order"
                 Image = Signature;
                 trigger OnAction()
                 begin
-                    AddSignature();
-                    HasSignature();
-                    UpdateSignStatus(true);
+                    RecSignature.OpenSignaturePage(rec."No.", rec."Document Type".AsInteger(), database::"Service Header");
+                    if RecSignature.get(database::"Service Header", rec."No.", rec."Document Type".AsInteger()) then
+                        rec.UpdateSignStatus(true);
+                    CurrPage.Update(false);
+                end;
+            }
+
+            action(Unsign)
+            {
+                ApplicationArea = All;
+                Caption = 'Unsign';
+                ToolTip = 'Unsign';
+                Image = Undo;
+                trigger OnAction()
+                begin
+                    RecSignature.RemoveSignature(rec."No.", rec."Document Type".AsInteger(), database::"Service Header");
+                    rec.UpdateSignStatus(false);
+                    CurrPage.Update(false);
+
                 end;
             }
         }
@@ -58,6 +85,9 @@ pageextension 50025 "CS Service Order" extends "Service Order"
         addafter(Category_Category7)
         {
             actionref(Sign_Promoted; Sign)
+            {
+            }
+            actionref(UnSign_Promoted; Unsign)
             {
             }
         }
@@ -68,36 +98,10 @@ pageextension 50025 "CS Service Order" extends "Service Order"
 
     trigger OnAfterGetRecord()
     begin
-        SignatureStatusEditable := HasSignature();
+        SignatureStatusEditable := RecSignature.get(database::"Service Header", rec."No.", rec."Document Type".AsInteger());
+        RecSignature.CalcFields(Signature);
     end;
 
     var
         SignatureStatusEditable: Boolean;
-
-    local procedure HasSignature(): Boolean;
-    begin
-        if RecSignature.GET(database::"Service Header", rec."No.", rec."Document Type".AsInteger()) then
-            RecSignature.CalcFields("Signature");
-        exit(RecSignature.Signature.HasValue());
-    end;
-
-    local procedure AddSignature();
-    var
-        Signature: Page Signature;
-    begin
-        Signature.SetDocNo(rec."No.");
-        Signature.SetDocType(rec."Document Type".AsInteger());
-        Signature.SetTable(Database::"Service Header");
-        Signature.SetWithExit();
-        Signature.RunModal();
-    end;
-
-    local procedure UpdateSignStatus(Signed: Boolean)
-    begin
-        if Signed then
-            rec."Status Signing" := rec."Status Signing"::Signed
-        else
-            rec."Status Signing" := rec."Status Signing"::Unsigned;
-        rec.Modify();
-    end;
 }
