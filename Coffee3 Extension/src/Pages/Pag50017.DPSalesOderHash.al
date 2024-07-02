@@ -181,7 +181,9 @@ page 50017 "DP Sales Order#"
                         if not RecSignature.HasSignature(rec."No.", rec."Document Type".AsInteger(), database::"Sales Header") then begin
                             RecSignature.OpenSignaturePage(rec."No.", rec."Document Type".AsInteger(), database::"Sales Header");
                             CurrPage.UPDATE(false);
-                        end else begin
+                        end;
+
+                        if RecSignature.HasSignature(rec."No.", rec."Document Type".AsInteger(), database::"Sales Header") then begin
                             Rec.InPosting := true; // COFF-1
                             Rec.MODIFY();
                             COMMIT();

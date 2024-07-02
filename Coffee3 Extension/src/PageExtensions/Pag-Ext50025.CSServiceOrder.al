@@ -31,19 +31,19 @@ pageextension 50025 "CS Service Order" extends "Service Order"
 
         modify(Invoicing)
         {
-            Visible = false;
+            Visible = FasttabVisible;
         }
         modify(Shipping)
         {
-            Visible = false;
+            Visible = FasttabVisible;
         }
         modify(Details)
         {
-            Visible = false;
+            Visible = FasttabVisible;
         }
         modify(" Foreign Trade")
         {
-            Visible = false;
+            Visible = FasttabVisible;
         }
     }
 
@@ -96,12 +96,28 @@ pageextension 50025 "CS Service Order" extends "Service Order"
     var
         RecSignature: Record "CS Signature";
 
+    trigger OnOpenPage()
+    begin
+        SetFastTabVisibility();
+    end;
+
     trigger OnAfterGetRecord()
     begin
         SignatureStatusEditable := RecSignature.get(database::"Service Header", rec."No.", rec."Document Type".AsInteger());
         RecSignature.CalcFields(Signature);
+        SetFastTabVisibility();
     end;
 
     var
         SignatureStatusEditable: Boolean;
+        FasttabVisible: Boolean;
+
+    local procedure SetFastTabVisibility()
+    var
+        WarehouseEmployee: Record "Warehouse Employee";
+
+    begin
+        WarehouseEmployee.SetRange("User ID", UserId());
+        FasttabVisible := WarehouseEmployee.IsEmpty();
+    end;
 }

@@ -6681,7 +6681,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 1668621162 - Field 979250707 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 994825818">
           <source>Service Orders - in Process</source>
-          <target>Serviceorders - Verwerkt</target>
+          <target>Serviceorders - In-Verwerking</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension CS Service Cue - Field CS Service Orders - in Process - Property Caption</note>
         </trans-unit>
@@ -6699,9 +6699,8 @@
         </trans-unit>
         <trans-unit id="TableExtension 1147877454 - Field 2967719865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3610197182">
           <source>Status Signature</source>
-          <target>[NAB: REVIEW]Status Handtekening</target>
+          <target>Status Handtekening</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension CS Service Header - Field Status Signing - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1147877454 - Field 3728765889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3610197182">

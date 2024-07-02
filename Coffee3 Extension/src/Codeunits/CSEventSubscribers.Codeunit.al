@@ -213,6 +213,25 @@ codeunit 50003 "CSEventSubscribers"
             Rec.VALIDATE("Ship-to Code", ShipToRecL.Code);
     end;
 
+    [EventSubscriber(ObjectType::Table, 5900, 'OnBeforeInsertEvent', '', false, false)]
+    local procedure CS_ServiceHeader_OnAfterInsertEvent(var Rec: Record "Service Header")
+    begin
+        if Rec."Document Type" = Rec."Document Type"::Order then begin
+            rec."Starting Date" := Today();
+            rec."Starting Time" := time();
+        end;
+    end;
+
+    [EventSubscriber(ObjectType::Table, 5900, 'OnBeforeModifyEvent', '', false, false)]
+    local procedure CS_ServiceHeader_OnAfterModifyEvent(var Rec: Record "Service Header"; var xRec: Record "Service Header")
+    begin
+        if Rec."Document Type" = Rec."Document Type"::Order then
+            if (rec."Starting Date" <> 0D) OR (rec."Starting Time" <> 0T) then begin
+                rec."Starting Date" := Today();
+                rec."Starting Time" := time();
+            end;
+    end;
+
     [EventSubscriber(ObjectType::Codeunit, 80, 'OnRunOnBeforeCheckAndUpdate', '', false, false)]
     local procedure CS_SalesPost_OnRunOnBeforeCheckAndUpdate(var SalesHeader: Record "Sales Header")
     begin

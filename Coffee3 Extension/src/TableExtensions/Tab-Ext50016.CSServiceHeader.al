@@ -24,10 +24,15 @@ tableextension 50016 "CS Service Header" extends "Service Header"
 
     procedure UpdateSignStatus(Signed: Boolean)
     begin
-        if Signed then
-            rec."Status Signing" := rec."Status Signing"::Signed
-        else
+        if Signed then begin
+            rec."Status Signing" := rec."Status Signing"::Signed;
+            rec."Finishing Date" := Today();
+            rec."Finishing Time" := Time();
+        end else begin
             rec."Status Signing" := rec."Status Signing"::Unsigned;
+            rec."Finishing Date" := 0D;
+            rec."Finishing Time" := 0T;
+        end;
         rec.Modify();
     end;
 }
