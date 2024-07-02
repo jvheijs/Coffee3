@@ -6,6 +6,7 @@ codeunit 50006 CSCondorInstall
     var
         SalesHeader: Record "Sales Header";
         SalesShipmentHeader: Record "Sales Shipment Header";
+        SalesInvoiceHeader: Record "Sales Invoice Header";
         Signature: Record "CS Signature";
     begin
         if SalesHeader.findset() then
@@ -32,6 +33,21 @@ codeunit 50006 CSCondorInstall
                         Signature."Signature" := SalesShipmentHeader."Signature";
                         Signature."Document No." := SalesShipmentHeader."No.";
                         Signature."Table No." := Database::"Sales Shipment Header";
+                        Signature.Insert(true);
+                    end
+                end;
+            until SalesHeader.next() = 0;
+
+
+        if SalesInvoiceHeader.findset() then
+            repeat
+                if not Signature.get(Database::"Sales Invoice Header", SalesInvoiceHeader."No.", 0) then begin
+                    SalesInvoiceHeader.calcfields("Signature");
+                    if SalesInvoiceHeader.signature.hasvalue then begin
+                        Signature.init();
+                        Signature."Signature" := SalesInvoiceHeader."Signature";
+                        Signature."Document No." := SalesInvoiceHeader."No.";
+                        Signature."Table No." := Database::"Sales Invoice Header";
                         Signature.Insert(true);
                     end
                 end;

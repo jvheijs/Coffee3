@@ -135,9 +135,6 @@ report 50078 "Service Invoice"
             column(Signature; SignatureRec.Signature)
             {
             }
-            column(testfefefefewfcccccccccccccccccccccccccccccw; TEST)
-            {
-            }
             dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = sorting(Number);
@@ -783,7 +780,6 @@ report 50078 "Service Invoice"
                 // Signature
                 if SignatureRec.get(Database::"Service Invoice Header", "Service Invoice Header"."No.", 0) then begin
                     SignatureRec.CalcFields(Signature);
-                    test := 'TEST SIGNATURE';
                 end;
             end;
         }
@@ -979,8 +975,6 @@ report 50078 "Service Invoice"
         gTxtPayMethodLbl: Label 'Betalingsmethode';
         gDecTotalLineDiscAmout: Decimal;
         LineDiscAmtCaptionLbl: Label 'Totale korting EUR';
-        //TODO remove
-        TEST: text[20];
 
 
     procedure InitLogInteraction()
