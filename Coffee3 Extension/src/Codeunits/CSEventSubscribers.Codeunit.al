@@ -344,7 +344,7 @@ codeunit 50003 "CSEventSubscribers"
             Signature.CalcFields(Signature);
             Signature."Document No." := SalesShptHeader."No.";
             Signature."Document Type" := 0;
-            Signature."Table No." := Database::"Invt. Shipment Header";
+            Signature."Table No." := Database::"Sales Shipment Header";
             Signature.Insert();
         end;
     end;
