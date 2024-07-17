@@ -36,7 +36,7 @@ codeunit 50006 CSCondorInstall
                         Signature.Insert(true);
                     end
                 end;
-            until SalesHeader.next() = 0;
+            until SalesShipmentHeader.next() = 0;
 
 
         if SalesInvoiceHeader.findset() then
@@ -51,7 +51,7 @@ codeunit 50006 CSCondorInstall
                         Signature.Insert(true);
                     end
                 end;
-            until SalesHeader.next() = 0;
+            until SalesInvoiceHeader.next() = 0;
 
     end;
 }
