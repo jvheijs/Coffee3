@@ -70,6 +70,7 @@ page 50009 "Toolbox John"
                                     Signature.init();
                                     Signature."Signature" := SalesShipmentHeader."Signature";
                                     Signature."Document No." := SalesShipmentHeader."No.";
+                                    Signature."Document Type" := 0;
                                     Signature."Table No." := Database::"Sales Shipment Header";
                                     Signature.Insert(true);
                                 end
@@ -85,6 +86,7 @@ page 50009 "Toolbox John"
                                     Signature.init();
                                     Signature."Signature" := SalesInvoiceHeader."Signature";
                                     Signature."Document No." := SalesInvoiceHeader."No.";
+                                    Signature."Document Type" := 0;
                                     Signature."Table No." := Database::"Sales Invoice Header";
                                     Signature.Insert(true);
                                 end
