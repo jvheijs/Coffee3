@@ -135,6 +135,32 @@ report 50078 "Service Invoice"
             column(Signature; SignatureRec.Signature)
             {
             }
+
+            dataitem("Service Comment Line Hdr"; "Service Comment Line")
+            {
+                DataItemLink = "No." = field("No.");
+                DataItemLinkReference = "Service Invoice Header";
+                DataItemTableView = sorting("No.", "Line No.") where("Table Name" = const("Service Invoice Header"), "Table Subtype" = filter("Table Subtype"::"0"), "CS Show on Invoice" = filter(true));
+
+                column(LineNo_ServCommentLineHdr; "Line No.")
+                {
+                }
+                column(Type_ServCommentLineHdr; Type)
+                {
+                }
+                column(Date_ServCommentLineHdr; FORMAT(Date, 0, 4))
+                {
+                }
+                column(Comment_ServCommentLineHdr; Comment)
+                {
+                }
+
+                trigger OnAfterGetRecord()
+                begin
+                    if Comment = '' then
+                        CurrReport.Skip();
+                end;
+            }
             dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = sorting(Number);
@@ -414,7 +440,7 @@ report 50078 "Service Invoice"
                         {
                             DataItemLink = "No." = field("Document No."), "Table Line No." = field("Line No.");
                             DataItemLinkReference = "Service Invoice Line";
-                            DataItemTableView = sorting("No.", "Line No.") where("Table Name" = const("Service Invoice Line"), "Table Subtype" = filter("Table Subtype"::"0"));
+                            DataItemTableView = sorting("No.", "Line No.") where("Table Name" = const("Service Invoice Line"), "Table Subtype" = filter("Table Subtype"::"0"), "CS Show on Invoice" = filter(true));
 
                             column(LineNo_ServCommentLine; "Line No.")
                             {

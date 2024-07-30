@@ -3,6 +3,23 @@ pageextension 50033 "CS Service Item Worksheet" extends "Service Item Worksheet"
 
     actions
     {
+        addbefore(Faults)
+        {
+            action("Co&mments")
+            {
+                ApplicationArea = Comments;
+                Caption = 'Co&mments';
+                Image = ViewComments;
+
+                RunObject = Page "Service Comment Sheet";
+                RunPageLink = "Table Name" = const("Service Line"),
+                                  "Table Subtype" = field("Document Type"),
+                                      "No." = field("Document No."),
+                                      "Table Line No." = field("Line No."),
+                                  Type = const(General);
+                ToolTip = 'View or add comments for the record.';
+            }
+        }
         addafter("&Print_Promoted")
         {
 
@@ -10,6 +27,10 @@ pageextension 50033 "CS Service Item Worksheet" extends "Service Item Worksheet"
             {
                 Caption = 'Com&ments';
                 ShowAs = Standard;
+
+                actionref(Comments_Promoted; "Co&mments")
+                {
+                }
 
                 actionref(Faults_Promoted; Faults)
                 {

@@ -420,6 +420,33 @@ codeunit 50003 "CSEventSubscribers"
                 until DefaultServiceLines.Next() = 0;
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Serv-Documents Mgt.", OnAfterServInvHeaderInsert, '', false, false)]
+    local procedure "Serv-Documents Mgt._OnAfterServInvHeaderInsert"(var ServiceInvoiceHeader: Record "Service Invoice Header"; ServiceHeader: Record "Service Header")
+    var
+        ServiceCommentLine: Record "Service Comment Line";
+        ServiceCommentLineInsert: Record "Service Comment Line";
+    begin
+        ServiceCommentLine.init();
+        ServiceCommentLine.SetRange("Table Name", ServiceCommentLine."Table Name"::"Service Header");
+        ServiceCommentLine.SetRange("Table Subtype", ServiceHeader."Document Type");
+        ServiceCommentLine.SetRange("No.", ServiceHeader."No.");
+        if ServiceCommentLine.FindSet() then
+            repeat
+                ServiceCommentLineInsert.init();
+                ServiceCommentLineInsert."Table Name" := ServiceCommentLineInsert."Table Name"::"Service Invoice Header";
+                ServiceCommentLineInsert."Table Subtype" := ServiceCommentLineInsert."Table Subtype"::"0";
+                ServiceCommentLineInsert."No." := ServiceInvoiceHeader."No.";
+                ServiceCommentLineInsert.Date := ServiceCommentLine.Date;
+                ServiceCommentLineInsert."Line No." := ServiceCommentLine."Line No.";
+                ServiceCommentLineInsert.Type := ServiceCommentLine.Type;
+                ServiceCommentLineInsert.Comment := ServiceCommentLine.Comment;
+                ServiceCommentLineInsert."CS Show on Invoice" := ServiceCommentLine."CS Show on Invoice";
+                ServiceCommentLineInsert.Insert();
+            until ServiceCommentLine.Next() = 0;
+        ServiceCommentLine.DeleteAll();
+    end;
+
+
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Serv-Documents Mgt.", OnAfterServInvLineInsert, '', false, false)]
     local procedure "Serv-Documents Mgt._OnAfterServInvLineInsert"(var ServiceInvoiceLine: Record "Service Invoice Line"; ServiceLine: Record "Service Line")
     var
@@ -427,8 +454,8 @@ codeunit 50003 "CSEventSubscribers"
         ServiceCommentLineInsert: Record "Service Comment Line";
     begin
         ServiceCommentLine.init();
-        ServiceCommentLine.SetRange("Table Name", ServiceCommentLine."Table Name"::"Service Header");
-        ServiceCommentLine.SetRange("Table Subtype", ServiceLine."Document Type".AsInteger());
+        ServiceCommentLine.SetRange("Table Name", ServiceCommentLine."Table Name"::"Service Line");
+        ServiceCommentLine.SetRange("Table Subtype", ServiceLine."Document Type");
         ServiceCommentLine.SetRange("No.", ServiceLine."Document No.");
         ServiceCommentLine.SetRange("table Line No.", ServiceLine."Line No.");
         if ServiceCommentLine.FindSet() then
@@ -442,6 +469,7 @@ codeunit 50003 "CSEventSubscribers"
                 ServiceCommentLineInsert."Line No." := ServiceCommentLine."Line No.";
                 ServiceCommentLineInsert.Type := ServiceCommentLine.Type;
                 ServiceCommentLineInsert.Comment := ServiceCommentLine.Comment;
+                ServiceCommentLineInsert."CS Show on Invoice" := ServiceCommentLine."CS Show on Invoice";
                 ServiceCommentLineInsert.Insert();
             until ServiceCommentLine.Next() = 0;
         ServiceCommentLine.DeleteAll();

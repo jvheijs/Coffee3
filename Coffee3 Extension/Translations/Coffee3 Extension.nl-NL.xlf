@@ -13,49 +13,42 @@
           <source>Description Area</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Area and Customerstatus - Field Omschrijving rayon - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1481560520 - Field 3971649587 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description Status</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Area and Customerstatus - Field Omschrijving status - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1481560520 - Field 1833352594 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Area Code</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Area and Customerstatus - Field Rayoncode - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1481560520 - Field 910910131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Statuscode</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Area and Customerstatus - Field Statuscode - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3982178340 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Record Link</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Copy Record Link - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3982178340 - Field 1025054742 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attached</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Copy Record Link - Field Attached - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3982178340 - Field 4110714008 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attached File</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Copy Record Link - Field Attached File - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3982178340 - Field 3133801257 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -80,14 +73,12 @@
           <source>Imported into Blob</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Copy Record Link - Field Imported into Blob - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3982178340 - Field 3574213391 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Link ID</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Copy Record Link - Field Link ID - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3982178340 - Field 2898143332 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -112,21 +103,18 @@
           <source>RecRefPos</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Copy Record Link - Field RecRefPos - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3982178340 - Field 291409893 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>TableID</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Copy Record Link - Field TableID - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3982178340 - Field 2146254297 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>To User ID</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Copy Record Link - Field To User ID - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3982178340 - Field 1878130204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -140,14 +128,12 @@
           <source>Link,Note</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Copy Record Link - Field Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 3982178340 - Field 589256022 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>URL1</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Copy Record Link - Field URL1 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3982178340 - Field 2708250016 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -160,7 +146,6 @@
           <source>CS Default Service Lines</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CS Default Service Lines - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2411809373 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -192,35 +177,30 @@
           <source>Signature</source>
           <target>Handtekening</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CS Signature - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2401802496 - Field 486908828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document No.</source>
           <target>Documentnr.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CS Signature - Field Document No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2401802496 - Field 2363328873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Dococument Type</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CS Signature - Field Document Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2401802496 - Field 3765202864 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Signature</source>
           <target>Handtekening</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CS Signature - Field Signature - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2401802496 - Field 3017471043 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Table No.</source>
           <target>Tabelnr.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CS Signature - Field Table No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3385088057 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -317,28 +297,24 @@
           <source>Import Bestanden</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Import Bestanden - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3507780487 - Field 1075353949 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bestandsnaam</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Import Bestanden - Field Bestandsnaam - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3507780487 - Field 641352812 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Entry nummer</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Import Bestanden - Field Entry nummer - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3507780487 - Field 627566359 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Omschrijving</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Import Bestanden - Field Omschrijving - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3109324923 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1065,133 +1041,114 @@
           <source>~o</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60000</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 1559726398" size-unit="char" translate="yes" xml:space="preserve">
           <source>~ncc</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60001</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 3941603843" size-unit="char" translate="yes" xml:space="preserve">
           <source>~nII</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60002</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 284333164" size-unit="char" translate="yes" xml:space="preserve">
           <source>~e</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60003</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 2666210609" size-unit="char" translate="yes" xml:space="preserve">
           <source>~kM</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60004</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 3303907226" size-unit="char" translate="yes" xml:space="preserve">
           <source>~a</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60005</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 1390817375" size-unit="char" translate="yes" xml:space="preserve">
           <source>~nMM</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60006</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 2028513992" size-unit="char" translate="yes" xml:space="preserve">
           <source>~kV</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60007</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 1728635421" size-unit="char" translate="yes" xml:space="preserve">
           <source>~nVV</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60008</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 2366332038" size-unit="char" translate="yes" xml:space="preserve">
           <source>~nAA</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60009</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 109228966" size-unit="char" translate="yes" xml:space="preserve">
           <source>~kA</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60010</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 3766499645" size-unit="char" translate="yes" xml:space="preserve">
           <source>~kT</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60011</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 3128803028" size-unit="char" translate="yes" xml:space="preserve">
           <source>~nTT</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60012</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 2491106411" size-unit="char" translate="yes" xml:space="preserve">
           <source>A..Z</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60013</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 1853409794" size-unit="char" translate="yes" xml:space="preserve">
           <source>~kW</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60014</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 1215713177" size-unit="char" translate="yes" xml:space="preserve">
           <source>~nWW</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60015</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 578016560" size-unit="char" translate="yes" xml:space="preserve">
           <source>~kP</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60016</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 4235287239" size-unit="char" translate="yes" xml:space="preserve">
           <source>~nPP</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60017</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 3597590622" size-unit="char" translate="yes" xml:space="preserve">
           <source>~nKK</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60018</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 2959894005" size-unit="char" translate="yes" xml:space="preserve">
@@ -1204,105 +1161,90 @@
           <source>J</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60020</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 2095994940" size-unit="char" translate="yes" xml:space="preserve">
           <source>N</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60021</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 2733691557" size-unit="char" translate="yes" xml:space="preserve">
           <source>~kK</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60022</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 3371388174" size-unit="char" translate="yes" xml:space="preserve">
           <source>~00050305</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60023</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 3202479151" size-unit="char" translate="yes" xml:space="preserve">
           <source>~kC</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60024</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 3840175768" size-unit="char" translate="yes" xml:space="preserve">
           <source>~nCC</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60025</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 182905089" size-unit="char" translate="yes" xml:space="preserve">
           <source>~kG</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60026</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 820601706" size-unit="char" translate="yes" xml:space="preserve">
           <source>~nGG</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60027</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 2264903963" size-unit="char" translate="yes" xml:space="preserve">
           <source>~kX</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60028</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 2902600580" size-unit="char" translate="yes" xml:space="preserve">
           <source>~nXX</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60029</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 645497508" size-unit="char" translate="yes" xml:space="preserve">
           <source>~kB</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60030</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 7800891" size-unit="char" translate="yes" xml:space="preserve">
           <source>~nBB</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60031</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 1920890742" size-unit="char" translate="yes" xml:space="preserve">
           <source>~kH</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60032</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - NamedType 1283194125" size-unit="char" translate="yes" xml:space="preserve">
           <source>~nHH</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - NamedType Text60033</note>
         </trans-unit>
         <trans-unit id="Codeunit 4000211118 - Method 1665861916 - NamedType 645831373" size-unit="char" translate="yes" xml:space="preserve">
           <source>Klaar met acties.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CreateTerminalExportFile - Method OnRun - NamedType ReadyTxt</note>
         </trans-unit>
         <trans-unit id="Codeunit 3045885007 - NamedType 1758949055" size-unit="char" translate="yes" xml:space="preserve">
@@ -1327,70 +1269,60 @@
           <source>CS Default Service Lines</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CS Default Service Lines - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2411809373 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Description field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CS Default Service Lines - Control Description - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2411809373 - Control 3320823955 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Line No. field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CS Default Service Lines - Control Line No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2411809373 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the No. field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CS Default Service Lines - Control No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2411809373 - Control 1878130204 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Type field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CS Default Service Lines - Control Type - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2689968617 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Klantvoorraad</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CustStock Klantvoorraad - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2689968617 - Control 3761755486 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Check Date field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CustStock Klantvoorraad - Control Check Date - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2689968617 - Control 2356422732 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Cust. No. field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CustStock Klantvoorraad - Control Cust. No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2689968617 - Control 568743302 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Item No. field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CustStock Klantvoorraad - Control Item No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2689968617 - Control 3763287528 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Quantity in stock field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CustStock Klantvoorraad - Control Quantity in stock - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 4263012333 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1409,21 +1341,18 @@
           <source>DP My Customers</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP My Customers - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3669790793 - Control 63967408 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Klant memo 1</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP My Customers - Control Cust.Memo1 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3669790793 - Control 701664025 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Klant memo 2</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP My Customers - Control Cust.Memo2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3669790793 - Control 4190130733 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -1490,21 +1419,18 @@
           <source>Werk alle gebruikers bij.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP My Customers - Action UpdateUsers - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3669790793 - Action 2118953517 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bijwerken gebruikers-klanten</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP My Customers - Action UpdateUsers - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3669790793 - Action 491222352 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Nieuwe verkooporder</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP My Customers - Action Verkooporder - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1695189049 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
@@ -1979,14 +1905,12 @@
           <source>Overzicht niet geboekte verkooporders</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Role Center - Action Overzicht niet geboekte verkooporders - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3342938117 - Action 3226631316 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Mijn klanten</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Role Center - Action Page My Customers - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3342938117 - Action 3434938165 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2317,14 +2241,12 @@
           <source>Verkooporderregels</source>
           <target>Verkooporderregel</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Sales Order Line - Control DPSalesLineDetail - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2846811288 - Control 411069083 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Artikel</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Sales Order Line - Control DetailStock - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2846811288 - Control 384648491 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2337,56 +2259,48 @@
           <source>Datum-1</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Sales Order Line - Control DateStock-1 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2846811288 - Control 1660041725 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Datum-2</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Sales Order Line - Control DateStock-2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2846811288 - Control 1388456353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Opgenomen voorraad per datum</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Sales Order Line - Control Vrd-Laatste - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2846811288 - Control 1388456353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Opgenomen voorraad</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Sales Order Line - Control Vrd-Laatste - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2846811288 - Control 2508771973 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Opgenomen voorraad per datum 1</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Sales Order Line - Control Vrd-Laatste-1 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2846811288 - Control 2508771973 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Opgenomen voorraad 1</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Sales Order Line - Control Vrd-Laatste-1 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2846811288 - Control 1871075356 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Opgenomen voorraad per datum 2</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Sales Order Line - Control Vrd-Laatste-2 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2846811288 - Control 1871075356 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Opgenomen voorraad 2</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Sales Order Line - Control Vrd-Laatste-2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2846811288 - Control 332802016 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -2399,56 +2313,48 @@
           <source>Artikel nr.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Sales Order Line - Control ItemNo - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2846811288 - Control 3435539207 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Historie</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Sales Order Line - Control Orders - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2846811288 - Control 391974646 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Verkocht aantal per datum</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Sales Order Line - Control Bst-Laatste - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2846811288 - Control 391974646 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Verkocht aantal</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Sales Order Line - Control Bst-Laatste - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2846811288 - Control 3878188626 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Verkocht aantal per datum 1</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Sales Order Line - Control Bst-Laatste-1 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2846811288 - Control 3878188626 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Verkocht aantal 1</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Sales Order Line - Control Bst-Laatste-1 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2846811288 - Control 1965098775 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Verkocht aantal per datum 2</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Sales Order Line - Control Bst-Laatste-2 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2846811288 - Control 1965098775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Verkocht aantal 2</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Sales Order Line - Control Bst-Laatste-2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2846811288 - Control 3894751596 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2461,21 +2367,18 @@
           <source>Datum-1</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Sales Order Line - Control DateLastOrder-1 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2846811288 - Control 1964174785 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Datum-2</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Sales Order Line - Control DateLastOrder-2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2846811288 - Control 3250206731 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Soort</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Sales Order Line - Control Type1 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2846811288 - Action 2245087378 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2524,7 +2427,6 @@
           <source>Signature</source>
           <target>Handtekening</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Sales Order# - Control CSSignature - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 677399851 - Control 2846811288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2645,7 +2547,6 @@
           <source>Boeken</source>
           <target>B&amp;oeken</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page DP Sales Order# - Action Post# - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 677399851 - Action 3001607129 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2772,28 +2673,24 @@
           <source>Verplaats routes.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Routes - Action ChangeRoutes - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 430914142 - Action 3265204032 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Routes Verplaatsen</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Routes - Action ChangeRoutes - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 430914142 - Action 2431622588 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sorteer routes.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Routes - Action SortRoutes - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 430914142 - Action 2431622588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Routes Sorteren</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Routes - Action SortRoutes - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1968532296 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -2998,168 +2895,144 @@
           <source>Toolbox John</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1572453330 - Action 1396138289 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Alle facturen/verzendingen op afgedrukt 0 zetten i.v.m. mailen</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John - Action Alle facturen/verzendingen als afgedrukt - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1572453330 - Action 1396138289 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Alle facturen/verzendingen als afgedrukt</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John - Action Alle facturen/verzendingen als afgedrukt - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1572453330 - Action 1139914810 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>DB instellen als testomgeving</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John - Action DB instellen als testomgeving - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1572453330 - Action 3299409362 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Eenmalig code John</source>
-          <target></target>
+        <trans-unit id="Page 1572453330 - Action 2360955249 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Eenmalig handtekeningen omzetten</source>
+          <target>Eenmalig handtekeningen omzetten</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John - Action Eenmalig code John - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John - Action Eenmalig handtekeningen omzetten - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1576088124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Toolbox John-Condor</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John-Condor - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1576088124 - Control 3133801257 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Company field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John-Condor - Control Company - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1576088124 - Control 1249475212 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Created field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John-Condor - Control Created - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1576088124 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Description field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John-Condor - Control Description - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1576088124 - Control 641352812 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Entry nummer field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John-Condor - Control Entry nummer - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1576088124 - Control 2898143332 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Note field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John-Condor - Control Note - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1576088124 - Control 747683197 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Notify field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John-Condor - Control Notify - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1576088124 - Control 2897660500 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Record ID field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John-Condor - Control Record ID - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1576088124 - Control 577209412 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the SystemCreatedAt field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John-Condor - Control SystemCreatedAt - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1576088124 - Control 4000648066 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the SystemCreatedBy field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John-Condor - Control SystemCreatedBy - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1576088124 - Control 1367528460 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the SystemId field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John-Condor - Control SystemId - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1576088124 - Control 2453272523 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the SystemModifiedAt field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John-Condor - Control SystemModifiedAt - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1576088124 - Control 4085837753 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the SystemModifiedBy field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John-Condor - Control SystemModifiedBy - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1576088124 - Control 2146254297 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the To User ID field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John-Condor - Control To User ID - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1576088124 - Control 1878130204 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Type field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John-Condor - Control Type - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1576088124 - Control 589256022 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the URL1 field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John-Condor - Control URL1 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1576088124 - Control 2708250016 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the User ID field.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John-Condor - Control User ID - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1576088124 - Action 1139914810 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>DB instellen als testomgeving</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John-Condor - Action DB instellen als testomgeving - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1576088124 - Action 1152567061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Eenmalig code John Verzendadressen</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Toolbox John-Condor - Action Eenmalig code John Verzendadressen - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 4294593031 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3214,63 +3087,54 @@
           <source>Rayon Nieuw</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Change Route - Control RayonNieuw - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 609490641 - Control 1504331245 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Rayon Nieuw</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Change Route - Control RayonNieuw - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 609490641 - Control 718368087 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Rayon Oud</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Change Route - Control RayonOud - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 609490641 - Control 718368087 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Rayon Oud</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Change Route - Control RayonOud - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 609490641 - Control 3542577155 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Route Nieuw</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Change Route - Control RouteNieuw - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 609490641 - Control 3542577155 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Route Nieuw</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Change Route - Control RouteNieuw - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 609490641 - Control 3914903969 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Route Oud</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Change Route - Control RouteOud - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 609490641 - Control 3914903969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Route Oud</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Change Route - Control RouteOud - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3296809971 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Condor verzamelfacturering</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Condor Combine Shipments - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3296809971 - NamedType 2962434689" size-unit="char" translate="yes" xml:space="preserve">
@@ -3367,7 +3231,6 @@
           <source>Bereken factuurkorting</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Condor Combine Shipments - Control CalcInvDisc - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3296809971 - Control 2699193159 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -3380,7 +3243,6 @@
           <source>Kopieer tekst regels</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Condor Combine Shipments - Control CopyTextLines - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3296809971 - Control 4040901854 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -3393,7 +3255,6 @@
           <source>Documentdatum</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Condor Combine Shipments - Control DocDateReq - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3296809971 - Control 3954803709 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -3406,7 +3267,6 @@
           <source>Alleen standaard betalings voorwaarden</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Condor Combine Shipments - Control OnlyStdPmtTerms - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3296809971 - Control 3037438984 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -3419,7 +3279,6 @@
           <source>Boekingsdatum</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Condor Combine Shipments - Control PostingDate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3296809971 - Control 3789019539 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -3432,7 +3291,6 @@
           <source>Boek facturen</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Condor Combine Shipments - Control PostInv - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1611820602 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3458,7 +3316,6 @@
           <source>Rekeningnummer</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report CS Reminder - NamedType BankAccNoCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1611820602 - NamedType 2728952663" size-unit="char" translate="yes" xml:space="preserve">
@@ -3532,7 +3389,6 @@
           <source>Vervaldatum</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report CS Reminder - NamedType DueDateCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1611820602 - NamedType 595034892" size-unit="char" translate="yes" xml:space="preserve">
@@ -3563,7 +3419,6 @@
           <source>Startpagina</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report CS Reminder - NamedType HomePageCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1611820602 - NamedType 3208712818" size-unit="char" translate="yes" xml:space="preserve">
@@ -3582,14 +3437,12 @@
           <source>Telefoonnummer</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report CS Reminder - NamedType PhoneNoCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1611820602 - NamedType 443421780" size-unit="char" translate="yes" xml:space="preserve">
           <source>Boekingsdatum</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report CS Reminder - NamedType PostingDateCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1611820602 - NamedType 2320187798" size-unit="char" translate="yes" xml:space="preserve">
@@ -3602,7 +3455,6 @@
           <source>Aanmaningsnr.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report CS Reminder - NamedType ReminderNoCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1611820602 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
@@ -3801,14 +3653,12 @@
           <source>Rayon</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Route Sorting - Control Rayon - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 3279940629 - Control 2252133069 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Rayon</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Route Sorting - Control Rayon - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3279940629 - Control 2353243635 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -4043,7 +3893,6 @@
           <source>Bedrag Euro</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales Credit-Memo - NamedType AmountCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 4028917678 - NamedType 175863088" size-unit="char" translate="yes" xml:space="preserve">
@@ -4080,21 +3929,18 @@
           <source>Klantnummer</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales Credit-Memo - NamedType CustNoCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 4028917678 - NamedType 35837468" size-unit="char" translate="yes" xml:space="preserve">
           <source>Factuurdatum</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales Credit-Memo - NamedType DateCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 4028917678 - NamedType 1374150914" size-unit="char" translate="yes" xml:space="preserve">
           <source>Verzend adres</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales Credit-Memo - NamedType DeliveryAddressCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 4028917678 - NamedType 2557738537" size-unit="char" translate="yes" xml:space="preserve">
@@ -4179,14 +4025,12 @@
           <source>Korting %</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales Credit-Memo - NamedType LineDiscCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 4028917678 - NamedType 1292293871" size-unit="char" translate="yes" xml:space="preserve">
           <source>Creditnota nr.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales Credit-Memo - NamedType NoCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 4028917678 - NamedType 2219219549" size-unit="char" translate="yes" xml:space="preserve">
@@ -4289,7 +4133,6 @@
           <source>Total Euro incl. BTW</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales Credit-Memo - NamedType TotalCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 4028917678 - NamedType 1537992153" size-unit="char" translate="yes" xml:space="preserve">
@@ -4308,14 +4151,12 @@
           <source>Eenheidsprijs Euro</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales Credit-Memo - NamedType UnitPriceCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 4028917678 - NamedType 4049601073" size-unit="char" translate="yes" xml:space="preserve">
           <source>BTW bedrag Euro</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales Credit-Memo - NamedType VATAmtCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 4028917678 - NamedType 2485276663" size-unit="char" translate="yes" xml:space="preserve">
@@ -4334,7 +4175,6 @@
           <source>BTW%</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales Credit-Memo - NamedType VatCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 4028917678 - NamedType 3365690297" size-unit="char" translate="yes" xml:space="preserve">
@@ -4413,7 +4253,6 @@
           <source>Bedrag Euro</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales Invoice - NamedType AmountCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 4034894651 - NamedType 175863088" size-unit="char" translate="yes" xml:space="preserve">
@@ -4450,21 +4289,18 @@
           <source>Klantnummer</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales Invoice - NamedType CustNoCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 4034894651 - NamedType 35837468" size-unit="char" translate="yes" xml:space="preserve">
           <source>Factuurdatum</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales Invoice - NamedType DateCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 4034894651 - NamedType 1374150914" size-unit="char" translate="yes" xml:space="preserve">
           <source>Verzend Adres</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales Invoice - NamedType DeliveryAddressCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 4034894651 - NamedType 2557738537" size-unit="char" translate="yes" xml:space="preserve">
@@ -4549,7 +4385,6 @@
           <source>Korting %</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales Invoice - NamedType LineDiscCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 4034894651 - NamedType 1292293871" size-unit="char" translate="yes" xml:space="preserve">
@@ -4658,7 +4493,6 @@
           <source>Total Euro incl. BTW</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales Invoice - NamedType TotalCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 4034894651 - NamedType 1537992153" size-unit="char" translate="yes" xml:space="preserve">
@@ -4677,14 +4511,12 @@
           <source>Eenheidsprijs Euro</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales Invoice - NamedType UnitPriceCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 4034894651 - NamedType 4049601073" size-unit="char" translate="yes" xml:space="preserve">
           <source>BTW bedrag Euro</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales Invoice - NamedType VATAmtCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 4034894651 - NamedType 2485276663" size-unit="char" translate="yes" xml:space="preserve">
@@ -4703,7 +4535,6 @@
           <source>BTW%</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sales Invoice - NamedType VatCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 4034894651 - NamedType 3365690297" size-unit="char" translate="yes" xml:space="preserve">
@@ -4776,7 +4607,6 @@
           <source>Zending bestand PTT</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Sending File PTT - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1209116609 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -4789,7 +4619,6 @@
           <source>Bedrag Euro</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Service Credit-Memo - NamedType AmountCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1209116609 - NamedType 175863088" size-unit="char" translate="yes" xml:space="preserve">
@@ -4826,21 +4655,18 @@
           <source>Klantnummer</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Service Credit-Memo - NamedType CustNoCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1209116609 - NamedType 35837468" size-unit="char" translate="yes" xml:space="preserve">
           <source>Factuurdatum</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Service Credit-Memo - NamedType DateCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1209116609 - NamedType 1374150914" size-unit="char" translate="yes" xml:space="preserve">
           <source>Verzendadres</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Service Credit-Memo - NamedType DeliveryAddressCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1209116609 - NamedType 2557738537" size-unit="char" translate="yes" xml:space="preserve">
@@ -4925,7 +4751,6 @@
           <source>Korting %</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Service Credit-Memo - NamedType LineDiscCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1209116609 - NamedType 1292293871" size-unit="char" translate="yes" xml:space="preserve">
@@ -5040,7 +4865,6 @@
           <source>Total Euro incl. BTW</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Service Credit-Memo - NamedType TotalCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1209116609 - NamedType 1537992153" size-unit="char" translate="yes" xml:space="preserve">
@@ -5059,14 +4883,12 @@
           <source>Eenheidsprijs Euro</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Service Credit-Memo - NamedType UnitPriceCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1209116609 - NamedType 4049601073" size-unit="char" translate="yes" xml:space="preserve">
           <source>BTW bedrag Euro</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Service Credit-Memo - NamedType VATAmtCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1209116609 - NamedType 2485276663" size-unit="char" translate="yes" xml:space="preserve">
@@ -5085,7 +4907,6 @@
           <source>BTW%</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Service Credit-Memo - NamedType VatCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1209116609 - NamedType 3365690297" size-unit="char" translate="yes" xml:space="preserve">
@@ -5164,7 +4985,6 @@
           <source>Bedrag Euro</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType AmountCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1224914752 - NamedType 175863088" size-unit="char" translate="yes" xml:space="preserve">
@@ -5201,21 +5021,18 @@
           <source>Klantnummer</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType CustNoCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1224914752 - NamedType 35837468" size-unit="char" translate="yes" xml:space="preserve">
           <source>Factuurdatum</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType DateCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1224914752 - NamedType 1374150914" size-unit="char" translate="yes" xml:space="preserve">
           <source>Verzend adres</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType DeliveryAddressCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1224914752 - NamedType 2557738537" size-unit="char" translate="yes" xml:space="preserve">
@@ -5306,7 +5123,6 @@
           <source>Korting %</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType LineDiscCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1224914752 - NamedType 1292293871" size-unit="char" translate="yes" xml:space="preserve">
@@ -5415,7 +5231,6 @@
           <source>Total Euro incl. BTW</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType TotalCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1224914752 - NamedType 1537992153" size-unit="char" translate="yes" xml:space="preserve">
@@ -5434,14 +5249,12 @@
           <source>Eenheidsprijs Euro</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType UnitPriceCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1224914752 - NamedType 4049601073" size-unit="char" translate="yes" xml:space="preserve">
           <source>BTW bedrag Euro</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType VATAmtCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1224914752 - NamedType 2485276663" size-unit="char" translate="yes" xml:space="preserve">
@@ -5460,7 +5273,6 @@
           <source>BTW%</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType VatCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 1224914752 - NamedType 3365690297" size-unit="char" translate="yes" xml:space="preserve">
@@ -5659,7 +5471,6 @@
           <source>Periodieke onderhouds checklist Coffee3</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Service Order CS - NamedType TextReportTitle</note>
         </trans-unit>
         <trans-unit id="Report 812624597 - NamedType 2752340107" size-unit="char" translate="yes" xml:space="preserve">
@@ -5860,95 +5671,94 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Posted Sales Invoices - Action ActionName - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 1761155876 - Action 3000180178 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1187328241">
+          <source>View or add comments for the record.</source>
+          <target>Opmerkingen voor de record weergeven of toevoegen.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Posted Serv. Invoice Subf - Action Co&amp;mments - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1761155876 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1187328241">
+          <source>Co&amp;mments</source>
+          <target>Op&amp;merkingen</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Posted Serv. Invoice Subf - Action Co&amp;mments - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 516392999 - Control 3285657144 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1778940791">
           <source>Signature</source>
           <target>Handtekening</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Posted Service Invoice - Control CSSignature - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1233668946 - Action 328024103 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 540259714">
           <source>Batch Mailen Condor</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Posted Service Invoices - Action Batch Mailen Condor - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1761155876 - Action 872013834 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1187328241">
           <source>Com&amp;ments</source>
           <target>Op&amp;merkingen</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Pst. Serv. Inv. Sub. - Action Com&amp;ments - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1761155876 - Action 190606218 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1187328241">
           <source>View or register comments for the accessories to the service item.</source>
           <target>Opmerkingen voor de accessoires voor het serviceartikel weergeven of registreren.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Pst. Serv. Inv. Sub. - Action Accessories - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1761155876 - Action 190606218 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1187328241">
           <source>Accessories</source>
           <target>Accessoires</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Pst. Serv. Inv. Sub. - Action Accessories - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1761155876 - Action 3595547883 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1187328241">
           <source>View or edit the different fault codes that you can assign to service items. You can use fault codes to identify the different service item faults or the actions taken on service items for each combination of fault area and symptom codes.</source>
           <target>De verschillende probleemcodes weergeven of bewerken die u aan serviceartikelen kunt toewijzen. U kunt met probleemcodes de verschillende serviceartikelproblemen of de acties die worden ondernomen voor serviceartikelen aangeven voor elke combinatie van probleemgebied- en symptoomcodes.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Pst. Serv. Inv. Sub. - Action Faults - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1761155876 - Action 3595547883 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1187328241">
           <source>Faults</source>
           <target>Problemen</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Pst. Serv. Inv. Sub. - Action Faults - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1761155876 - Action 990296649 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1187328241">
           <source>View or register internal comments for the service item. Internal comments are for internal use only and are not printed on reports.</source>
           <target>Interne opmerkingen voor het serviceartikel weergeven of registreren. Interne opmerkingen zijn alleen voor intern gebruik bestemd en worden niet in rapporten afgedrukt.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Pst. Serv. Inv. Sub. - Action Internal - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1761155876 - Action 990296649 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1187328241">
           <source>Internal</source>
           <target>Intern</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Pst. Serv. Inv. Sub. - Action Internal - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1761155876 - Action 1904586796 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1187328241">
           <source>View or select from items that you lend out temporarily to customers to replace items that they have in service.</source>
           <target>Artikelen weergeven of selecteren die tijdelijk aan klanten worden uitgeleend ter vervanging van artikelen die worden gerepareerd of onderhouden.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Pst. Serv. Inv. Sub. - Action Loaners - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1761155876 - Action 1904586796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1187328241">
           <source>Loaners</source>
           <target>Uitleenartikelen</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Pst. Serv. Inv. Sub. - Action Loaners - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1761155876 - Action 2144384599 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1187328241">
           <source>View or edit the different resolution codes that you can assign to service items. You can use resolution codes to identify methods used to solve typical service problems.</source>
           <target>De verschillende oplossingscodes weergeven of bewerken die u aan serviceartikelen kunt toewijzen. Met oplossingscodes geeft u aan hoe bepaalde serviceproblemen kunnen worden opgelost.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Pst. Serv. Inv. Sub. - Action Resolutions - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1761155876 - Action 2144384599 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1187328241">
           <source>Resolutions</source>
           <target>Oplossingen</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Pst. Serv. Inv. Sub. - Action Resolutions - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2813462268 - Control 4082495761 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3161236875">
@@ -5980,6 +5790,18 @@
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Serv. Dispatcher Activities - Control CS Open Service Quotes - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1310928274 - Action 3000180178 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 449515330">
+          <source>View or add comments for the record.</source>
+          <target>Opmerkingen voor de record weergeven of toevoegen.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Service Item Worksheet - Action Co&amp;mments - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1310928274 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 449515330">
+          <source>Co&amp;mments</source>
+          <target>Op&amp;merkingen</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Service Item Worksheet - Action Co&amp;mments - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1310928274 - Action 194318258 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 449515330">
           <source>Com&amp;ments</source>
@@ -6015,28 +5837,24 @@
           <source>Unsign</source>
           <target>Verwijder Handtekening</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Service Order - Action Unsign - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2623093069 - Action 2811978612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2145436509">
           <source>Unsign</source>
           <target>Verwijder Handtekening</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Service Order - Action Unsign - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2623093069 - Control 3285657144 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2145436509">
           <source>Signature</source>
           <target>Handtekening</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Service Order - Control CSSignature - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2623093069 - Control 3285657144 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2145436509">
           <source>Signature</source>
           <target>Handtekening</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Service Order - Control CSSignature - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2623093069 - Control 2967719865 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2145436509">
@@ -6049,8 +5867,31 @@
           <source>Specifies the code of the location (for example, warehouse or distribution center) of the items specified on the service item lines.</source>
           <target>Hiermee wordt de code opgegeven voor de vestiging (bijvoorbeeld een magazijn of een distributiecentrum) van de artikelen die worden aangegeven op de serviceartikelregels.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Service Order - Control CS Location Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3360071267 - Action 503024588 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2247137235">
+          <source>View or add comments for the record.</source>
+          <target>Opmerkingen voor de record weergeven of toevoegen.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Service Order Subform - Action Comments - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3360071267 - Action 503024588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2247137235">
+          <source>Comments</source>
+          <target>Opmerkingen</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Service Order Subform - Action Comments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3360071267 - Action 203043652 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2247137235">
+          <source>View or add comments for the related service item.</source>
+          <target>Opmerkingen voor de serviceartikel weergeven of toevoegen.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Service Order Subform - Action Service Item Comments - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3360071267 - Action 203043652 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2247137235">
+          <source>Service Item Comments</source>
+          <target>Serviceartikel Opmerkingen</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Service Order Subform - Action Service Item Comments - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3360071267 - Control 4256984390 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2247137235">
           <source>Service Contract Description</source>
@@ -6068,21 +5909,18 @@
           <source>Unsign</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Service Orders - Action Unsign - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 643402756 - Action 2811978612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3297607540">
           <source>Unsign</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Service Orders - Action Unsign - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 643402756 - Control 2967719865 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3297607540">
           <source>Status Signing</source>
           <target>Handtekening Status</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Service Orders - Control Status Signing - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1916327220 - Action 523354100 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4270809572">
@@ -6114,6 +5952,18 @@
           <target>Gebruiker Vestiging</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Warehouse Employees - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1337896731 - Control 4071155541 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1261126875">
+          <source>Show comment on posted invoice report.</source>
+          <target>Print opmerking op geboekte factuur.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CSServiceCommentSheet - Control CS Show on Invoice - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1337896731 - Control 4071155541 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1261126875">
+          <source>Show on Invoice</source>
+          <target>Print op Factuur</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CSServiceCommentSheet - Control CS Show on Invoice - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4181923962 - Field 3879378388 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2733917450">
           <source>Quantity Reminders Send</source>
@@ -6649,9 +6499,15 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension CS Salesperson/Purchases - Field Rayonfilter - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3709608436 - Field 4071155541 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 730405412">
+          <source>Show on Invoice</source>
+          <target>Print op Factuur</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CS Service Comment Line - Field CS Show on Invoice - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2311452844 - Change 2515859609 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3367425660">
           <source>;</source>
-          <target></target>
+          <target>;</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension CS Service Contract Header - Change Last Invoice Date - Property Caption</note>
         </trans-unit>
@@ -6809,14 +6665,12 @@
           <source>Service Invoice Line</source>
           <target>Servicefactuurregel</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">EnumExtension CS Serv. Comment Table Name - EnumValue Service Invoice Line - Property Caption</note>
         </trans-unit>
         <trans-unit id="EnumExtension 2288161794 - EnumValue 2682833765 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Enum 1904820937">
           <source>Service Line</source>
           <target>Serviceregel</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">EnumExtension CS Serv. Comment Table Name - EnumValue Service Line - Property Caption</note>
         </trans-unit>
       </group>
