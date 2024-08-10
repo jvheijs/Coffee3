@@ -1,4 +1,4 @@
-report 50078 "Service Invoice"
+report 50078 "Service Invoice OLD"
 {
     // CS1.0 040718 JvH : Betalingsmethode toegevoegd.
     // CS1.1 090718 JvH : Betalingsmethode moet van document, niet klantkaart.
@@ -10,9 +10,9 @@ report 50078 "Service Invoice"
     // CS2.0 260719 JvH : BTW specificatieblok niet meer vetgedrukt, maatwerk kortingsvelden wel.
     // CS2.0 090819 JvH : Correctie op Tablix10 bezoekadres. Wordt nu op de juiste momenten weergegeven.
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Rep50078/Rep50078.ServiceInvoice.rdlc';
+    RDLCLayout = './src/Reports/Rep50078/Rep50078.ServiceInvoice.OLD.rdlc';
 
-    Caption = 'Service Invoice';
+    Caption = 'Service Invoice OLD';
     Permissions = TableData "Sales Shipment Buffer" = rimd;
     PreviewMode = PrintLayout;
 
@@ -140,7 +140,7 @@ report 50078 "Service Invoice"
             {
                 DataItemLink = "No." = field("No.");
                 DataItemLinkReference = "Service Invoice Header";
-                DataItemTableView = sorting("No.", "Line No.") where("Table Name" = const("Service Invoice Header"), "Table Subtype" = filter("Table Subtype"::"0"), "CS Show on Invoice" = filter(true));
+                DataItemTableView = sorting("No.", "Line No.") where("Table Name" = const("Service Invoice Header"), "Table Subtype" = filter("Table Subtype"::"0"), "CS Keep Internal" = filter(false));
 
                 column(LineNo_ServCommentLineHdr; "Line No.")
                 {
@@ -440,7 +440,7 @@ report 50078 "Service Invoice"
                         {
                             DataItemLink = "No." = field("Document No."), "Table Line No." = field("Line No.");
                             DataItemLinkReference = "Service Invoice Line";
-                            DataItemTableView = sorting("No.", "Line No.") where("Table Name" = const("Service Invoice Line"), "Table Subtype" = filter("Table Subtype"::"0"), "CS Show on Invoice" = filter(true));
+                            DataItemTableView = sorting("No.", "Line No.") where("Table Name" = const("Service Invoice Line"), "Table Subtype" = filter("Table Subtype"::"0"), "CS Keep Internal" = filter(false));
 
                             column(LineNo_ServCommentLine; "Line No.")
                             {

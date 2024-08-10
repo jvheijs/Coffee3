@@ -4,13 +4,13 @@ pageextension 50037 CSServiceCommentSheet extends "Service Comment Sheet"
     {
         addlast(Control1)
         {
-            field("CS Show on Invoice"; Rec."CS Show on Invoice")
+            field("CS Keep Internal"; Rec."CS Keep Internal")
             {
                 ApplicationArea = All;
                 Visible = IsInvoiceorOrder;
                 Editable = IsInvoiceorOrder;
-                Caption = 'Show on Invoice';
-                ToolTip = 'Show comment on posted invoice report.';
+                Caption = 'Keep Internal';
+                ToolTip = 'Keep comment internal and do not print on documents.';
             }
         }
     }

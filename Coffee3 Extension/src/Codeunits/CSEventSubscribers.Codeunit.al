@@ -440,7 +440,7 @@ codeunit 50003 "CSEventSubscribers"
                 ServiceCommentLineInsert."Line No." := ServiceCommentLine."Line No.";
                 ServiceCommentLineInsert.Type := ServiceCommentLine.Type;
                 ServiceCommentLineInsert.Comment := ServiceCommentLine.Comment;
-                ServiceCommentLineInsert."CS Show on Invoice" := ServiceCommentLine."CS Show on Invoice";
+                ServiceCommentLineInsert."CS Keep Internal" := ServiceCommentLine."CS Keep Internal";
                 ServiceCommentLineInsert.Insert();
             until ServiceCommentLine.Next() = 0;
         ServiceCommentLine.DeleteAll();
@@ -469,7 +469,7 @@ codeunit 50003 "CSEventSubscribers"
                 ServiceCommentLineInsert."Line No." := ServiceCommentLine."Line No.";
                 ServiceCommentLineInsert.Type := ServiceCommentLine.Type;
                 ServiceCommentLineInsert.Comment := ServiceCommentLine.Comment;
-                ServiceCommentLineInsert."CS Show on Invoice" := ServiceCommentLine."CS Show on Invoice";
+                ServiceCommentLineInsert."CS Keep Internal" := ServiceCommentLine."CS Keep Internal";
                 ServiceCommentLineInsert.Insert();
             until ServiceCommentLine.Next() = 0;
         ServiceCommentLine.DeleteAll();

@@ -126,8 +126,9 @@
         </trans-unit>
         <trans-unit id="Table 3982178340 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>Link,Note</source>
-          <target></target>
+          <target>[NAB: REVIEW]</target>
           <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Copy Record Link - Field Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 3982178340 - Field 589256022 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -3595,6 +3596,463 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report CS Reminder - Control ShowNotDueAmounts - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 2035984208 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Service - Invoice</source>
+          <target>Servicefactuur</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 3285233284" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bedrag Euro</source>
+          <target>Bedrag Euro</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType AmountCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 1739113461" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account No.</source>
+          <target>Rekeningnr.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType CompanyInfoBankAccountNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 1275674192" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bank</source>
+          <target>Bank</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType CompanyInfoBankNameCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 2150512197" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fax No.</source>
+          <target>Faxnr.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType CompanyInfoFaxNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 1454106313" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Giro No.</source>
+          <target>Gironr.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType CompanyInfoGiroNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 2826867220" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Phone No.</source>
+          <target>Telefoonnr.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType CompanyInfoPhoneNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 2343386794" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Reg. No.</source>
+          <target>Btw-nummer</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType CompanyInfoVATRegistrationNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 3123543624" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Klantnummer</source>
+          <target>Klantnummer</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType CustNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 35837468" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Factuurdatum</source>
+          <target>Factuurdatum</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType DateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 1374150914" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Verzend adres</source>
+          <target>Verzend adres</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType DeliveryAddressCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 2557738537" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target>Omschrijving</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType DescrCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 2165929531" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Discount</source>
+          <target>Factuurkorting</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType DiscountCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 3321222305" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Coffee3 is een handelsnaam van Fountain Expres BV</source>
+          <target>Coffee3 is een handelsnaam van Fountain Expres BV</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType FtrLabel1</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 2683525688" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 %2 %3 %4 %5 Tel. %6 Fax. %7</source>
+          <target>%1 %2 %3 %4 %5 Tel. %6 Fax. %7</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType FtrLabel2</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 2045829071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>K.v.k. %1 Bank: %2 IBAN: %3 BIC: %4</source>
+          <target>K.v.k. %1 Bank: %2 IBAN: %3 BIC: %4</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType FtrLabel3</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 2214738094" size-unit="char" translate="yes" xml:space="preserve">
+          <source>tnv Fountain Express BV, BTW-nr. %1</source>
+          <target>tnv Fountain Express BV, BTW-nr. %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType FtrLabel4</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 1577041477" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bezoek ook onze website %1</source>
+          <target>Bezoek ook onze website %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType FtrLabel5</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 4068713142" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Betalingsmethode</source>
+          <target>Betalingsmethode</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType gTxtPayMethodLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 973567044" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Header Dimensions</source>
+          <target>Kopdimensies</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType HeaderDimensionsCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 250968736" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Discount Amount</source>
+          <target>Bedrag factuurkorting</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType InvDiscountAmountCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 4241823392" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice No.</source>
+          <target>Factuurnr.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType InvoiceNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 3035617683" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item</source>
+          <target>Artikel</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType ItemCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 52968212" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Discount on VAT</source>
+          <target>Contantkorting op btw</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType LineAmountInvDiscountAmountAmountIncludingVATCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 3701122699" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line Dimensions</source>
+          <target>Regeldimensies</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType LineDimensionsCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 1881244073" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Totale korting EUR</source>
+          <target>Totale korting EUR</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType LineDiscAmtCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 371557993" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Korting %</source>
+          <target>Korting %</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType LineDiscCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 1292293871" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice No.</source>
+          <target>Factuurnr.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType NoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 1105229007" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Terms</source>
+          <target>Betalingsvoorwaarden</target>
+          <target>Betalingscondities</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType PaymentTermsDescriptionCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 3543880195" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posted Shipment Date</source>
+          <target>Datum geboekte verzending</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType PostedShipmentDateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 3037909084" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity</source>
+          <target>Aantal</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType QtyCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 3246368361" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty</source>
+          <target>Aantal</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType QuantityCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 2295386186" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Service Invoice</source>
+          <target>Servicefactuur</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType ReportTitle</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 601422815" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Serial No.</source>
+          <target>Serienummer</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType SerialNoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 3866861393" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Due Date</source>
+          <target>Vervaldatum</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType ServiceInvoiceHeaderDueDateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 3675439341" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <target>Boekingsdatum</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType ServiceInvoiceHeaderPostingDateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 290435575" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Disc. %</source>
+          <target>Korting %</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType ServiceInvoiceLineLineDiscountCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 2047603120" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment</source>
+          <target>Verzending</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType ShipmentCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 232471621" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Address</source>
+          <target>Verzend adres</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType ShiptoAddressCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 3126303398" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Euro</source>
+          <target></target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType SubtotalCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Service - Invoice %1</source>
+          <target>Service - Factuur %1</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Document No.</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Page %1</source>
+          <target>Pagina %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 1583171122" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Euro incl. BTW</source>
+          <target></target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType TotalCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 1537992153" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transport</source>
+          <target>Transport</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType TransportCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 1065670270" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit</source>
+          <target>Eenheid</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType UnitCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 3659909257" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Eenheidsprijs Euro</source>
+          <target></target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType UnitPriceCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 486809357" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inv. Disc. Base Amount</source>
+          <target>Basisbedrag van factuurkorting</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType VATAmountLineInvDiscBaseAmountControl141CaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 3106775047" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line Amount</source>
+          <target>Regelbedrag</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType VATAmountLineLineAmountControl140CaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 3061094447" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount</source>
+          <target>Btw-bedrag</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType VATAmountLineVATAmountControl109CaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 3598960943" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Base</source>
+          <target>Basisbedrag btw</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType VATAmountLineVATBaseControl108CaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 2789509854" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total</source>
+          <target>Totaal</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType VATAmountLineVATBaseControl116CaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 1688458226" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT %</source>
+          <target>Btw %</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType VATAmountLineVATCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 880741055" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Identifier</source>
+          <target>Btw-identificatie</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType VATAmountLineVATIdentifierCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 3405969474" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount Specification</source>
+          <target>Specificatie btw-bedrag</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType VATAmountSpecificationCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 4049601073" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BTW bedrag Euro</source>
+          <target></target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType VATAmtCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 2485276663" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount Specification</source>
+          <target>Specificatie btw-bedrag</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType VATAmtSpecificationCptnLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 1303359398" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Base</source>
+          <target>Basisbedrag btw</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType VATBaseCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 3482947265" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BTW%</source>
+          <target></target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType VatCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 3365690297" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Clause</source>
+          <target>Btw-clausule</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType VATClausesCap</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 3884610169" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT %</source>
+          <target>Btw %</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType VATPercentageCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - NamedType 2560828959" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT total</source>
+          <target></target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - NamedType VATTotalCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - ReportDataItem 3117283677 - Property 1806354803" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posted Service Invoice</source>
+          <target>Geboekte servicefactuur</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - ReportDataItem Service Invoice Header - Property RequestFilterHeading</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <target>Opties</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - Control 215716959 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if you want notes about additional fees to be shown on the document.</source>
+          <target>Hiermee wordt opgegeven of u wilt dat notities over extra kosten in het document worden weergegeven.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - Control DisplayAdditionalFeeNote - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - Control 215716959 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Additional Fee Note</source>
+          <target>Opmerking voor toeslag weergeven</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - Control DisplayAdditionalFeeNote - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - Control 2578066365 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how many copies of the document to print.</source>
+          <target>Hiermee wordt opgegeven hoeveel exemplaren van het document moeten worden afgedrukt.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - Control NoOfCopies - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - Control 2578066365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. of Copies</source>
+          <target>Aantal exemplaren</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - Control NoOfCopies - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - Control 316520822 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies if you want the printed report to show information that is only for internal use.</source>
+          <target>Hiermee wordt opgegeven of het afgedrukte rapport informatie moet bevatten die alleen bestemd is voor intern gebruik.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - Control ShowInternalInfo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2035984208 - Control 316520822 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Internal Information</source>
+          <target>Interne informatie weergeven</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CS Service Invoice - Control ShowInternalInfo - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 334510524 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer Inventory Found</source>
           <target>Klantvoorraden gevonden</target>
@@ -4975,371 +5433,432 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Service Credit-Memo - Control ShowInternalInfo - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Service Invoice</source>
-          <target>Servicefactuur</target>
+        <trans-unit id="Report 1723089853 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Service Invoice OLD</source>
+          <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - Property Caption</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 3285233284" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 3285233284" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bedrag Euro</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType AmountCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType AmountCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 175863088" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 175863088" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account No.</source>
           <target>Rekeningnr.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType CompanyInfoBankAccNoCptnLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType CompanyInfoBankAccNoCptnLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 3907868757" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 3907868757" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bank</source>
           <target>Bank</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType CompanyInfoBankNameCptnLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType CompanyInfoBankNameCptnLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 1454106313" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 1454106313" size-unit="char" translate="yes" xml:space="preserve">
           <source>Giro No.</source>
           <target>Gironr.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType CompanyInfoGiroNoCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType CompanyInfoGiroNoCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 2826867220" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 2826867220" size-unit="char" translate="yes" xml:space="preserve">
           <source>Phone No.</source>
           <target>Telefoonnr.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType CompanyInfoPhoneNoCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType CompanyInfoPhoneNoCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 3448977668" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 3448977668" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Reg. No.</source>
           <target>Btw-nummer</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType CompanyInfoVATRegNoCptnLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType CompanyInfoVATRegNoCptnLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 3123543624" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 3123543624" size-unit="char" translate="yes" xml:space="preserve">
           <source>Klantnummer</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType CustNoCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType CustNoCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 35837468" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 35837468" size-unit="char" translate="yes" xml:space="preserve">
           <source>Factuurdatum</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType DateCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType DateCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 1374150914" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 1374150914" size-unit="char" translate="yes" xml:space="preserve">
           <source>Verzend adres</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType DeliveryAddressCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType DeliveryAddressCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 2557738537" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 2557738537" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <target>Omschrijving</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType DescrCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType DescrCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 2165929531" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 2165929531" size-unit="char" translate="yes" xml:space="preserve">
           <source>Invoice Discount</source>
           <target>Factuurkorting</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType DiscountCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType DiscountCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 3321222305" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 3321222305" size-unit="char" translate="yes" xml:space="preserve">
           <source>Coffee3 is een handelsnaam van Fountain Expres BV</source>
-          <target></target>
+          <target>Coffee3 is een handelsnaam van Fountain Expres BV</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType FtrLabel1</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType FtrLabel1</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 2683525688" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 2683525688" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 %2 %3 %4 %5 Tel. %6 Fax. %7</source>
           <target>%1 %2 %3 %4 %5 Tel. %6 Fax. %7</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType FtrLabel2</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType FtrLabel2</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 2045829071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 2045829071" size-unit="char" translate="yes" xml:space="preserve">
           <source>K.v.k. %1 Bank: %2 IBAN: %3 BIC: %4</source>
           <target>K.v.k. %1 Bank: %2 IBAN: %3 BIC: %4</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType FtrLabel3</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType FtrLabel3</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 2214738094" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 2214738094" size-unit="char" translate="yes" xml:space="preserve">
           <source>tnv Fountain Express BV, BTW-nr. %1</source>
           <target>tnv Fountain Express BV, BTW-nr. %1</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType FtrLabel4</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType FtrLabel4</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 1577041477" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 1577041477" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bezoek ook onze website %1</source>
           <target>Bezoek ook onze website %1</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType FtrLabel5</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType FtrLabel5</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 4068713142" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 4068713142" size-unit="char" translate="yes" xml:space="preserve">
           <source>Betalingsmethode</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType gTxtPayMethodLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType gTxtPayMethodLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 1378777375" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 1378777375" size-unit="char" translate="yes" xml:space="preserve">
           <source>Invoice Discount Base Amount</source>
           <target>Basisbedrag van factuurkorting</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType InvDiscBaseAmtCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType InvDiscBaseAmtCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 3573196756" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 3573196756" size-unit="char" translate="yes" xml:space="preserve">
           <source>Invoice Discount Amount</source>
           <target>Bedrag factuurkorting</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType InvDiscountAmtCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType InvDiscountAmtCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 3035617683" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 3035617683" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item</source>
           <target>Artikel</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType ItemCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType ItemCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 3861931375" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 3861931375" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Discount on VAT</source>
           <target>Contantkorting op btw</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType LineAmtAfterInvDiscCptnLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType LineAmtAfterInvDiscCptnLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 3548486750" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 3548486750" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line Amount</source>
           <target>Regelbedrag</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType LineAmtCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType LineAmtCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 1881244073" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 1881244073" size-unit="char" translate="yes" xml:space="preserve">
           <source>Totale korting EUR</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType LineDiscAmtCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType LineDiscAmtCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 371557993" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 371557993" size-unit="char" translate="yes" xml:space="preserve">
           <source>Korting %</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType LineDiscCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType LineDiscCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 1292293871" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 1292293871" size-unit="char" translate="yes" xml:space="preserve">
           <source>Invoice No.</source>
           <target>Factuurnr.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType NoCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType NoCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 2219219549" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 2219219549" size-unit="char" translate="yes" xml:space="preserve">
           <source>OrderNo</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType OrderNoCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType OrderNoCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 4022464961" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 4022464961" size-unit="char" translate="yes" xml:space="preserve">
           <source>Page %1 of %2</source>
           <target>Pagina %1 van %2</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType PageCaptionCap</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType PageCaptionCap</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 3037909084" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 3037909084" size-unit="char" translate="yes" xml:space="preserve">
           <source>Quantity</source>
           <target>Aantal</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType QtyCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType QtyCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 2248720191" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 2248720191" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reference</source>
           <target>Referentie</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType RefCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType RefCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 2295386186" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 2295386186" size-unit="char" translate="yes" xml:space="preserve">
           <source>Service Invoice</source>
           <target>Servicefactuur</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType ReportTitle</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType ReportTitle</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 3126303398" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 3126303398" size-unit="char" translate="yes" xml:space="preserve">
           <source>Total Euro</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType SubtotalCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType SubtotalCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
           <source>Salesperson</source>
           <target>Verkoper</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType Text000</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType Text000</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>Total %1</source>
           <target>Totaal %1</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType Text001</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType Text001</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
           <source>Total %1 Incl. VAT</source>
           <target>Totaal %1 incl. btw</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType Text002</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType Text002</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
           <source>COPY</source>
           <target>KOPIE</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType Text003</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType Text003</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
           <source>Service - Invoice %1</source>
           <target>Service - Factuur %1</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType Text004</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType Text004</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 2008153173" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 2008153173" size-unit="char" translate="yes" xml:space="preserve">
           <source>Total %1 Excl. VAT</source>
           <target>Totaal %1 excl. btw</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType Text006</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType Text006</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 2645849790" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 2645849790" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Amount Specification in </source>
           <target>Specificatie btw-bedrag in </target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType Text007</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType Text007</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 3283546407" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 3283546407" size-unit="char" translate="yes" xml:space="preserve">
           <source>Local Currency</source>
           <target>Lokale valuta</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType Text008</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType Text008</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 3921243024" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 3921243024" size-unit="char" translate="yes" xml:space="preserve">
           <source>Exchange rate: %1/%2</source>
           <target>Wisselkoers: %1/%2</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType Text009</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType Text009</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 1664139952" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 1664139952" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sales - Prepayment Invoice %1</source>
           <target>Verkoop - Vooruitbetalingsfactuur %1</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType Text010</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType Text010</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 1583171122" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 1583171122" size-unit="char" translate="yes" xml:space="preserve">
           <source>Total Euro incl. BTW</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType TotalCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType TotalCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 1537992153" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 1537992153" size-unit="char" translate="yes" xml:space="preserve">
           <source>Transport</source>
           <target>Transport</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType TransportCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType TransportCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 1065670270" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 1065670270" size-unit="char" translate="yes" xml:space="preserve">
           <source>Unit</source>
           <target>Eenheid</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType UnitCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType UnitCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 3659909257" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 3659909257" size-unit="char" translate="yes" xml:space="preserve">
           <source>Eenheidsprijs Euro</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType UnitPriceCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType UnitPriceCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 4049601073" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 4049601073" size-unit="char" translate="yes" xml:space="preserve">
           <source>BTW bedrag Euro</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType VATAmtCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType VATAmtCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 2485276663" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 2485276663" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Amount Specification</source>
           <target>Specificatie btw-bedrag</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType VATAmtSpecificationCptnLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType VATAmtSpecificationCptnLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 1303359398" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 1303359398" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Base</source>
           <target>Basisbedrag btw</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType VATBaseCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType VATBaseCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 3482947265" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 3482947265" size-unit="char" translate="yes" xml:space="preserve">
           <source>BTW%</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType VatCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType VatCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 3365690297" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 3365690297" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Clause</source>
           <target>Btw-clausule</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType VATClausesCap</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType VATClausesCap</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 2012124496" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 2012124496" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Identifier</source>
           <target>Btw-identificatie</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType VATIdentifierCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType VATIdentifierCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 3865757642" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 3865757642" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT No.</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType VatNoCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType VatNoCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 3884610169" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 3884610169" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT %</source>
           <target>Btw %</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType VATPercentageCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType VATPercentageCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - NamedType 2560828959" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - NamedType 2560828959" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT total</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - NamedType VATTotalCaptionLbl</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - NamedType VATTotalCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - ReportDataItem 3117283677 - Property 1806354803" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - ReportDataItem 3117283677 - Property 1806354803" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posted Service Invoice</source>
           <target>Geboekte servicefactuur</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - ReportDataItem Service Invoice Header - Property RequestFilterHeading</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - ReportDataItem Service Invoice Header - Property RequestFilterHeading</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Options</source>
           <target>Opties</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - Control Options - Property Caption</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - Control Options - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - Control 1885540899 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - Control 1885540899 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Show Assembly Components</source>
           <target>Assemblycomponenten weergeven</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - Control DisplayAsmInformation - Property Caption</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - Control DisplayAsmInformation - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - Control 816368762 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - Control 816368762 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Log Interaction</source>
           <target>Interactie registreren</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - Control LogInteraction - Property Caption</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - Control LogInteraction - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - Control 2578066365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - Control 2578066365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. of Copies</source>
           <target>Aantal exemplaren</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - Control NoOfCopies - Property Caption</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - Control NoOfCopies - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 1224914752 - Control 316520822 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1723089853 - Control 316520822 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Show Internal Information</source>
           <target>Interne informatie weergeven</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice - Control ShowInternalInfo - Property Caption</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Service Invoice OLD - Control ShowInternalInfo - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 812624597 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Service Order</source>
@@ -5953,17 +6472,17 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Warehouse Employees - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1337896731 - Control 4071155541 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1261126875">
-          <source>Show comment on posted invoice report.</source>
-          <target>Print opmerking op geboekte factuur.</target>
+        <trans-unit id="PageExtension 1337896731 - Control 1974005320 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1261126875">
+          <source>Keep comment internal and do not print on documents.</source>
+          <target>Hou opmerkingen intern en print deze niet.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CSServiceCommentSheet - Control CS Show on Invoice - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CSServiceCommentSheet - Control CS Keep Internal - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1337896731 - Control 4071155541 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1261126875">
-          <source>Show on Invoice</source>
-          <target>Print op Factuur</target>
+        <trans-unit id="PageExtension 1337896731 - Control 1974005320 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1261126875">
+          <source>Keep Internal</source>
+          <target>Houd Intern</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CSServiceCommentSheet - Control CS Show on Invoice - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CSServiceCommentSheet - Control CS Keep Internal - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4181923962 - Field 3879378388 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2733917450">
           <source>Quantity Reminders Send</source>
@@ -6499,11 +7018,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension CS Salesperson/Purchases - Field Rayonfilter - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3709608436 - Field 4071155541 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 730405412">
-          <source>Show on Invoice</source>
-          <target>Print op Factuur</target>
+        <trans-unit id="TableExtension 3709608436 - Field 1974005320 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 730405412">
+          <source>Keep Internal</source>
+          <target>Houd Intern</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CS Service Comment Line - Field CS Show on Invoice - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CS Service Comment Line - Field CS Keep Internal - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2311452844 - Change 2515859609 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3367425660">
           <source>;</source>
