@@ -533,7 +533,6 @@ report 50002 "CS Reminder"
                         VATAmountLine.GetLine(Number);
                         if not VATClause.Get(VATAmountLine."VAT Clause Code") then
                             CurrReport.Skip();
-                        // VATClause.GetDescription("Issued Reminder Header");
                         VATClause.GetDescriptionText("Issued Reminder Header");
                     end;
 
@@ -770,7 +769,6 @@ report 50002 "CS Reminder"
 
         trigger OnOpenPage()
         begin
-            // LogInteraction := SegManagement.FindInteractTmplCode(8) <> '';
             LogInteraction := SegManagement.FindInteractionTemplateCode(Enum::"Interaction Log Entry Document Type"::"Sales Rmdr.") <> '';
             LogInteractionEnable := LogInteraction;
         end;
