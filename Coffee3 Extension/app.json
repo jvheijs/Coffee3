@@ -30,7 +30,7 @@
                  ],
     "resourceExposurePolicy":  {
                                    "allowDebugging":  true, 
-                                   "allowDownloadingSource": true, 
+                                   "allowDownloadingSource": false, 
                                    "includeSourceInSymbolFile": true
                                },
     "internalsVisibleTo":  [
