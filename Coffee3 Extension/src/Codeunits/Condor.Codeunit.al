@@ -1,16 +1,13 @@
 codeunit 50000 "Condor"
 {
-
     trigger OnRun()
     begin
-
         gFncFillMyCustomer();
-        // lFncTestEnv();
     end;
 
     var
 
-procedure gFncFillMyCustomer()
+    procedure gFncFillMyCustomer()
     var
         lRecUser: Record User;
         lRecSalespersonPurchaser: Record "Salesperson/Purchaser";
@@ -18,12 +15,8 @@ procedure gFncFillMyCustomer()
         lRecMyCustomer: Record "My Customer";
         lRecShiptoAddress: Record "Ship-to Address";
     begin
-
         // COFF-1.ns
-
-        // lRecUser.SETFILTER("User Name",'@'+USERID);
         lRecMyCustomer.DELETEALL();
-
         lRecUser.FindSet();
         repeat
             // MESSAGE('xxx %1 %2', lRecUser."User Name",lRecUser."Contact Email");
@@ -32,7 +25,6 @@ procedure gFncFillMyCustomer()
                 if lRecSalespersonPurchaser.FindFirst() then
                     if lRecSalespersonPurchaser.Rayonfilter <> '' then begin
                         lRecMyCustomer.SETFILTER("User ID", USERID);
-
                         lRecCustomer.SETFILTER(Rayon, lRecSalespersonPurchaser.Rayonfilter);
                         if lRecCustomer.FINDSET() then
                             repeat
@@ -42,24 +34,34 @@ procedure gFncFillMyCustomer()
                                 lRecMyCustomer."Phone No." := lRecCustomer."Phone No.";
                                 lRecShiptoAddress.SETFILTER("Customer No.", lRecCustomer."No.");
                                 lRecShiptoAddress.SETFILTER(Code, 'BEZOEK');
-
                                 if lRecShiptoAddress.FINDFIRST() then begin
-                                    lRecMyCustomer.Bezoekadres := copystr(lRecShiptoAddress.Address, 1, 60);
-                                    lRecMyCustomer."Postcode bezoekadres" := copystr(lRecShiptoAddress."Post Code", 1, 10);
+                                    lRecMyCustomer.Bezoekadres := copystr(lRecShiptoAddress.Address, 1, MaxStrLen(lRecMyCustomer.Bezoekadres));
+                                    lRecMyCustomer."Postcode bezoekadres" := CopyStr(lRecShiptoAddress."Post Code", 1, MaxStrLen(lRecMyCustomer."Postcode bezoekadres"));
                                     lRecMyCustomer."Plaats bezoekadres" := lRecShiptoAddress.City;
                                 end else begin
-                                    lRecMyCustomer.Bezoekadres := copystr(lRecCustomer.Address, 1, 60);
-                                    lRecMyCustomer."Postcode bezoekadres" := copystr(lRecCustomer."Post Code", 1, 10);
+                                    lRecMyCustomer.Bezoekadres := CopyStr(lRecCustomer.Address, 1, MaxStrLen(lRecMyCustomer.Bezoekadres));
+                                    lRecMyCustomer."Postcode bezoekadres" := CopyStr(lRecCustomer."Post Code", 1, MaxStrLen(lRecMyCustomer."Postcode bezoekadres"));
                                     lRecMyCustomer."Plaats bezoekadres" := lRecCustomer.City;
                                 end;
+                                lRecMyCustomer."GSM-nummer" := lRecCustomer."GSM-nummer";
+                                lRecMyCustomer.Klantstatus := lRecCustomer.Klantstatus;
+                                lRecMyCustomer.Rayon := lRecCustomer.Rayon;
+                                lRecMyCustomer.Routenummer := lRecCustomer.Routenummer;
+                                lRecMyCustomer.Dropcode := lRecCustomer.Dropcode;
+                                lRecMyCustomer."Cust.Memo1" := lRecCustomer."Cust.Memo1";
+                                lRecMyCustomer."Cust.Memo2" := lRecCustomer."Cust.Memo2";
+                                lRecMyCustomer."Mark 01" := lRecCustomer."Mark 01";
+                                lRecMyCustomer."Mark 02" := lRecCustomer."Mark 02";
+                                lRecMyCustomer."Mark 03" := lRecCustomer."Mark 03";
+                                lRecMyCustomer.Bevyz := lRecCustomer.Bevyz;
+                                lRecMyCustomer."Partner Type Org" := lRecCustomer."Partner Type Org";
+                                lRecMyCustomer.INSERT();
                             until lRecCustomer.NEXT() = 0;
                     end;
             end;
         until lRecUser.NEXT() = 0;
-
         // COFF-1.ne
     end;
-
 
     procedure gFncRayonFilter(): Text
     var
@@ -77,7 +79,6 @@ procedure gFncFillMyCustomer()
         // COFF-1.ne
         ERROR('U heeft geen rayonfilter.');
     end;
-
 
     procedure gFncFillSalesLine(pRecSalesHeader: Record "Sales Header")
     var
@@ -133,36 +134,6 @@ procedure gFncFillMyCustomer()
         lRecSalesLine.VALIDATE(Type, 0);
         lRecSalesLine.VALIDATE(Description, '---- Service artikelen');
         lRecSalesLine.INSERT();
-        /*
-        // Op basis van klant voorraad
-        lRecCustStock.SETFILTER("Cust. No.","Sell-to Customer No.");
-
-        lRecCustStock.SETFILTER("Check Date",FORMAT(CALCDATE(lRecSalesReceivablesSetup."Max. Historie Time",WORKDATE()))+'..');
-        if lRecCustStock.FINDFIRST() THEN
-        REPEAT
-            if lRecItem.GET(lRecCustStock."Item No.") THEN
-            if NOT lRecInventoryPostingGroup.GET(lRecItem."Inventory Posting Group") THEN lRecInventoryPostingGroup.INIT();
-            if lRecInventoryPostingGroup."Service Item" THEN BEGIN
-            lRecSalesLine1.SETRANGE("Document Type",pRecSalesHeader."Document Type");
-            lRecSalesLine1.SETRANGE("Document No.",pRecSalesHeader."No.");
-            lRecSalesLine1.SETRANGE(Type,lRecSalesLine1.Type::Item);
-            lRecSalesLine1.SETFILTER("No.",lRecCustStock."Item No.");
-
-            if NOT lRecSalesLine1.FINDSET() THEN BEGIN
-                lRecSalesLine.VALIDATE("Document Type","Document Type");
-                lRecSalesLine.VALIDATE("Document No.","No.");
-                lIntLineNo += 10000;
-                lRecSalesLine.VALIDATE("Line No.",lIntLineNo);
-                lRecSalesLine.VALIDATE("Sell-to Customer No.","Sell-to Customer No.");
-                lRecSalesLine.VALIDATE(Type,lRecSalesLine.Type::Item);
-                lRecSalesLine.VALIDATE("No.",lRecCustStock."Item No.");
-
-                lRecSalesLine.INSERT();
-            END;
-            END;
-        UNTIL lRecCustStock.NEXT() =0 ;
-        */
-        //
         lRecSalesInvoiceLine.SETFILTER("Sell-to Customer No.", pRecSalesHeader."Sell-to Customer No.");
         lRecSalesInvoiceLine.SETFILTER("Posting Date", FORMAT(CALCDATE(lRecSalesReceivablesSetup."Max. Historie Time", WORKDATE())) + '..');
 
@@ -252,22 +223,14 @@ procedure gFncFillMyCustomer()
         exit(0);
     end;
 
-    // local procedure lFncTestEnv()
-    // var
-    //     lRecCustomer: Record Customer;
-    //     lRecShiptoAddress: Record "Ship-to Address";
-    // begin
-
-    //     lRecCustomer.MODIFYALL("E-Mail", 'heijs@condorsolutions.nl;marc.vanoudheusden@coffee3.nl');
-    //     lRecShiptoAddress.MODIFYALL("E-Mail", 'heijs@condorsolutions.nl;marc.vanoudheusden@coffee3.nl');
-    // end;
 
     procedure CS_CustomerCard_MakeNewSalesOrder(var Customer: Record Customer)
     var
         lRecUserSetup: Record 91;
         lRecSalesOrder: Record "Sales Header";
         lRecSalesSetup: Record "Sales & Receivables Setup";
-        lCduNoSerMgt: Codeunit NoSeriesManagement;
+        lCduNoSerMgt: Codeunit "No. Series";
+
     begin
         lRecSalesSetup.GET();
         lRecSalesOrder.INIT();
@@ -276,7 +239,7 @@ procedure gFncFillMyCustomer()
 
         if lRecSalesOrder."No." = '' then begin
             lRecSalesSetup.TESTFIELD(lRecSalesSetup."Order Nos.");
-            lCduNoSerMgt.InitSeries(lRecSalesSetup."Order Nos.", lRecSalesSetup."Order Nos.", TODAY, lRecSalesOrder."No.", lRecSalesSetup."Order Nos.");
+            lRecSalesOrder."No." := lCduNoSerMgt.GetNextNo(lRecSalesSetup."Order Nos.", TODAY);
         end;
 
         lRecSalesOrder.InitRecord();
@@ -304,7 +267,7 @@ procedure gFncFillMyCustomer()
         lRecUserSetup: Record 91;
         lRecSalesInv: Record "Sales Header";
         lRecSalesSetup: Record "Sales & Receivables Setup";
-        lCduNoSerMgt: Codeunit NoSeriesManagement;
+        lCduNoSerMgt: Codeunit "No. Series";
     begin
         lRecSalesSetup.GET();
 
@@ -315,7 +278,7 @@ procedure gFncFillMyCustomer()
         if lRecSalesInv."No." = '' then begin
             lRecSalesSetup.TESTFIELD("Invoice Nos.");
             lRecSalesSetup.TESTFIELD("Posted Invoice Nos.");
-            lCduNoSerMgt.InitSeries(lRecSalesSetup."Invoice Nos.", lRecSalesSetup."Invoice Nos.", TODAY, lRecSalesInv."No.", lRecSalesSetup."Invoice Nos.");
+            lRecSalesInv."No." := lCduNoSerMgt.GetNextNo(lRecSalesSetup."Invoice Nos.", TODAY);
         end;
 
         lRecSalesInv.InitRecord();

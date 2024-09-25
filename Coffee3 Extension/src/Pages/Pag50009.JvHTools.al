@@ -42,6 +42,7 @@ page 50009 "Toolbox John"
                 Image = Process;
                 trigger OnAction()
                 var
+
                     SalesHeader: Record "Sales Header";
                     SalesShipmentHeader: Record "Sales Shipment Header";
                     SalesInvoiceHeader: Record "Sales Invoice Header";

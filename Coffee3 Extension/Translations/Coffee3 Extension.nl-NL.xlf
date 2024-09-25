@@ -6168,13 +6168,13 @@
         </trans-unit>
         <trans-unit id="PageExtension 3504234660 - Action 274644633 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
           <source>MakeNewSalesInvoice</source>
-          <target>Maak nieuwe verkooporder</target>
+          <target>Maak nieuwe verkoopfactuur</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Customer Card - Action MakeNewSalesInvoice - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3504234660 - Action 3701230020 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
           <source>MakeNewSalesOrder</source>
-          <target>Maak nieuwe verkoopfactuur</target>
+          <target>Maak nieuwe verkooporder</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Customer Card - Action MakeNewSalesOrder - Property Caption</note>
         </trans-unit>

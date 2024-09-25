@@ -489,5 +489,4 @@ codeunit 50003 "CSEventSubscribers"
         //TempEmailItem."Send CC" := '';    
         TempEmailItem."Send BCC" := 'no-reply@coffee3.nl';
     end;
-
 }
