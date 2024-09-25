@@ -66,6 +66,9 @@ report 50006 "Service Order CS"
             column(CustAddr6; CustAddr[6])
             {
             }
+            column(Signature; SignatureRec.Signature)
+            {
+            }
             dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = sorting(Number);
@@ -185,6 +188,10 @@ report 50006 "Service Order CS"
                     gBooServiceOrderYN := TextYes
                 else
                     gBooServiceOrderYN := TextNo;
+
+                // Signature
+                if SignatureRec.get(Database::"Service Header", "Service Header"."No.", "Service Header"."Document Type".AsInteger()) then
+                    SignatureRec.CalcFields(Signature);
             end;
         }
     }
@@ -237,6 +244,7 @@ report 50006 "Service Order CS"
         SalesSetup: Record "Sales & Receivables Setup";
         CompanyInfo1: Record "Company Information";
         CompanyInfo2: Record "Company Information";
+        SignatureRec: Record "CS Signature";
         CompanyInfo3: Record "Company Information";
         GLSetup: Record "General Ledger Setup";
         CompanyInfo: Record "Company Information";

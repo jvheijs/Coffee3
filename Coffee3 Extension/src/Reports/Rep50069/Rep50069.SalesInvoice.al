@@ -674,6 +674,7 @@ report 50069 "Sales Invoice"
 
             trigger OnAfterGetRecord()
             var
+                Signature: Record "CS Signature";
                 lRecPayMethod: Record "Payment Method";
                 lTxtPicturePath: Text[50];
             begin
@@ -754,11 +755,12 @@ report 50069 "Sales Invoice"
                 ShowShippingAddr := FormatAddr.SalesInvShipTo(ShipToAddr, CustAddr, "Sales Invoice Header");
 
                 // Signature
-                CalcFields("Signature");
-                if "Sales Invoice Header"."Signature".HasValue then begin
+                if Signature.get(Database::"Sales Invoice Header", "Sales Invoice Header"."No.", 0) then begin
                     gRecCompanyInformation.INIT();
-                    gRecCompanyInformation.Picture := "Sales Invoice Header"."Signature";
-                    if not gRecCompanyInformation.Insert then gRecCompanyInformation.MODIFY();
+                    Signature.CalcFields(Signature);
+                    gRecCompanyInformation.Picture := Signature.Signature;
+                    if not gRecCompanyInformation.Insert() then
+                        gRecCompanyInformation.MODIFY();
                     gRecCompanyInformation.CalcFields(Picture);
                 end;
             end;

@@ -50,6 +50,8 @@ tableextension 50010 "CS Sales Invoice Header" extends "Sales Invoice Header"
             Caption = 'Signature';
             Subtype = Bitmap;
             DataClassification = ToBeClassified;
+            ObsoleteState = pending;
+            ObsoleteReason = 'Obsolete because the signature is now stored in the CS Signature table.';
         }
 
         field(50050; "CS Bill-to Customer No."; Code[20])

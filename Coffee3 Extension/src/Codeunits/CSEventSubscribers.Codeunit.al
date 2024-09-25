@@ -213,6 +213,25 @@ codeunit 50003 "CSEventSubscribers"
             Rec.VALIDATE("Ship-to Code", ShipToRecL.Code);
     end;
 
+    [EventSubscriber(ObjectType::Table, 5900, 'OnBeforeInsertEvent', '', false, false)]
+    local procedure CS_ServiceHeader_OnAfterInsertEvent(var Rec: Record "Service Header")
+    begin
+        if Rec."Document Type" = Rec."Document Type"::Order then begin
+            rec."Starting Date" := Today();
+            rec."Starting Time" := time();
+        end;
+    end;
+
+    [EventSubscriber(ObjectType::Table, 5900, 'OnBeforeModifyEvent', '', false, false)]
+    local procedure CS_ServiceHeader_OnAfterModifyEvent(var Rec: Record "Service Header"; var xRec: Record "Service Header")
+    begin
+        if Rec."Document Type" = Rec."Document Type"::Order then
+            if (rec."Starting Date" <> 0D) OR (rec."Starting Time" <> 0T) then begin
+                rec."Starting Date" := Today();
+                rec."Starting Time" := time();
+            end;
+    end;
+
     [EventSubscriber(ObjectType::Codeunit, 80, 'OnRunOnBeforeCheckAndUpdate', '', false, false)]
     local procedure CS_SalesPost_OnRunOnBeforeCheckAndUpdate(var SalesHeader: Record "Sales Header")
     begin
@@ -301,20 +320,47 @@ codeunit 50003 "CSEventSubscribers"
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnBeforeSalesInvHeaderInsert', '', false, false)]
     local procedure CS_SalesPost_OnBeforeSalesInvHeaderInsert(var SalesInvHeader: Record "Sales Invoice Header"; var SalesHeader: Record "Sales Header")
+    var
+        Signature: Record "CS Signature";
     begin
         SalesInvHeader."CS Shipment Date" := SalesInvHeader."Shipment Date";
         SalesInvHeader."CS Bill-to Customer No." := SalesInvHeader."Bill-to Customer No.";
-        SalesHeader.calcfields("Signature");
-        if SalesHeader."Signature".HasValue then
-            SalesInvHeader."Signature" := SalesHeader."Signature";
+
+        if Signature.get(Database::"Sales Header", SalesHeader."No.", SalesHeader."Document Type".AsInteger()) then begin
+            Signature.CalcFields(Signature);
+            Signature."Document No." := SalesInvHeader."No.";
+            Signature."Document Type" := 0;
+            Signature."Table No." := Database::"Sales Invoice Header";
+            Signature.Insert();
+        end;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnBeforeSalesShptHeaderInsert', '', false, false)]
     local procedure CS_SalesPost_OnBeforeSalesShptHeaderInsert(var SalesShptHeader: Record "Sales Shipment Header"; SalesHeader: Record "Sales Header");
+    var
+        Signature: Record "CS Signature";
     begin
-        SalesHeader.calcfields("Signature");
-        if SalesHeader."Signature".HasValue then
-            SalesShptHeader."Signature" := SalesHeader."Signature";
+        if Signature.get(Database::"Sales Header", SalesHeader."No.", SalesHeader."Document Type".AsInteger()) then begin
+            Signature.CalcFields(Signature);
+            Signature."Document No." := SalesShptHeader."No.";
+            Signature."Document Type" := 0;
+            Signature."Table No." := Database::"Sales Shipment Header";
+            Signature.Insert();
+        end;
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Serv-Documents Mgt.", OnAfterServInvHeaderInsert, '', false, false)]
+    local procedure "Serv-Documents Mgt._OnBeforeServInvHeaderInsert"(var ServiceInvoiceHeader: Record "Service Invoice Header"; ServiceHeader: Record "Service Header")
+    var
+        Signature: Record "CS Signature";
+    begin
+        if Signature.get(Database::"Service Header", ServiceHeader."No.", ServiceHeader."Document Type".AsInteger()) then begin
+            Signature.CalcFields(Signature);
+            Signature."Document No." := ServiceInvoiceHeader."No.";
+            Signature."Document Type" := 0;
+            Signature."Table No." := Database::"Service Invoice Header";
+            Signature.Insert();
+        end;
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Shipment Line", 'OnBeforeInsertInvLineFromShptLine', '', false, false)]
@@ -348,6 +394,87 @@ codeunit 50003 "CSEventSubscribers"
         AssemblyHeader.SetWarningsOff();
     end;
 
+    [EventSubscriber(ObjectType::Table, database::"Service Item Line", 'OnAfterInsertEvent', '', false, false)]
+    local procedure CS_ServiceItemLine_OnAfterInsert(var Rec: Record "Service Item Line")
+    var
+        ServiceItemLine: Record "Service Item Line";
+        DefaultServiceLines: Record "CS Default Service Lines";
+        ServiceLine: Record "Service Line";
+    begin
+        if DefaultServiceLines.IsEmpty() or rec.IsTemporary then
+            exit;
+
+        ServiceItemLine.SetRange("Document Type", Rec."Document Type");
+        ServiceItemLine.SetRange("Document No.", Rec."Document No.");
+        If ServiceItemLine.Count() = 1 then
+            if DefaultServiceLines.FindSet() then
+                repeat
+                    ServiceLine.init();
+                    ServiceLine."Document Type" := Rec."Document Type";
+                    ServiceLine."Document No." := Rec."Document No.";
+                    ServiceLine."Line No." := DefaultServiceLines."Line No.";
+                    ServiceLine."Service Item Line No." := Rec."Line No.";
+                    ServiceLine.validate(Type, DefaultServiceLines.Type);
+                    ServiceLine.Validate("No.", DefaultServiceLines."No.");
+                    ServiceLine.Insert(true);
+                until DefaultServiceLines.Next() = 0;
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Serv-Documents Mgt.", OnAfterServInvHeaderInsert, '', false, false)]
+    local procedure "Serv-Documents Mgt._OnAfterServInvHeaderInsert"(var ServiceInvoiceHeader: Record "Service Invoice Header"; ServiceHeader: Record "Service Header")
+    var
+        ServiceCommentLine: Record "Service Comment Line";
+        ServiceCommentLineInsert: Record "Service Comment Line";
+    begin
+        ServiceCommentLine.init();
+        ServiceCommentLine.SetRange("Table Name", ServiceCommentLine."Table Name"::"Service Header");
+        ServiceCommentLine.SetRange("Table Subtype", ServiceHeader."Document Type");
+        ServiceCommentLine.SetRange("No.", ServiceHeader."No.");
+        if ServiceCommentLine.FindSet() then
+            repeat
+                ServiceCommentLineInsert.init();
+                ServiceCommentLineInsert."Table Name" := ServiceCommentLineInsert."Table Name"::"Service Invoice Header";
+                ServiceCommentLineInsert."Table Subtype" := ServiceCommentLineInsert."Table Subtype"::"0";
+                ServiceCommentLineInsert."No." := ServiceInvoiceHeader."No.";
+                ServiceCommentLineInsert.Date := ServiceCommentLine.Date;
+                ServiceCommentLineInsert."Line No." := ServiceCommentLine."Line No.";
+                ServiceCommentLineInsert.Type := ServiceCommentLine.Type;
+                ServiceCommentLineInsert.Comment := ServiceCommentLine.Comment;
+                ServiceCommentLineInsert."CS Keep Internal" := ServiceCommentLine."CS Keep Internal";
+                ServiceCommentLineInsert.Insert();
+            until ServiceCommentLine.Next() = 0;
+        ServiceCommentLine.DeleteAll();
+    end;
+
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Serv-Documents Mgt.", OnAfterServInvLineInsert, '', false, false)]
+    local procedure "Serv-Documents Mgt._OnAfterServInvLineInsert"(var ServiceInvoiceLine: Record "Service Invoice Line"; ServiceLine: Record "Service Line")
+    var
+        ServiceCommentLine: Record "Service Comment Line";
+        ServiceCommentLineInsert: Record "Service Comment Line";
+    begin
+        ServiceCommentLine.init();
+        ServiceCommentLine.SetRange("Table Name", ServiceCommentLine."Table Name"::"Service Line");
+        ServiceCommentLine.SetRange("Table Subtype", ServiceLine."Document Type");
+        ServiceCommentLine.SetRange("No.", ServiceLine."Document No.");
+        ServiceCommentLine.SetRange("table Line No.", ServiceLine."Line No.");
+        if ServiceCommentLine.FindSet() then
+            repeat
+                ServiceCommentLineInsert.init();
+                ServiceCommentLineInsert."Table Name" := ServiceCommentLineInsert."Table Name"::"Service Invoice Line";
+                ServiceCommentLineInsert."Table Subtype" := ServiceCommentLineInsert."Table Subtype"::"0";
+                ServiceCommentLineInsert."No." := ServiceInvoiceLine."Document No.";
+                ServiceCommentLineInsert."Table Line No." := ServiceInvoiceLine."Line No.";
+                ServiceCommentLineInsert.Date := ServiceCommentLine.Date;
+                ServiceCommentLineInsert."Line No." := ServiceCommentLine."Line No.";
+                ServiceCommentLineInsert.Type := ServiceCommentLine.Type;
+                ServiceCommentLineInsert.Comment := ServiceCommentLine.Comment;
+                ServiceCommentLineInsert."CS Keep Internal" := ServiceCommentLine."CS Keep Internal";
+                ServiceCommentLineInsert.Insert();
+            until ServiceCommentLine.Next() = 0;
+        ServiceCommentLine.DeleteAll();
+    end;
+
     var
         SalesHeader: Record "Sales Header";
         Currency: Record Currency;
@@ -357,7 +484,6 @@ codeunit 50003 "CSEventSubscribers"
         Text50006: Label 'Wilt u de betalingswijze wijzigen van KONTANT naar PTT-REMBOURS voor deze factuur?';
 
     [EventSubscriber(ObjectType::Codeunit, codeunit::"Document-Mailing", OnBeforeSendEmail, '', false, false)]
-
     local procedure OnbeforeSendMail(var TempEmailItem: record "Email Item" temporary)
     begin
         //TempEmailItem."Send CC" := '';    

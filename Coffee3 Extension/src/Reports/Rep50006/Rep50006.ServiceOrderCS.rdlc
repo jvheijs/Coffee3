@@ -3735,32 +3735,22 @@
                                                         <TablixCell />
                                                         <TablixCell>
                                                           <CellContents>
-                                                            <Textbox Name="Textbox168">
-                                                              <CanGrow>true</CanGrow>
-                                                              <KeepTogether>true</KeepTogether>
-                                                              <Paragraphs>
-                                                                <Paragraph>
-                                                                  <TextRuns>
-                                                                    <TextRun>
-                                                                      <Value />
-                                                                      <Style />
-                                                                    </TextRun>
-                                                                  </TextRuns>
-                                                                  <Style />
-                                                                </Paragraph>
-                                                              </Paragraphs>
-                                                              <rd:DefaultName>Textbox168</rd:DefaultName>
+                                                            <Image Name="Signature">
+                                                              <Source>Database</Source>
+                                                              <Value>=System.Convert.FromBase64String(System.Convert.ToBase64String(Last(Fields!Signature.Value, "DataSet_Result")))</Value>
+                                                              <MIMEType>image/bmp</MIMEType>
+                                                              <Sizing>FitProportional</Sizing>
+                                                              <ZIndex>1</ZIndex>
+                                                              <Visibility>
+                                                                <Hidden>=iif(ISNOTHING(Last(Fields!Signature.Value, "DataSet_Result")) = True, True, False)</Hidden>
+                                                              </Visibility>
+                                                              <DataElementOutput>NoOutput</DataElementOutput>
                                                               <Style>
                                                                 <Border>
-                                                                  <Color>LightGrey</Color>
-                                                                  <Style>Solid</Style>
+                                                                  <Style>None</Style>
                                                                 </Border>
-                                                                <PaddingLeft>2pt</PaddingLeft>
-                                                                <PaddingRight>2pt</PaddingRight>
-                                                                <PaddingTop>2pt</PaddingTop>
-                                                                <PaddingBottom>2pt</PaddingBottom>
                                                               </Style>
-                                                            </Textbox>
+                                                            </Image>
                                                             <ColSpan>2</ColSpan>
                                                           </CellContents>
                                                         </TablixCell>
@@ -4376,6 +4366,9 @@ End Function</Code>
         </Field>
         <Field Name="CustAddr6">
           <DataField>CustAddr6</DataField>
+        </Field>
+        <Field Name="Signature">
+          <DataField>Signature</DataField>
         </Field>
         <Field Name="OutputNo">
           <DataField>OutputNo</DataField>

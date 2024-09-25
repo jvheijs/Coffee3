@@ -24,7 +24,10 @@ tableextension 50009 "CS Sales Shipment Header" extends "Sales Shipment Header"
         field(50009; "Signature"; Blob)
         {
             Caption = 'Signature';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
+            SubType = Bitmap;
+            ObsoleteState = pending;
+            ObsoleteReason = 'Obsolete because the signature is now stored in the CS Signature table.';
         }
 
         field(50021; SalesPersonOrder; Boolean)

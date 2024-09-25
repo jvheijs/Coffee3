@@ -1485,16 +1485,17 @@ Cstr(Fields!PageCaption.Value)
                                     <FontSize>8pt</FontSize>
                                   </Style>
                                 </Tablix>
-                                <Image Name="Signature_Customer">
+                                <Image Name="CompanyInfo2Picture3">
                                   <Source>Database</Source>
                                   <Value>=Fields!Signature_Customer.Value</Value>
-                                  <MIMEType>image/png</MIMEType>
+                                  <MIMEType>image/bmp</MIMEType>
                                   <Sizing>FitProportional</Sizing>
-                                  <Top>0.04607cm</Top>
-                                  <Left>6.54453cm</Left>
-                                  <Height>2.24698cm</Height>
-                                  <Width>11.48446cm</Width>
+                                  <Top>0.45861cm</Top>
+                                  <Left>6.697cm</Left>
+                                  <Height>23.8459mm</Height>
+                                  <Width>112.06205mm</Width>
                                   <ZIndex>1</ZIndex>
+                                  <DataElementOutput>NoOutput</DataElementOutput>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
