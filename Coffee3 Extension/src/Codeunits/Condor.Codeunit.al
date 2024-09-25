@@ -308,8 +308,10 @@ codeunit 50000 "Condor"
         lRecSalespersonPurchaser: Record "Salesperson/Purchaser";
         lRecUser: Record User;
         lRecSalesHeader: Record "Sales Header";
+        lRecCust: Record Customer;
         lCduCondor: Codeunit Condor;
         lPgeDPSalesOrder: Page "DP Sales Order";
+
     begin
         lRecUser.SETFILTER("User Name", USERID);
         lRecUser.FINDFIRST();
@@ -331,6 +333,12 @@ codeunit 50000 "Condor"
         lRecSalesHeader.Rayon := Rec.Rayon;
         lRecSalesHeader.Routenummer := Rec.Routenummer;
 
+        lRecCust.get(rec."Customer No.");
+        lRecSalesHeader.VALIDATE("Payment Method Code", lRecCust."Payment Method Code");
+        lRecSalesHeader.VALIDATE("Payment Terms Code", lRecCust."Payment Terms Code");
+        if (lRecCust."Payment Method Code" = '01') then
+            if not confirm('Betalingsconditie is contant, wilt u doorgaan?', false) then
+                exit;
 
         if Rec.Rayon < 10 then
             lRecSalesHeader.VALIDATE("Location Code", '0' + FORMAT(Rec.Rayon))
