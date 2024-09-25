@@ -114,9 +114,11 @@ page 50017 "DP Sales Order#"
                               "Document No." = field("No.");
                 UpdatePropagation = Both;
             }
-            field("CSSignature"; rec."Signature")
+            field("CSSignature"; RecSignature."Signature")
             {
+                Caption = 'Signature';
                 Editable = false;
+                ApplicationArea = All;
             }
         }
     }
@@ -176,10 +178,12 @@ page 50017 "DP Sales Order#"
 
                     trigger OnAction()
                     begin
-                        if HasSignature() = false then
-                            AddSignature();
+                        if not RecSignature.HasSignature(rec."No.", rec."Document Type".AsInteger(), database::"Sales Header") then begin
+                            RecSignature.OpenSignaturePage(rec."No.", rec."Document Type".AsInteger(), database::"Sales Header");
+                            CurrPage.UPDATE(false);
+                        end;
 
-                        if HasSignature() then begin
+                        if RecSignature.HasSignature(rec."No.", rec."Document Type".AsInteger(), database::"Sales Header") then begin
                             Rec.InPosting := true; // COFF-1
                             Rec.MODIFY();
                             COMMIT();
@@ -230,6 +234,12 @@ page 50017 "DP Sales Order#"
         }
     }
 
+    trigger OnAfterGetRecord()
+    begin
+        if RecSignature.get(database::"Sales Header", rec."No.", rec."Document Type".AsInteger()) then
+            RecSignature.CalcFields(Signature);
+    end;
+
     trigger OnAfterGetCurrRecord()
     begin
 
@@ -243,6 +253,7 @@ page 50017 "DP Sales Order#"
     end;
 
     var
+        RecSignature: Record "CS Signature";
         CustomerName: Text[50];
         CustomerEmail: Text[50];
         ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
@@ -254,22 +265,6 @@ page 50017 "DP Sales Order#"
         gBlnSignatureDataSet: Boolean;
         gRecCustomer: Record Customer;
         gRecCustomerBankAccount: Record "Customer Bank Account";
-
-    local procedure HasSignature(): Boolean;
-    begin
-        rec.get(rec."Document Type", rec."No.");
-        rec.CalcFields("Signature");
-        exit(Rec."Signature".HasValue);
-    end;
-
-    local procedure AddSignature();
-    var
-        Signature: Page Signature;
-    begin
-        Signature.SetRecord(Rec);
-        Signature.SetWithExit();
-        Signature.RunModal();
-    end;
 
     local procedure Post(PostingCodeunitID: Integer; Navigate: Option)
     var

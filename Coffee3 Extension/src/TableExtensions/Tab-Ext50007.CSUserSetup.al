@@ -11,5 +11,13 @@ tableextension 50007 "CS User Setup" extends "User Setup"
             DataClassification = ToBeClassified;
 
         }
+
+        field(50001; "CS Has Wshe. Employee"; boolean)
+        {
+            Caption = 'Has Warehouse Employee';
+            FieldClass = FlowField;
+            CalcFormula = exist("Warehouse Employee" where("User ID" = field("User ID")));
+            Editable = false;
+        }
     }
 }

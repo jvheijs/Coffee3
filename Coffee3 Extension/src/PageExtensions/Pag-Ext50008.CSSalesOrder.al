@@ -8,7 +8,6 @@ pageextension 50008 "CS Sales Order" extends "Sales Order"
             {
                 ApplicationArea = All;
             }
-
         }
         addafter(Status)
         {

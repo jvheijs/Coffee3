@@ -3,6 +3,13 @@ tableextension 50017 "CS Service Invoice Header" extends "Service Invoice Header
     Description = 'CS2.0';
     fields
     {
+        field(50000; "Signature"; Blob)
+        {
+            Caption = 'Signature';
+            Subtype = Bitmap;
+            DataClassification = CustomerContent;
+        }
+
         field(50020; Verzendprofiel; Code[20])
         {
             Caption = 'Verzendprofiel';
