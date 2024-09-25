@@ -231,12 +231,12 @@ page 50011 "DP Sales Order"
                         Rec.FINDFIRST();
 
                         if Rec.InPosting then begin
-                            // if "Payment Method Code" <> '01' THEN
-                            if Confirm('Contante betaling ?', false) then begin
-                                Rec.Validate("Payment Method Code", '01');
-                                Rec.Validate("Payment Terms Code", '01');
-                                Rec.MODIFY();
-                            end;
+                            if "Payment Method Code" <> '01' THEN
+                                if Confirm('Contante betaling ?', false) then begin
+                                    Rec.Validate("Payment Method Code", '01');
+                                    Rec.Validate("Payment Terms Code", '01');
+                                    Rec.MODIFY();
+                                end;
 
                             if lRecCustomer.Get(lRecSalesHeader."Bill-to Customer No.") then begin
                                 if lRecCustomer."E-Mail" = '' then begin
