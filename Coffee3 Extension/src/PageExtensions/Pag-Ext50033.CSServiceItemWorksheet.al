@@ -1,5 +1,20 @@
 pageextension 50033 "CS Service Item Worksheet" extends "Service Item Worksheet"
 {
+    layout
+    {
+        modify(Customer)
+        {
+            Visible = FasttabVisible;
+        }
+        modify(Shipping)
+        {
+            Visible = FasttabVisible;
+        }
+        modify(Details)
+        {
+            Visible = FasttabVisible;
+        }
+    }
 
     actions
     {
@@ -52,4 +67,25 @@ pageextension 50033 "CS Service Item Worksheet" extends "Service Item Worksheet"
         }
 
     }
+
+    trigger OnOpenPage()
+    begin
+        SetFastTabVisibility();
+    end;
+
+    trigger OnAfterGetRecord()
+    begin
+        SetFastTabVisibility();
+    end;
+
+    var
+        FasttabVisible: Boolean;
+
+    local procedure SetFastTabVisibility()
+    var
+        WarehouseEmployee: Record "Warehouse Employee";
+    begin
+        WarehouseEmployee.SetRange("User ID", UserId());
+        FasttabVisible := WarehouseEmployee.IsEmpty();
+    end;
 }
