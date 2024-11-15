@@ -3,5 +3,6 @@
   "appFolders": [],
   "testFolders": [],
   "bcptTestFolders": [],
-  "artifact": ""
+  "artifact": "",
+  "doNotPerformUpgrade": true
 }
