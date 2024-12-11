@@ -6342,13 +6342,13 @@
         </trans-unit>
         <trans-unit id="PageExtension 2623093069 - Action 685401789 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2145436509">
           <source>Sign</source>
-          <target>Teken</target>
+          <target>Handtekening</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Service Order - Action Sign - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2623093069 - Action 685401789 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2145436509">
           <source>Sign</source>
-          <target>Teken</target>
+          <target>Handtekening</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CS Service Order - Action Sign - Property Caption</note>
         </trans-unit>
