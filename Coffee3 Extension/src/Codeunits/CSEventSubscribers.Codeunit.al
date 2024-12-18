@@ -451,8 +451,11 @@ codeunit 50003 "CSEventSubscribers"
     local procedure "Serv-Documents Mgt._OnAfterServInvLineInsert"(var ServiceInvoiceLine: Record "Service Invoice Line"; ServiceLine: Record "Service Line")
     var
         ServiceCommentLine: Record "Service Comment Line";
+        ServiceItemCommentLine: Record "Service Comment Line";
         ServiceCommentLineInsert: Record "Service Comment Line";
+        NextLineNo: Integer;
     begin
+        NextLineNo := 0;
         ServiceCommentLine.init();
         ServiceCommentLine.SetRange("Table Name", ServiceCommentLine."Table Name"::"Service Line");
         ServiceCommentLine.SetRange("Table Subtype", ServiceLine."Document Type");
@@ -460,6 +463,7 @@ codeunit 50003 "CSEventSubscribers"
         ServiceCommentLine.SetRange("table Line No.", ServiceLine."Line No.");
         if ServiceCommentLine.FindSet() then
             repeat
+                // Copy to Service Invoice Line
                 ServiceCommentLineInsert.init();
                 ServiceCommentLineInsert."Table Name" := ServiceCommentLineInsert."Table Name"::"Service Invoice Line";
                 ServiceCommentLineInsert."Table Subtype" := ServiceCommentLineInsert."Table Subtype"::"0";
@@ -471,6 +475,28 @@ codeunit 50003 "CSEventSubscribers"
                 ServiceCommentLineInsert.Comment := ServiceCommentLine.Comment;
                 ServiceCommentLineInsert."CS Keep Internal" := ServiceCommentLine."CS Keep Internal";
                 ServiceCommentLineInsert.Insert();
+
+                // Copy to Service Item
+                If ServiceLine."Service Item No." <> '' then begin
+                    if NextLineNo = 0 then begin
+                        ServiceItemCommentLine.SetRange(Type, ServiceItemCommentLine.Type::General);
+                        ServiceItemCommentLine.SetRange("Table Name", ServiceItemCommentLine."Table Name"::"Service Item");
+                        ServiceItemCommentLine.SetRange("No.", ServiceLine."Service Item No.");
+                        if ServiceItemCommentLine.FindLast() then
+                            NextLineNo := ServiceItemCommentLine."Line No.";
+                    end;
+
+                    NextLineNo += 10000;
+                    ServiceCommentLineInsert.init();
+                    ServiceCommentLineInsert."Table Name" := ServiceCommentLineInsert."Table Name"::"Service Item";
+                    ServiceCommentLineInsert."No." := ServiceLine."Service Item No.";
+                    ServiceCommentLineInsert.Date := ServiceCommentLine.Date;
+                    ServiceCommentLineInsert."Line No." := NextLineNo;
+                    ServiceCommentLineInsert.Type := ServiceCommentLineInsert.Type::General;
+                    ServiceCommentLineInsert.Comment := ServiceCommentLine.Comment;
+                    ServiceCommentLineInsert."CS Keep Internal" := ServiceCommentLine."CS Keep Internal";
+                    ServiceCommentLineInsert.Insert();
+                end;
             until ServiceCommentLine.Next() = 0;
         ServiceCommentLine.DeleteAll();
     end;
