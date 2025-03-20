@@ -462,6 +462,9 @@ report 50007 "CS Service Invoice"
                         column(LineDiscAmtCaption; LineDiscAmtCaptionLbl)
                         {
                         }
+                        column(TotalLineDiscountAmount; TotalLineDiscountAmount)
+                        {
+                        }
                         dataitem("Service Comment Line"; "Service Comment Line")
                         {
                             DataItemLink = "No." = field("Document No."), "Table Line No." = field("Line No.");
@@ -583,6 +586,7 @@ report 50007 "CS Service Invoice"
                             TotalAmount += Amount;
                             TotalAmountInclVAT += "Amount Including VAT";
                             TotalInvDiscAmount += "Inv. Discount Amount";
+                            TotalLineDiscountAmount += "Line Discount Amount";
                             TypeInt := Type.AsInteger();
                         end;
 
@@ -945,6 +949,7 @@ report 50007 "CS Service Invoice"
         TotalAmount: Decimal;
         TotalAmountInclVAT: Decimal;
         TotalInvDiscAmount: Decimal;
+        TotalLineDiscountAmount: Decimal;
         DimTxtArrLength: Integer;
         DimTxtArr: array[500] of Text[50];
         IsServiceContractLine: Boolean;
