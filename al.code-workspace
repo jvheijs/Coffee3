@@ -8,6 +8,10 @@
     },
     {
       "path": ".alpackages"
+    },
+    {
+      "name": "Coffee3-1",
+      "path": "../Coffee3-1"
     }
   ],
   "settings": {}
